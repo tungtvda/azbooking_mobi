@@ -9,8 +9,8 @@ require_once DIR.'/view/default/public.php';
 function view_banner($data=array())
 {
     $asign=array();
-    $asign['name_dm']=$data['banner']['name'];
-    $asign['banner_img']=$data['banner']['banner_img'];
-    $asign['url']=$data['banner']['url'];
+//    $asign['name_dm']=$data['banner']['name'];
+//    $asign['banner_img']=$data['banner']['banner_img'];
+//    $asign['url']=$data['banner']['url'];
     print_template($asign,'banner');
 }

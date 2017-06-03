@@ -4,8 +4,8 @@
             <div class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
                 <div id="text-1" class="widget widget_text traveltour-widget">
                     <div class="textwidget"><img
-                            src="http://azbooking.vn/view/admin/Themes/kcfinder/upload/images/cauhinh/logoazbooking.vn.png"
-                            alt=""/>
+                                src="http://azbooking.vn/view/admin/Themes/kcfinder/upload/images/cauhinh/logoazbooking.vn.png"
+                                alt=""/>
                     </div>
                     <p><a href="#" target="_blank"><i class="fa fa-facebook" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
                         <a href="#" target="_blank"><i class="fa fa-twitter" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
@@ -19,7 +19,7 @@
             <div class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
                 <div id="tourmaster-widget-tour-category-6"
                      class="widget widget_tourmaster-widget-tour-category traveltour-widget"><h3
-                        class="traveltour-widget-title"><span class="traveltour-widget-head-text">Tại sao bạn nên lựa chọn chúng tôi</span>
+                            class="traveltour-widget-title"><span class="traveltour-widget-head-text">Tại sao bạn nên lựa chọn chúng tôi</span>
                     </h3><span class="clear"></span>
                     <div class="tourmaster-widget-tour-category">
                         <div id="text-11" class="widget widget_text traveltour-widget">
@@ -51,8 +51,8 @@
             </div>
             <div class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
                 <div id="text-2" class="widget widget_text traveltour-widget"><h3
-                        class="traveltour-widget-title"><span
-                            class="traveltour-widget-head-text">Văn phòng Hà Nội</span></h3><span class="clear"></span>
+                            class="traveltour-widget-title"><span
+                                class="traveltour-widget-head-text">Văn phòng Hà Nội</span></h3><span class="clear"></span>
                     <div class="textwidget"><p>Address : 12 Main Street Pt. London</p>
                         <div class="gdlr-core-space-shortcode" style="margin-top: -13px;"></div>
                         <p>Phone : +44 3656 4567</p>
@@ -62,8 +62,8 @@
                     </div>
                 </div>
                 <div id="text-2" class="widget widget_text traveltour-widget"><h3
-                        class="traveltour-widget-title"><span
-                            class="traveltour-widget-head-text">Văn phòng Hà Nội</span></h3><span class="clear"></span>
+                            class="traveltour-widget-title"><span
+                                class="traveltour-widget-head-text">Văn phòng Hà Nội</span></h3><span class="clear"></span>
                     <div class="textwidget"><p>Address : 12 Main Street Pt. London</p>
                         <div class="gdlr-core-space-shortcode" style="margin-top: -13px;"></div>
                         <p>Phone : +44 3656 4567</p>
@@ -86,7 +86,7 @@
 </div>
 
 <script type='text/javascript'
-        src='js/datepicker.min.js?ver=1.11.4'></script>
+        src='{SITE-NAME}/view/default/themes/js/datepicker.min.js?ver=1.11.4'></script>
 <script type='text/javascript'>jQuery(document).ready(function (jQuery) {
         jQuery.datepicker.setDefaults({
             "closeText": "Close",
@@ -113,11 +113,9 @@
         "dayNamesMin": ["S", "M", "T", "W", "T", "F", "S"],
         "firstDay": "1"
     };</script>
-<script type='text/javascript'
-        src='js/tourmaster.js?ver=4.7.5'></script>
 
 <script type='text/javascript'
-        src='js/script-core.js?ver=1.0.0'></script>
+        src='{SITE-NAME}/view/default/themes/js/script-core.js?ver=1.0.0'></script>
 
 </body>
 </html>

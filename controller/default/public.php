@@ -24,15 +24,15 @@ foreach ($array_files as $filename) {
 function show_header($title,$description,$keyword,$data1=array())
 {
     $data=array();
-    $data['Title']=$title;
-    $data['Description']=$description;
-    $data['Keyword']=$keyword;
-    $data['config']=$data1['config'];
-    if (isset($data1['link_anh'])) {
-        $data['link_anh'] = $data1['link_anh'];
-    } else {
-        $data['link_anh'] = $data1['config'][0]->Logo;
-    }
+//    $data['Title']=$title;
+//    $data['Description']=$description;
+//    $data['Keyword']=$keyword;
+//    $data['config']=$data1['config'];
+//    if (isset($data1['link_anh'])) {
+//        $data['link_anh'] = $data1['link_anh'];
+//    } else {
+//        $data['link_anh'] = $data1['config'][0]->Logo;
+//    }
     view_header($data);
 }
 function show_header2($title,$description,$keyword,$data1=array())
@@ -94,14 +94,14 @@ function  show_right($data1=array())
 function show_menu($data1=array(),$active='trangchu')
 {
     $data=array();
-    $data['config']=$data1['config'];
-    $data['active']=$active;
-    $data['menu']=$data1['menu'];
-    $data['danhmuc_menu']=danhmuc_1_getByTop('','id!=1','position asc');
-    $data['danhmuc_khachsan']=danhmuc_khachsan_getByTop('','id!=1','position asc');
-    $data['danhmuc_tintuc']=danhmuc_tintuc_getByTop('','','position asc');
-    $data['danhmuc_menu']=danhmuc_1_getByTop('','id!=1 and tour_quoc_te=0','position asc');
-    $data['danhmuc_menu_quocte']=danhmuc_1_getByTop('','id!=1 and tour_quoc_te=1','position asc');
+//    $data['config']=$data1['config'];
+//    $data['active']=$active;
+//    $data['menu']=$data1['menu'];
+//    $data['danhmuc_menu']=danhmuc_1_getByTop('','id!=1','position asc');
+//    $data['danhmuc_khachsan']=danhmuc_khachsan_getByTop('','id!=1','position asc');
+//    $data['danhmuc_tintuc']=danhmuc_tintuc_getByTop('','','position asc');
+//    $data['danhmuc_menu']=danhmuc_1_getByTop('','id!=1 and tour_quoc_te=0','position asc');
+//    $data['danhmuc_menu_quocte']=danhmuc_1_getByTop('','id!=1 and tour_quoc_te=1','position asc');
     view_menu($data);
 }
 
@@ -115,10 +115,10 @@ function show_banner($data1=array())
 function show_footer($data1=array())
 {
     $data=array();
-    $data['config']=$data1['config'];
-    $data['mangxahoi']=social_getByTop(1,'','');
-    $data['info']=info_mix_getByTop('','','id asc');
-    $data['danhmuc_menu_footer']=danhmuc_1_getByTop('','id!=1','position asc');
+//    $data['config']=$data1['config'];
+//    $data['mangxahoi']=social_getByTop(1,'','');
+//    $data['info']=info_mix_getByTop('','','id asc');
+//    $data['danhmuc_menu_footer']=danhmuc_1_getByTop('','id!=1','position asc');
     view_footer($data);
 }
 function  show_left_danhmuc($data1=array())

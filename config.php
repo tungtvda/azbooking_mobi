@@ -4,7 +4,8 @@
  * @author vdbkpro
  * @copyright 2013
  */
-define("SITE_NAME", "http://localhost/azbooking");
+define("SITE_NAME", "http://localhost/azbooking_mobi");
+define("SITE_NAME_MAIN", "http://localhost/azbooking");
 define("DIR", dirname(__FILE__));
 define('SERVER','localhost');
 define('DB_USERNAME','root');
