@@ -26,6 +26,10 @@ $data['video_index']=video_getByTop(1,'','id desc');
 $data['tieuchi']=tieuchi_getByTop('','','position asc');
 $data['banner']='';
 
+$data['slide']=slide_getByTop('','','Id desc');
+$random_keys=array_rand($data['slide'],1);
+$data['banner']['name']=$data['slide'][$random_keys]->name;
+$data['banner']['banner_img']=$data['slide'][$random_keys]->img;
 $title=$data['menu'][0]->title;
 $description=$data['menu'][0]->description;
 $keyword=$data['menu'][0]->keyword;

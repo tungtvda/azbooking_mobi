@@ -4104,7 +4104,8 @@ html .woocommerce span.onsale {
 }
 
 .mm-panels > .mm-panel.mm-hasnavbar {
-    padding-top: 40px
+    padding-top: 40px;
+    background-color: #ffffff;
 }
 
 .mm-vertical .mm-panel {
