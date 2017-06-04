@@ -731,7 +731,7 @@ ul.mm-listview li a {
 }
 
 .mm-navbar .mm-title:hover, .mm-navbar .mm-btn:hover, ul.mm-listview li a:hover, ul.mm-listview li > span:hover, ul.mm-listview li.current-menu-item > a, ul.mm-listview li.current-menu-ancestor > a, ul.mm-listview li.current-menu-ancestor > span {
-    color: #042161;
+    color:#c30606;
 }
 
 .mm-menu {

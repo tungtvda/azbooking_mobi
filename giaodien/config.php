@@ -4,13 +4,12 @@
  * @author vdbkpro
  * @copyright 2013
  */
-define("SITE_NAME", "http://localhost/azbooking_mobi");
-define("SITE_NAME_MAIN", "http://azbooking.vn");
+define("SITE_NAME", "http://azbooking.vn");
 define("DIR", dirname(__FILE__));
 define('SERVER','localhost');
-define('DB_USERNAME','root');
-define('DB_PASSWORD','');
-define('DB_NAME','azbooking');
+define('DB_USERNAME','azbk_az');
+define('DB_PASSWORD','R7N91ujv');
+define('DB_NAME','azbk_az');
 define('CACHE',false);
 define('DATETIME_FORMAT',"y-m-d H:i:s");
 define('PRIVATE_KEY','hoidinhnvbk');
