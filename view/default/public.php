@@ -187,6 +187,11 @@ function print_item($file,$ListItem,$LocDau=false,$LocDauAssign=false,$numberfor
 
                 }
                 $ft->assign('khoihanh',$string_khoihanh);
+//                if($dem%2==0){
+//                    $ft->assign('tourmaster-column-first','tourmaster-column-first');
+//                }else{
+//
+//                }
             }
             if(get_class($item)=='tour_img') {
                 $class='column';

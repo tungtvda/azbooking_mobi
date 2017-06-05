@@ -1,4 +1,4 @@
-<div class="gdlr-core-item-list  tourmaster-item-pdlr tourmaster-column-15 tourmaster-column-first">
+<div class="gdlr-core-item-list  tourmaster-item-pdlr tourmaster-column-15">
     <div class="tourmaster-tour-grid tourmaster-tour-frame tourmaster-price-right-title">
         <div class="tourmaster-tour-thumbnail tourmaster-media-image"><a
                     href=""><img
