@@ -10,11 +10,11 @@ require_once DIR . '/common/cls_fast_template.php';
 function show_index($data = array())
 {
     $asign = array();
-//    $asign['tour_PROMOTIONS'] ='';
-//    if(count($data['tour_PROMOTIONS'])>0)
-//    {
-//        $asign['tour_PROMOTIONS'] = print_item('tour_index', $data['tour_PROMOTIONS']);
-//    }
+    $asign['danhsach'] ='';
+    if(count($data['danhsach'])>0)
+    {
+        $asign['danhsach'] = print_item('item_list', $data['danhsach']);
+    }
 //    $asign['khachsan_index'] ='';
 //    if(count($data['khachsan_index'])>0)
 //    {

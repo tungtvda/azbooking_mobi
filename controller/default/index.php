@@ -14,16 +14,10 @@ require_once DIR.'/controller/default/public.php';
 $data['menu']=menu_getByTop('','','');
 $data['config']=config_getByTop(1,'','');
 ////
-$data['tour_PROMOTIONS']=tour_getByTop(5,'promotion=1 ','id desc');
-$data['tour_sales']=tour_getByTop(5,'price_sales!="" ','id desc');
-
 $date_now=_returnGetDateTime();
-
-$data['tour_count_down']=tour_getByTop(3,'count_down!="" and count_down>"'.$date_now.'"','id desc');
-
+$data['tour_count_down']=tour_getByTop('','(count_down!="" and count_down>"'.$date_now.'") or promotion=1 or price_sales!="" ','count_down desc,id DESC');
 $data['tieuchi']=tieuchi_getByTop('','','position asc');
 $data['banner']='';
-
 $data['slide']=slide_getByTop('','','Id desc');
 $random_keys=array_rand($data['slide'],1);
 $data['banner']['name']=$data['slide'][$random_keys]->name;
