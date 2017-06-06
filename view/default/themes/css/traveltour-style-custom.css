@@ -501,31 +501,31 @@ body.traveltour-boxed.traveltour-background-pattern .traveltour-body-outer-wrapp
 }
 
 .traveltour-body h1, .traveltour-body h2, .traveltour-body h3, .traveltour-body h4, .traveltour-body h5, .traveltour-body h6, .traveltour-body .traveltour-title-font, .traveltour-body .gdlr-core-title-font {
-    font-family: "Poppins", sans-serif;
+    font-family: Tahoma, Arial, Helvetica, sans-serif
 }
 
 .woocommerce-breadcrumb, .woocommerce span.onsale, .single-product.woocommerce div.product p.price .woocommerce-Price-amount, .single-product.woocommerce #review_form #respond label {
-    font-family: "Poppins", sans-serif;
+    font-family:  Tahoma, Arial, Helvetica, sans-serif
 }
 
 .traveltour-navigation .sf-menu > li > a, .traveltour-navigation .sf-vertical > li > a, .traveltour-navigation-font {
-    font-family: "Poppins", sans-serif;
+    font-family:  Tahoma, Arial, Helvetica, sans-serif
 }
 
 .traveltour-body, .traveltour-body .gdlr-core-content-font, .traveltour-body input, .traveltour-body textarea, .traveltour-body button, .traveltour-body select, .traveltour-body .traveltour-content-font, .gdlr-core-audio .mejs-container * {
-    font-family: "Poppins", sans-serif;
+    font-family:  Tahoma, Arial, Helvetica, sans-serif
 }
 
 .traveltour-body .gdlr-core-info-font, .traveltour-body .traveltour-info-font {
-    font-family: "Poppins", sans-serif;
+    font-family:  Tahoma, Arial, Helvetica, sans-serif
 }
 
 .traveltour-body .gdlr-core-blog-info-font, .traveltour-body .traveltour-blog-info-font {
-    font-family: "Poppins", sans-serif;
+    font-family:  Tahoma, Arial, Helvetica, sans-serif
 }
 
 .traveltour-body .gdlr-core-quote-font {
-    font-family: "Open Sans", sans-serif;
+    font-family:  Tahoma, Arial, Helvetica, sans-serif
 }
 
 .traveltour-body h1 {

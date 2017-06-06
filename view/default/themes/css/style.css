@@ -1156,3 +1156,51 @@ you can use the generic selector below, but it's slower:
     font-size: 2em;
 }
 
+.button_count_down {
+
+    /*background-color: #004A7F;*/
+
+    /*-webkit-border-radius: 10px;*/
+
+    /*border-radius: 10px;*/
+
+    border: none;
+
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+
+    text-decoration: none;
+
+}
+@-webkit-keyframes glowing_button_count_down {
+    0% { color: #01fff3; }
+    50% { color: #ffffff;  }
+    100% { color: #01fff3;  }
+}
+
+@-moz-keyframes glowing_button_count_down {
+    0% { color: #01fff3;}
+    50% { color: #ffffff;  }
+    100% { color: #01fff3; }
+}
+
+@-o-keyframes glowing_button_count_down {
+    0% { color: #01fff3;  }
+    50% { color: #ffffff; }
+    100% { color: #01fff3; }
+}
+
+@keyframes glowing_button_count_down {
+    0% { color: #01fff3; }
+    50% { color: #ffffff;  }
+    100% { color: #01fff3; }
+}
+
+.button_count_down {
+    -webkit-animation: glowing_button_count_down 1500ms infinite;
+    -moz-animation: glowing_button_count_down 1500ms infinite;
+    -o-animation: glowing_button_count_down 1500ms infinite;
+    animation: glowing_button_count_down 1500ms infinite;
+}

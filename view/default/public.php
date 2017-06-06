@@ -138,13 +138,32 @@ function print_item($file,$ListItem,$LocDau=false,$LocDauAssign=false,$numberfor
                 $ft->assign('link',link_tourdetail($item,$data_dm[0]->name_url,$data_dm2[0]->name_url));
                 $key_id='';
                 $mes_='Đã hết hạn';
-                $date_count='';
+                $ft->assign('check_sales_coundown','');
+                $ft->assign('js_coundown','');
                 if($item->count_down!=''){
                     $date_now=_returnGetDateTime();
                     $date_count=strtotime($item->count_down);
-//                    $date=date('Y-m-d H:i:s', strtotime($item->count_down-$date_now));
                     $key_id=$item->id;
                     $mes_='';
+                    if(strtotime($item->count_down)>strtotime($date_now)){
+                        $date_count_string='<div class="CountDown button_count_down">
+                    <i class="fa fa-clock-o fa-2x"></i>&nbsp;&nbsp;
+                                           <span data-time="'.$date_count.'" class="kkcountdown-'.$key_id.'">
+                                                <span class="kkcountdown-box"></span>
+                                           </span>
+                </div>';
+                        $ft->assign('check_sales_coundown',$date_count_string);
+                        $ft->assign('js_coundown',"$('.kkcountdown-{key_id}').kkcountdown({
+                            dayText: 'ngày ',
+                            daysText: ' ngày ',
+                            hoursText: 'h ',
+                            minutesText: 'm ',
+                            secondsText: 's',
+                            displayZeroDays: true,
+                            callback: cBack,
+                            rusNumbers: false
+                        });");
+                    }
                 }
                 $arr_destination=explode(',',$item->destination);
                 $tring_des='';
@@ -161,9 +180,10 @@ function print_item($file,$ListItem,$LocDau=false,$LocDauAssign=false,$numberfor
                     }
                 }
                 $ft->assign('tring_des',$tring_des);
+                $ft->assign('img',SITE_NAME_MAIN.$item->img);
                 $ft->assign('key_id',$key_id);
                 $ft->assign('mes_',$mes_);
-                $ft->assign('date_count',$date_count);
+
                 $ft->assign('start',sao($item->hotel));
                 $arr_check=explode(',',$item->departure);
                 if($arr_check==''){
