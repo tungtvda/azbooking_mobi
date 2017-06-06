@@ -4,8 +4,8 @@
                     href="{link}"><img
                         src="{img}"
                         alt="{name}"/></a>
-            <div class="tourmaster-thumbnail-ribbon gdlr-core-outer-frame-element"
-                 style="color: #ffffff;background-color: #4692e7;">
+            <div {hidden_sales} class="tourmaster-thumbnail-ribbon gdlr-core-outer-frame-element"
+                                style="color: #ffffff;background-color: {backgroup};">
                 <div class="tourmaster-thumbnail-ribbon-cornor"
                      style="border-right-color: rgba(70, 146, 231, 0.5);">
 
@@ -17,19 +17,15 @@
             <h3 class="tourmaster-tour-title gdlr-core-skin-title"
                 style="font-size: 17px;"><a
                         href="{link}">{name}</a></h3>
-            <div class="tourmaster-tour-price-wrap tourmaster-discount"><span
-                        class="tourmaster-tour-price"><span class="tourmaster-head">From</span><span
-                            class="tourmaster-tail">$2,400</span></span><span
-                        class="tourmaster-tour-discount-price">$2,800</span></div>
             <div class="tourmaster-tour-info-wrap clearfix">
+                <div {show_code} class="tourmaster-tour-info tourmaster-tour-info-duration-text ">
+                    <i class="icon_clock_alt"></i> Mã tour: {code}
+                </div>
                 <div class="tourmaster-tour-info tourmaster-tour-info-duration-text ">
-                    <i class="icon_clock_alt"></i>9 Days 8 Nights
+                    <i class="icon_clock_alt"></i> {durations}
                 </div>
                 <div class="tourmaster-tour-info tourmaster-tour-info-departure-location ">
-                    <i class="flaticon-takeoff-the-plane"></i>San Francisco
-                </div>
-                <div class="tourmaster-tour-info tourmaster-tour-info-return-location ">
-                    <i class="flaticon-plane-landing"></i>San Francisco
+                    <i class="fa fa-plane"></i> {tring_des}
                 </div>
                 <div class="tourmaster-tour-info tourmaster-tour-info-minimum-age ">
                     <i class="fa fa-user"></i>Min Age : 10+
@@ -38,10 +34,21 @@
                     <i class="fa fa-users"></i>Max People : 32
                 </div>
             </div>
-            <div class="tourmaster-tour-rating"><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fa fa-star"></i><span
-                        class="tourmaster-tour-rating-text">(1 Review)</span></div>
+            <div class="tourmaster-tour-rating">
+                <div class="price_div">
+                    <div class="tourmaster-tour-price-wrap tourmaster-discount">
+                        <span {show_sales} class="tourmaster-tour-price">
+                            <span class="tourmaster-tail">{price_sales}</span>
+                        </span>
+                        <span class="tourmaster-tour-discount-price">{price_format}</span>
+                    </div>
+                </div>
+                <div class="dat_tour">
+                    <a  href="">Đặt tour</a>
+                </div>
+
+
+            </div>
         </div>
     </div>
 </div>

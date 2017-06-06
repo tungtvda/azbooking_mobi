@@ -3161,14 +3161,14 @@ a.tourmaster-button, input[type="button"].tourmaster-button, input[type="submit"
 }
 
 .tourmaster-tour-grid.tourmaster-price-right-title .tourmaster-tour-title {
-    padding-right: 100px;
+    /*padding-right: 100px;*/
 }
 
 .tourmaster-tour-grid.tourmaster-price-right-title .tourmaster-tour-price-wrap {
-    text-align: right;
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    /*text-align: right;*/
+    /*position: absolute;*/
+    /*top: 0px;*/
+    /*right: 0px;*/
 }
 
 .tourmaster-tour-grid.tourmaster-price-right-title .tourmaster-tour-price {
@@ -3212,8 +3212,8 @@ a.tourmaster-button, input[type="button"].tourmaster-button, input[type="submit"
 }
 
 .tourmaster-tour-grid.tourmaster-tour-frame .tourmaster-tour-price-wrap {
-    top: 32px;
-    right: 25px;
+    /*top: 32px;*/
+    /*right: 25px;*/
 }
 
 .tourmaster-tour-grid.tourmaster-tour-frame .tourmaster-tour-rating,
@@ -3253,7 +3253,7 @@ a.tourmaster-button, input[type="button"].tourmaster-button, input[type="submit"
 }
 
 .tourmaster-tour-item-column-4 .tourmaster-tour-grid.tourmaster-price-right-title .tourmaster-tour-title {
-    padding-right: 90px;
+    /*padding-right: 90px;*/
 }
 
 .tourmaster-tour-item-column-4 .tourmaster-tour-grid .tourmaster-tour-price-wrap.tourmaster-discount .tourmaster-tour-price {
