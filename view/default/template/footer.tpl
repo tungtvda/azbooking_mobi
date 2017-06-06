@@ -84,7 +84,7 @@
 </footer>
 </div>
 </div>
-
+<!--<script type="text/javascript" src="{SITE-NAME}/view/default/themes/js/jquery-ui.min.js"></script>-->
 <script type='text/javascript'
         src='{SITE-NAME}/view/default/themes/js/datepicker.min.js?ver=1.11.4'></script>
 <script type='text/javascript'>jQuery(document).ready(function (jQuery) {
@@ -116,6 +116,7 @@
 
 <script type='text/javascript'
         src='{SITE-NAME}/view/default/themes/js/script-core.js?ver=1.0.0'></script>
-
+<script type="text/javascript"
+        src="{SITE-NAME}/view/default/themes/js/kkcountdown.js"></script>
 </body>
 </html>

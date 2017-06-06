@@ -15,7 +15,7 @@ $data['menu']=menu_getByTop('','','');
 $data['config']=config_getByTop(1,'','');
 ////
 $date_now=_returnGetDateTime();
-$data['tour_count_down']=tour_getByTop('','(count_down!="" and count_down>"'.$date_now.'") or promotion=1 or price_sales!="" ','count_down desc,id DESC');
+$data['danhsach']=tour_getByTop('','(count_down!="" and count_down>"'.$date_now.'") or promotion=1 or price_sales!="" ','count_down desc,id DESC');
 $data['tieuchi']=tieuchi_getByTop('','','position asc');
 $data['banner']='';
 $data['slide']=slide_getByTop('','','Id desc');
