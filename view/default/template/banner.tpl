@@ -12,8 +12,8 @@
             <div class="traveltour-page-title-overlay"></div>
             <div class="traveltour-page-title-container traveltour-container">
                 <div class="traveltour-page-title-content traveltour-item-pdlr">
-                    <h1 class="traveltour-page-title">
-                       {name_dm}</h1>
+                    <h3 style="color: #ffffff; font-size: 20px">
+                       {name_dm}</h3>
                 </div>
             </div>
         </div>

@@ -140,14 +140,16 @@ function print_item($file,$ListItem,$LocDau=false,$LocDauAssign=false,$numberfor
                 $mes_='Đã hết hạn';
                 $ft->assign('check_sales_coundown','');
                 $ft->assign('js_coundown','');
-                if($item->count_down!=''){
-                    $date_now=_returnGetDateTime();
+                $ft->assign('hidden_sales','hidden');
+                $date_now=_returnGetDateTime();
+                if($item->count_down!='' && strtotime($item->count_down)>strtotime($date_now)){
+                    $ft->assign('backgroup','#4692e7');
+                    $ft->assign('hidden_sales','');
                     $date_count=strtotime($item->count_down);
                     $key_id=$item->id;
                     $mes_='';
-                    if(strtotime($item->count_down)>strtotime($date_now)){
                         $date_count_string='<div class="CountDown button_count_down">
-                    <i class="fa fa-clock-o fa-2x"></i>&nbsp;&nbsp;
+                    <i class="fa fa-clock-o"></i>&nbsp;&nbsp;
                                            <span data-time="'.$date_count.'" class="kkcountdown-'.$key_id.'">
                                                 <span class="kkcountdown-box"></span>
                                            </span>
@@ -163,6 +165,12 @@ function print_item($file,$ListItem,$LocDau=false,$LocDauAssign=false,$numberfor
                             callback: cBack,
                             rusNumbers: false
                         });");
+                }else{
+                    if($item->price_sales!='' && $item->price!='' && $item->price<$item->price_sales){
+                        $ft->assign('backgroup','#e85e34');
+                        $ft->assign('hidden_sales','');
+                        $phantran=round((($item->price_sales-$item->price)/$item->price_sales)*100);
+                        $ft->assign('check_sales_coundown','<i class="fa fa-arrow-circle-down"></i> '.$phantran.' %');
                     }
                 }
                 $arr_destination=explode(',',$item->destination);

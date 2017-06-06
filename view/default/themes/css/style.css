@@ -1204,3 +1204,22 @@ you can use the generic selector below, but it's slower:
     -o-animation: glowing_button_count_down 1500ms infinite;
     animation: glowing_button_count_down 1500ms infinite;
 }
+.dat_tour a{
+    display: block;
+    text-align: center;
+    padding: 10px 5px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #ff0909;
+    color: #FFFFFF !important;
+    border-radius: 4px;
+}
+.price_div{
+    float: left;
+    width: 65%;
+}
+.dat_tour{
+    float: left;
+    width: 35%;
+}
