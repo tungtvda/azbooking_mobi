@@ -3000,8 +3000,9 @@ body.traveltour-boxed .gdlr-core-column-extend-right .gdlr-core-pbf-background-w
 
     body.traveltour-body-front .gdlr-core-container {
         max-width: 500px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 15px;
+        /*padding-left: 15px;*/
+        /*padding-right: 15px;*/
     }
 
     .traveltour-column-10, .traveltour-column-12, .traveltour-column-15, .traveltour-column-20,

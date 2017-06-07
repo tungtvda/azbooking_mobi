@@ -106,6 +106,24 @@
         "dayNamesMin": ["S", "M", "T", "W", "T", "F", "S"],
         "firstDay": "1"
     };</script>
+<script>
+    $("#DanhMuc1Id").change(function () {
+        if ($('#DanhMuc1Id  option:selected').val() != '') {
+            $.post('{SITE-NAME}/controller/default/ajax.php',
+                    {
+                        Tour: $('#DanhMuc1Id  option:selected').val()
+                    },
+                    function (data, status) {
+                        $("#DanhMuc2Id").html(data);
+
+                    });
+        }
+        else {
+            $("#DanhMuc2Id").html('');
+        }
+
+    });
+</script>
 
 <script type='text/javascript'
         src='{SITE-NAME}/view/default/themes/js/script-core.js?ver=1.0.0'></script>
