@@ -16,10 +16,10 @@
                     <div class="traveltour-top-search-row">
                         <div class="traveltour-top-search-cell">
                             <form role="search" method="get" class="search-form"
-                                  action=""><input type="text" style="font-size:14px"
+                                  action="{SITE-NAME}/tim-kiem/"><input type="text" style="font-size:14px"
                                                                                           class="search-field traveltour-title-font"
-                                                                                          placeholder="Từ khóa tìm kiếm..."
-                                                                                          value="" name="s">
+                                                                                          placeholder="Nhập từ khóa tìm kiếm..."
+                                                                                          value="" name="value">
                                 <div class="traveltour-top-search-submit"><i class="fa fa-search"></i></div>
                                 <input type="submit" class="search-submit" value="Tìm">
                                 <div class="traveltour-top-search-close"><i class="fa fa-times"></i></div>

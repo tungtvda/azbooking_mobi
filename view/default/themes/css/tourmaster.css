@@ -3885,7 +3885,7 @@ alpha(opacity = 0);
 .tourmaster-tour-search-item.tourmaster-style-column.tourmaster-column-count-5 .tourmaster-tour-search-submit {
     width: 20%;
     min-width: 0px;
-    margin-top: 32px;
+    /*margin-top: 32px;*/
 }
 
 .tourmaster-tour-search-item.tourmaster-style-column.tourmaster-column-count-6 .tourmaster-tour-search-field {

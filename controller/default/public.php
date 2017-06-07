@@ -109,6 +109,12 @@ function show_banner($data1=array())
 {
     $data=array();
     $data['banner']=$data1['banner'];
+    $data['danhmuc_1_timkiem_trongnuoc']=danhmuc_1_getByTop('','id!=1 and tour_quoc_te=0','position asc');
+    $data['danhmuc_1_timkiem_quocte']=danhmuc_1_getByTop('','id!=1 and tour_quoc_te=1','position asc');
+    $data['danhmuc_1_timkiem']=danhmuc_1_getByTop('','id!=1','position asc');
+    $data['danhmuc_khachsan_timkiem']=danhmuc_khachsan_getByTop('','','position asc');
+    $data['danhmuc_tintuc_timkiem']=danhmuc_tintuc_getByTop('','','position asc');
+    $data['departure_timkiem']=departure_getByTop('','','position asc');
     view_banner($data);
 }
 
