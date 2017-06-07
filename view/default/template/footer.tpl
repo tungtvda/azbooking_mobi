@@ -4,14 +4,14 @@
             <div class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
                 <div id="text-1" class="widget widget_text traveltour-widget">
                     <div class="textwidget"><img
-                                src="http://azbooking.vn/view/admin/Themes/kcfinder/upload/images/cauhinh/logoazbooking.vn.png"
-                                alt=""/>
+                                src="{Logo}"
+                                alt="{Name}"/>
                     </div>
-                    <p><a href="#" target="_blank"><i class="fa fa-facebook" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-twitter" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-linkedin" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-pinterest-p" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-vimeo" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
+                    <p><a href="{facebook}" target="_blank"><i class="fa fa-facebook" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
+                        <a href="{twitter}" target="_blank"><i class="fa fa-twitter" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
+                        <a href="{google}" target="_blank"><i class="fa fa-google-plus" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
+                        <a href="{youtube}" target="_blank"><i class="fa fa-youtube-play" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
+                        <a href="" target="_blank"><i class="fa fa-linkedin" style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
                     </p>
                 </div>
 
@@ -26,22 +26,7 @@
                             <div class="textwidget">
                                 <div class="gdlr-core-widget-list-shortcode" id="gdlr-core-widget-list-0" style="text-align: left;">
                                     <ul>
-                                        <li><i class="fa fa-dollar"
-                                               style="font-size: 15px;color: #ffa127;margin-right: 13px;"></i>No-hassle
-                                            best price guarantee
-                                        </li>
-                                        <li><i class="fa fa-headphones"
-                                               style="font-size: 15px;color: #ffa127;margin-right: 10px;"></i>Customer
-                                            care available 24/7
-                                        </li>
-                                        <li><i class="fa fa-star"
-                                               style="font-size: 15px;color: #ffa127;margin-right: 10px;"></i>Hand-picked
-                                            Tours &amp; Activities
-                                        </li>
-                                        <li><i class="fa fa-support"
-                                               style="font-size: 15px;color: #ffa127;margin-right: 10px;"></i>Free
-                                            Travel Insureance
-                                        </li>
+                                       {tieuchi}
                                     </ul>
                                 </div>
                             </div>
@@ -53,22 +38,30 @@
                 <div id="text-2" class="widget widget_text traveltour-widget"><h3
                             class="traveltour-widget-title"><span
                                 class="traveltour-widget-head-text">Văn phòng Hà Nội</span></h3><span class="clear"></span>
-                    <div class="textwidget"><p>Address : 12 Main Street Pt. London</p>
+                    <div class="textwidget"><p>Địa chỉ : {Address}</p>
                         <div class="gdlr-core-space-shortcode" style="margin-top: -13px;"></div>
-                        <p>Phone : +44 3656 4567</p>
+                        <p>Điện thoại : <a style="color: #0091EA" href="tel:{Phone}">{Phone}</a></p>
                         <div class="gdlr-core-space-shortcode" style="margin-top: -13px;"></div>
-                        <p>contact@traveltourtheme.com</p>
+                        <p>Di dộng : <a style="color: #0091EA" href="tel:{Hotline}">{Hotline}</a></p>
+                        <div class="gdlr-core-space-shortcode" style="margin-top: -13px;"></div>
+                        <p>Fax : {Fax}</p>
+                        <div class="gdlr-core-space-shortcode" style="margin-top: -13px;"></div>
+                        <p>Email : <a style="color: #0091EA" href="mailto:{Email}">{Email}</a></p>
                         <div class="gdlr-core-space-shortcode" style="margin-top: 20px;"></div>
                     </div>
                 </div>
                 <div id="text-2" class="widget widget_text traveltour-widget"><h3
                             class="traveltour-widget-title"><span
-                                class="traveltour-widget-head-text">Văn phòng Hà Nội</span></h3><span class="clear"></span>
-                    <div class="textwidget"><p>Address : 12 Main Street Pt. London</p>
+                                class="traveltour-widget-head-text">Văn phòng TP.Hồ Chí Minh</span></h3><span class="clear"></span>
+                    <div class="textwidget"><p>Địa chỉ : {Address_hcm}</p>
                         <div class="gdlr-core-space-shortcode" style="margin-top: -13px;"></div>
-                        <p>Phone : +44 3656 4567</p>
+                        <p>Điện thoại : <a style="color: #0091EA" href="tel:{Phone_hcm}">{Phone_hcm}</a></p>
                         <div class="gdlr-core-space-shortcode" style="margin-top: -13px;"></div>
-                        <p>contact@traveltourtheme.com</p>
+                        <p>Di dộng : <a style="color: #0091EA" href="tel:{Hotline_hcm}">{Hotline_hcm}</a></p>
+                        <div class="gdlr-core-space-shortcode" style="margin-top: -13px;"></div>
+                        <p>Fax : {Fax_hcm}</p>
+                        <div class="gdlr-core-space-shortcode" style="margin-top: -13px;"></div>
+                        <p>Email : <a style="color: #0091EA" href="mailto:{Email_hcm}">{Email_hcm}</a></p>
                         <div class="gdlr-core-space-shortcode" style="margin-top: 20px;"></div>
                     </div>
                 </div>

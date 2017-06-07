@@ -1222,4 +1222,5 @@ you can use the generic selector below, but it's slower:
 .dat_tour{
     float: left;
     width: 35%;
+    padding-top: 10px;
 }

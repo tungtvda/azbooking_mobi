@@ -10,12 +10,12 @@
                                  data-layout="fitrows">
                                 {danhsach}
                             </div>
-                            <div class="gdlr-core-pagination  gdlr-core-style-circle gdlr-core-center-align tourmaster-item-pdlr">
+                            <!--<div class="gdlr-core-pagination  gdlr-core-style-circle gdlr-core-center-align tourmaster-item-pdlr">
                                 <span class='page-numbers current'>1</span> <a class='page-numbers'
                                                                                href='https://demo.goodlayers.com/traveltour/tour-classic-with-detail-4-columns/page/2/'>2</a>
                                 <a class="next page-numbers"
                                    href="https://demo.goodlayers.com/traveltour/tour-classic-with-detail-4-columns/page/2/"></a>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
