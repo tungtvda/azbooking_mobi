@@ -98,9 +98,9 @@ function print_item($file,$ListItem,$LocDau=false,$LocDauAssign=false,$numberfor
                 $ft->assign('link_booking',link_booking($item));
                 $songuoi='';
                 if($item->so_cho!=''){
-                    $songuoi='<div class="price" style="margin-top: 10px">
-            <ins><span style="font-size: 16px; color: #000000">Số người: '.$item->so_cho.'</span></ins>
-        </div>';
+                    $songuoi=' <div class="tourmaster-tour-info tourmaster-tour-info-maximum-people ">
+                    <i class="fa fa-users"></i> Số chỗ: '.$item->so_cho.'
+                </div>';
                 }
                 $ft->assign('so_nguoi',$songuoi);
                 if($item->price==0||$item->price==''){

@@ -115,10 +115,11 @@ function show_banner($data1=array())
 function show_footer($data1=array())
 {
     $data=array();
-//    $data['config']=$data1['config'];
-//    $data['mangxahoi']=social_getByTop(1,'','');
+    $data['config']=$data1['config'];
+    $data['mangxahoi']=social_getByTop(1,'','');
 //    $data['info']=info_mix_getByTop('','','id asc');
 //    $data['danhmuc_menu_footer']=danhmuc_1_getByTop('','id!=1','position asc');
+    $data['tieuchi']=tieuchi_getByTop('','','position asc');
     view_footer($data);
 }
 function  show_left_danhmuc($data1=array())

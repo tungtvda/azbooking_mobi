@@ -19,42 +19,37 @@
                         href="{link}">{name}</a></h3>
             <div class="tourmaster-tour-info-wrap clearfix">
                 <div {show_code} class="tourmaster-tour-info tourmaster-tour-info-duration-text ">
-                    <i class="icon_clock_alt"></i> Mã tour: {code}
+                    <i class="fa fa-barcode"></i> Mã tour: {code}
                 </div>
                 <div class="tourmaster-tour-info tourmaster-tour-info-duration-text ">
-                    <i class="icon_clock_alt"></i> {durations}
+                    <i class="icon_clock_alt"></i> Thời gian: {durations}
                 </div>
                 <div class="tourmaster-tour-info tourmaster-tour-info-departure-location ">
-                    <i class="fa fa-plane"></i> {tring_des}
+                    <i class="fa fa-plane"></i> Lịch trình: {tring_des}
                 </div>
-                <div class="tourmaster-tour-info tourmaster-tour-info-minimum-age ">
-                    <i class="fa fa-user"></i>Min Age : 10+
+                <div class="tourmaster-tour-info tourmaster-tour-info-departure-location ">
+                    <i class="fa fa-calendar"></i> Khởi hành: {departure_time}
                 </div>
-                <div class="tourmaster-tour-info tourmaster-tour-info-maximum-people ">
-                    <i class="fa fa-users"></i>Max People : 32
-                </div>
+               {so_nguoi}
             </div>
             <div class="tourmaster-tour-rating">
                 <div class="price_div">
                     <div class="tourmaster-tour-price-wrap tourmaster-discount">
-                        <span {show_sales} class="tourmaster-tour-price">
-                            <span class="tourmaster-tail">{price_sales}</span>
+                        <span  class="tourmaster-tour-price">
+                            <span class="tourmaster-tail" {show_sales}>{price_sales}</span>
                         </span>
                         <span class="tourmaster-tour-discount-price">{price_format}</span>
                     </div>
                 </div>
                 <div class="dat_tour">
-                    <a  href="">Đặt tour</a>
+                    <a  href="{link}#booking">Đặt tour</a>
                 </div>
-
-
             </div>
         </div>
     </div>
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
-
         {js_coundown}
     });
 
