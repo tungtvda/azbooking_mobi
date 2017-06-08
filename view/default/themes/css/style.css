@@ -1241,3 +1241,50 @@ you can use the generic selector below, but it's slower:
 .btn_timkiem i{
     float: right;
 }
+ .breadcrumb {
+    /* position: absolute; */
+    top: 0;
+    left: 15px;
+    right: 15px;
+    background: none;
+    z-index: 9;
+    text-align: center;
+}
+.breadcrumb ul {
+    font-size: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.breadcrumb ul li {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 13px;
+}
+.breadcrumb ul li a {
+    position: relative;
+    display: block;
+    color: #ffffff;
+    margin-right: 32px;
+}
+.breadcrumb ul li a:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-left-color: #ddd;
+    -webkit-transform: scaleY(0.6);
+    -moz-transform: scaleY(0.6);
+    -ms-transform: scaleY(0.6);
+    -o-transform: scaleY(0.6);
+    transform: scaleY(0.6);
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: -25px;
+}
+.breadcrumb ul li span {
+    color: #0091ea;
+}
