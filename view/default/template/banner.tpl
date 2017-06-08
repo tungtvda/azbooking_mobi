@@ -17,8 +17,8 @@
                 </div>
             </div>
         </div>
-        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+        <div hidden id="box_timkiem" class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+            <div style="    padding-bottom: 0px;" class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
                 <div class="gdlr-core-pbf-element">
                     <div class="tourmaster-tour-search-item tourmaster-item-pdlr clearfix tourmaster-style-column tourmaster-column-count-5">
                         <div class="tourmaster-tour-search-wrap ">
@@ -86,9 +86,9 @@
             </div>
         </div>
         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-            <div style="padding-top: 0px" class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                <p style="padding: 20px; padding-top: 0px">
-                   <button class="btn_timkiem">Ẩn tìm kiếm <i class="fa fa-arrow-circle-o-down"></i></button>
+            <div style="padding-top: 0px;   padding-bottom: 0px;" class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                <p style="padding: 20px;  padding-bottom: 0px;">
+                   <button class="btn_timkiem">Tìm kiếm tour <i style="" class="fa fa-arrows "></i></button>
                 </p>
             </div>
         </div>

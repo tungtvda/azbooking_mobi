@@ -123,6 +123,9 @@
         }
 
     });
+    $(".btn_timkiem").click(function () {
+        $('#box_timkiem').slideToggle();
+    });
 </script>
 
 <script type='text/javascript'
