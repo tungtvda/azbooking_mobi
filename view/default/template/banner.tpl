@@ -14,6 +14,11 @@
                 <div class="traveltour-page-title-content traveltour-item-pdlr">
                     <h3 style="color: #ffffff; font-size: 20px">
                         {name_dm}</h3>
+                    <div class="breadcrumb">
+                        <ul>
+                            {url}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,8 +56,8 @@
                                     </div>
                                 </div>
 
-                                <div class="tourmaster-tour-search-field tourmaster-tour-search-field-duration"><label>Loại
-                                        tour</label>
+                                <div class="tourmaster-tour-search-field tourmaster-tour-search-field-duration"><label>Điểm
+                                        đến</label>
                                     <div class="tourmaster-combobox-wrap">
                                         <select name="danhmuc_tour_2" id="DanhMuc2Id" class="awe-select">
                                             <option value="">Điểm đến</option>
@@ -86,9 +91,10 @@
             </div>
         </div>
         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-            <div style="padding-top: 0px;   padding-bottom: 0px;" class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+            <div style="padding-top: 0px;   padding-bottom: 0px;"
+                 class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
                 <p style="padding: 20px;  padding-bottom: 0px;">
-                   <button class="btn_timkiem">Tìm kiếm tour <i style="" class="fa fa-arrows "></i></button>
+                    <button class="btn_timkiem">Tìm kiếm tour <i style="" class="fa fa-arrows "></i></button>
                 </p>
             </div>
         </div>
