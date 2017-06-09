@@ -2797,6 +2797,7 @@ a.tourmaster-button, input[type="button"].tourmaster-button, input[type="submit"
 .tourmaster-body .ui-datepicker .ui-datepicker-title {
     padding-left: 38px;
     padding-right: 38px;
+    text-align: center;
 }
 
 .tourmaster-body .ui-datepicker .ui-datepicker-month,
@@ -2840,12 +2841,12 @@ a.tourmaster-button, input[type="button"].tourmaster-button, input[type="submit"
     width: 32px;
     font-size: 13px;
     line-height: 16px;
-    padding: 10px 0px 6px;
+    padding: 7px 0px 7px;
     text-align: center;
     display: inline-block;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
+    border-radius: 4px;
+    /*-moz-border-radius: 50%;*/
+    /*-webkit-border-radius: 50%;*/
 }
 
 .tourmaster-body .ui-datepicker-header {

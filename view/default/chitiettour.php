@@ -79,10 +79,10 @@ function show_chitiet_tour($data = array())
     $asign['price_list']=$data['detail'][0]->price_list;
     $asign['vehicle']=$data['detail'][0]->vehicle;
 
-    $asign['tour_lienquan'] ='';
-    if(count($data['tour_lienquan'])>0) {
-        $asign['tour_lienquan'] = print_item('lienquan', $data['tour_lienquan']);
-    }
+//    $asign['tour_lienquan'] ='';
+//    if(count($data['tour_lienquan'])>0) {
+//        $asign['tour_lienquan'] = print_item('lienquan', $data['tour_lienquan']);
+//    }
 
     $asign['Hotline'] = $data['config'][0]->Hotline;
     $asign['Hotline_hcm'] = $data['config'][0]->Hotline_hcm;
@@ -186,10 +186,10 @@ function show_chitiet_tour($data = array())
     }
     $asign['hanh_trinh']=$tring_des;
 
-    $asign['tour_sales'] ='';
-    if(count($data['tour_sales'])>0) {
-        $asign['tour_sales'] = print_item('tour_sales', $data['tour_sales']);
-    }
+//    $asign['tour_sales'] ='';
+//    if(count($data['tour_sales'])>0) {
+//        $asign['tour_sales'] = print_item('tour_sales', $data['tour_sales']);
+//    }
     print_template($asign, 'chitiettour');
 }
 

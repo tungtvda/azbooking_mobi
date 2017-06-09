@@ -93,7 +93,7 @@ table.tourmaster-my-booking-table a.tourmaster-my-booking-action {
 }
 
 .tourmaster-body .ui-datepicker table tr td a.ui-state-active, .tourmaster-body .ui-datepicker table tr td a:hover, .tourmaster-body .ui-datepicker table tr td.tourmaster-highlight a, .tourmaster-body .ui-datepicker table tr td.tourmaster-highlight span {
-    background: #485da1;
+    background: #4692e7;
 }
 
 .tourmaster-body .ui-datepicker select {
@@ -394,7 +394,7 @@ table.tourmaster-my-booking-table .tourmaster-my-booking-price {
 }
 
 .tourmaster-body .ui-datepicker {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
 }
 
 .tourmaster-body .ui-datepicker {
@@ -402,7 +402,8 @@ table.tourmaster-my-booking-table .tourmaster-my-booking-price {
 }
 
 .tourmaster-body .ui-datepicker table tr th {
-    color: #808080;
+    color: #4692e7;
+    font-weight: bold;
 }
 
 .tourmaster-body .ui-datepicker table tr td a, .tourmaster-body .ui-datepicker-prev, .tourmaster-body .ui-datepicker-next {
@@ -410,7 +411,7 @@ table.tourmaster-my-booking-table .tourmaster-my-booking-price {
 }
 
 .tourmaster-body .ui-datepicker table tr td a, .tourmaster-body .ui-datepicker-prev, .tourmaster-body .ui-datepicker-next {
-    color: #5b5b5b;
+    /*color: #5b5b5b;*/
 }
 
 .tourmaster-body .ui-datepicker table tr td a.ui-state-disable {

@@ -812,7 +812,7 @@ body.traveltour-boxed .traveltour-body-wrapper, .gdlr-core-page-builder .gdlr-co
 }
 
 .traveltour-body, .traveltour-body span.wpcf7-not-valid-tip {
-    color: #8c8c8c;
+    color: #4692e7;
 }
 
 .traveltour-body h1, .traveltour-body h2, .traveltour-body h3, .traveltour-body h4, .traveltour-body h5, .traveltour-body h6 {
@@ -824,7 +824,7 @@ body.traveltour-boxed .traveltour-body-wrapper, .gdlr-core-page-builder .gdlr-co
 }
 
 .traveltour-body a {
-    color: #467fe7;
+    color: #000000;
 }
 
 .traveltour-body a:hover {
