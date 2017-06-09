@@ -80,32 +80,7 @@
 <!--<script type="text/javascript" src="{SITE-NAME}/view/default/themes/js/jquery-ui.min.js"></script>-->
 <script type='text/javascript'
         src='{SITE-NAME}/view/default/themes/js/datepicker.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>jQuery(document).ready(function (jQuery) {
-        jQuery.datepicker.setDefaults({
-            "closeText": "Close",
-            "currentText": "Today",
-            "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-            "monthNamesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-            "nextText": "Next",
-            "prevText": "Previous",
-            "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-            "dayNamesMin": ["S", "M", "T", "W", "T", "F", "S"],
-            "dateFormat": "dd/MM/yy",
-            "firstDay": 1,
-            "isRTL": false
-        });
-    });</script>
-<script type='text/javascript'>var TMi18n = {
-        "closeText": "Done",
-        "currentText": "Today",
-        "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        "monthNamesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-        "dayNamesMin": ["S", "M", "T", "W", "T", "F", "S"],
-        "firstDay": "1"
-    };</script>
+
 <script>
     $("#DanhMuc1Id").change(function () {
         if ($('#DanhMuc1Id  option:selected').val() != '') {
