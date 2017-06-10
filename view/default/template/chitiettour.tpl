@@ -3,15 +3,39 @@
         <div class="tourmaster-tour-booking-bar-container-inner">
             <div class="tourmaster-tour-booking-bar-anchor tourmaster-item-mglr"></div>
             <div class="tourmaster-tour-booking-bar-wrap tourmaster-item-mglr">
+                <div class="tourmaster-tour-booking-bar-widget  traveltour-sidebar-area">
+                    <div id="text-12" class="widget widget_text traveltour-widget">
+                        <div class="textwidget">
+                            <div class="gdlr-core-space-shortcode" style="margin-top: -10px;"></div>
+                            <div class="gdlr-core-widget-box-shortcode"
+                                 style="color: #c9e2ff;background-image: url(https://demos-pirftc7xlgm3gz2xr9zm.stackpathdns.com/traveltour/wp-content/uploads/2017/01/widget-bg.jpg);">
+                                <h3 class="gdlr-core-widget-box-shortcode-title"
+                                    style="color: #ffffff;">GỌI CHO CHÚNG TÔI</h3>
+                                <div class="gdlr-core-widget-box-shortcode-content"><p>Do not hesitage
+                                        to give us a call. We are an expert team and we are happy to talk to
+                                        you.</p>
+                                    <p><i class="fa fa-phone"
+                                          style="font-size: 20px;color: #ffcf2a;margin-right: 10px;"></i>
+                                        <span style="font-size: 20px; color: #ffcf2a; font-weight: 600;">1.8445.3356.33</span>
+                                    </p>
+                                    <p><i class="fa fa-envelope-o"
+                                          style="font-size: 17px;color: #ffcf2a;margin-right: 10px;"></i>
+                                        <span style="font-size: 14px; color: #fff; font-weight: 600;">Help@goodlayers.com</span>
+                                    </p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="tourmaster-tour-booking-bar-outer">
                     <div class="tourmaster-header-price tourmaster-item-mglr">
-                        <div class="tourmaster-header-price-ribbon">Special Offer</div>
                         <div class="tourmaster-header-price-wrap">
                             <div class="tourmaster-header-price-overlay"></div>
                             <div class="tourmaster-tour-price-wrap tourmaster-discount"><span
-                                        class="tourmaster-tour-price"><span
-                                            class="tourmaster-head">From</span><span class="tourmaster-tail">$2,600</span></span><span
-                                        class="tourmaster-tour-discount-price">$2,100</span><span
+                                        class="tourmaster-tour-price">
+                                    <span class="tourmaster-tail">{price_sales_format}</span>
+                                </span>
+                                <span
+                                        class="tourmaster-tour-discount-price">{price_format} {vnd}</span><span
                                         class="fa fa-info-circle tourmaster-tour-price-info"
                                         data-rel="tipsy"
                                         title="The ininital price based on 1 adult with the lowest price in low season"></span>
@@ -29,7 +53,7 @@
                                         class="fa fa-calendar"></i>
                                 <div class="tourmaster-tour-booking-date-input">
                                     <div class="tourmaster-datepicker-wrap">
-                                        <input type='text' class="form-control" id='datetimepicker4' />
+                                        <input type='text' class="form-control" id='datetimepicker4'/>
 
                                         <script type="text/javascript">
                                             $(function () {
@@ -80,7 +104,8 @@
                             </div>
                             <div class="tourmaster-tour-booking-room-template" data-step="999">
                                 <div class="tourmaster-tour-booking-people tourmaster-variable clearfix"
-                                     data-max-ppl="4"><span class="tourmaster-tour-booking-room-text">Room <span>1</span> :</span>
+                                     data-max-ppl="4"><span
+                                            class="tourmaster-tour-booking-room-text">Room <span>1</span> :</span>
                                     <div class="tourmaster-tour-booking-people-input tourmaster-variable clearfix">
                                         <div class="tourmaster-combobox-wrap"><select
                                                     name="tour-adult[]">
@@ -220,55 +245,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tourmaster-tour-booking-bar-widget  traveltour-sidebar-area">
-                    <div id="text-11" class="widget widget_text traveltour-widget">
-                        <div class="textwidget">
-                            <div class="gdlr-core-space-shortcode" style="margin-top: -20px;"></div>
-                            <div class="gdlr-core-widget-list-shortcode" id="gdlr-core-widget-list-0">
-                                <h3 class="gdlr-core-widget-list-shortcode-title">Why Book With Us?</h3>
-                                <ul>
-                                    <li><i class="fa fa-dollar"
-                                           style="font-size: 15px;color: #ffa127;margin-right: 13px;"></i>No-hassle
-                                        best price guarantee
-                                    </li>
-                                    <li><i class="fa fa-headphones"
-                                           style="font-size: 15px;color: #ffa127;margin-right: 10px;"></i>Customer
-                                        care available 24/7
-                                    </li>
-                                    <li><i class="fa fa-star"
-                                           style="font-size: 15px;color: #ffa127;margin-right: 10px;"></i>Hand-picked
-                                        Tours & Activities
-                                    </li>
-                                    <li><i class="fa fa-support"
-                                           style="font-size: 15px;color: #ffa127;margin-right: 10px;"></i>Free
-                                        Travel Insureance
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="text-12" class="widget widget_text traveltour-widget">
-                        <div class="textwidget">
-                            <div class="gdlr-core-space-shortcode" style="margin-top: -10px;"></div>
-                            <div class="gdlr-core-widget-box-shortcode"
-                                 style="color: #c9e2ff;background-image: url(https://demos-pirftc7xlgm3gz2xr9zm.stackpathdns.com/traveltour/wp-content/uploads/2017/01/widget-bg.jpg);">
-                                <h3 class="gdlr-core-widget-box-shortcode-title"
-                                    style="color: #ffffff;">Get a Question?</h3>
-                                <div class="gdlr-core-widget-box-shortcode-content"><p>Do not hesitage
-                                        to give us a call. We are an expert team and we are happy to talk to
-                                        you.</p>
-                                    <p><i class="fa fa-phone"
-                                          style="font-size: 20px;color: #ffcf2a;margin-right: 10px;"></i>
-                                        <span style="font-size: 20px; color: #ffcf2a; font-weight: 600;">1.8445.3356.33</span>
-                                    </p>
-                                    <p><i class="fa fa-envelope-o"
-                                          style="font-size: 17px;color: #ffcf2a;margin-right: 10px;"></i>
-                                        <span style="font-size: 14px; color: #fff; font-weight: 600;">Help@goodlayers.com</span>
-                                    </p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -938,7 +915,8 @@
                                     class="fa fa-star-half-o"></i></div>
                         <div class="tourmaster-single-review-filter"
                              id="tourmaster-single-review-filter">
-                            <div class="tourmaster-single-review-sort-by"><span class="tourmaster-head">Sort By:</span><span
+                            <div class="tourmaster-single-review-sort-by"><span
+                                        class="tourmaster-head">Sort By:</span><span
                                         class="tourmaster-sort-by-field" data-sort-by="rating">Rating</span><span
                                         class="tourmaster-sort-by-field tourmaster-active"
                                         data-sort-by="date">Date</span></div>
