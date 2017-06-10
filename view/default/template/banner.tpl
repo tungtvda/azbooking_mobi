@@ -7,7 +7,7 @@
             </header>
         </div>
         <div class="traveltour-page-title-wrap  traveltour-style-medium traveltour-center-align"
-             style="background: url({banner_img}); background-size: 100%;">
+             style="background: url({banner_img}); background-size: 100%;    background-repeat: no-repeat;background-size: 100% 100%;">
             <div class="traveltour-header-transparent-substitute"></div>
             <div class="traveltour-page-title-overlay"></div>
             <div class="traveltour-page-title-container traveltour-container">

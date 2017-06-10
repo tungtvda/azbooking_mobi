@@ -377,11 +377,14 @@ table.tourmaster-my-booking-table .tourmaster-my-booking-price {
     background-color: #fff9f9;
 }
 
-.tourmaster-form-field.tourmaster-with-border input[type="text"], .tourmaster-form-field.tourmaster-with-border input[type="email"], .tourmaster-form-field.tourmaster-with-border input[type="password"], .tourmaster-form-field.tourmaster-with-border textarea, .tourmaster-form-field.tourmaster-with-border select {
-    border-color: #e6e6e6;
+.tourmaster-form-field.tourmaster-with-border input[type="text"], .tourmaster-form-field.tourmaster-with-border input[type="number"], .tourmaster-form-field.tourmaster-with-border input[type="email"], .tourmaster-form-field.tourmaster-with-border input[type="password"], .tourmaster-form-field.tourmaster-with-border textarea, .tourmaster-form-field.tourmaster-with-border select {
+    border: 1px solid #e6e6e6;
 }
 
 .goodlayers-payment-form .goodlayers-payment-form-field input[type="text"] {
+    border-color: #e6e6e6;
+}
+.goodlayers-payment-form .goodlayers-payment-form-field input[type="number"] {
     border-color: #e6e6e6;
 }
 
