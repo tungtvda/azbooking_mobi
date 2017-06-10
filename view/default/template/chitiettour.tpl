@@ -11,16 +11,18 @@
                                  style="color: #c9e2ff;background-image: url(https://demos-pirftc7xlgm3gz2xr9zm.stackpathdns.com/traveltour/wp-content/uploads/2017/01/widget-bg.jpg);">
                                 <h3 class="gdlr-core-widget-box-shortcode-title"
                                     style="color: #ffffff;">GỌI CHO CHÚNG TÔI</h3>
-                                <div class="gdlr-core-widget-box-shortcode-content"><p>Do not hesitage
-                                        to give us a call. We are an expert team and we are happy to talk to
-                                        you.</p>
-                                    <p><i class="fa fa-phone"
-                                          style="font-size: 20px;color: #ffcf2a;margin-right: 10px;"></i>
-                                        <span style="font-size: 20px; color: #ffcf2a; font-weight: 600;">1.8445.3356.33</span>
+                                <div class="gdlr-core-widget-box-shortcode-content">
+                                    <p><a href="tel:{Hotline}"><i class="fa fa-phone"
+                                                                  style="font-size: 20px;color: #ffcf2a;margin-right: 10px;"></i>
+                                            <span style="font-size: 20px; color: #ffcf2a; font-weight: 600;">{Hotline}</span></a>
                                     </p>
-                                    <p><i class="fa fa-envelope-o"
-                                          style="font-size: 17px;color: #ffcf2a;margin-right: 10px;"></i>
-                                        <span style="font-size: 14px; color: #fff; font-weight: 600;">Help@goodlayers.com</span>
+                                    <p><a href="tel:{Hotline}"><i class="fa fa-phone"
+                                                                  style="font-size: 20px;color: #ffcf2a;margin-right: 10px;"></i>
+                                            <span style="font-size: 20px; color: #ffcf2a; font-weight: 600;">{Hotline_hcm}</span></a>
+                                    </p>
+                                    <p><a href="mailto:{Hotline}"><i class="fa fa-envelope-o"
+                                                                     style="font-size: 17px;color: #ffcf2a;margin-right: 10px;"></i>
+                                            <span style="font-size: 14px; color: #fff; font-weight: 600;">{Email}</span></a>
                                     </p></div>
                             </div>
                         </div>
@@ -30,28 +32,76 @@
                     <div class="tourmaster-header-price tourmaster-item-mglr">
                         <div class="tourmaster-header-price-wrap">
                             <div class="tourmaster-header-price-overlay"></div>
-                            <div class="tourmaster-tour-price-wrap tourmaster-discount"><span
-                                        class="tourmaster-tour-price">
+                            <div style="text-align: center" class="tourmaster-tour-price-wrap tourmaster-discount">
+                                <p {price_sales_format_hidden}>
+                                    <span class="tourmaster-tour-price"> <i class="fa fa-dollar"></i>
                                     <span class="tourmaster-tail">{price_sales_format}</span>
-                                </span>
-                                <span
-                                        class="tourmaster-tour-discount-price">{price_format} {vnd}</span><span
-                                        class="fa fa-info-circle tourmaster-tour-price-info"
-                                        data-rel="tipsy"
-                                        title="The ininital price based on 1 adult with the lowest price in low season"></span>
+                                    </span>
+                                </p>
+                                <p style="margin-bottom: 0px">
+                                    <i class="fa fa-dollar fa-2x"></i>
+                                    <span class="tourmaster-tour-discount-price">{price_format} {vnd}</span>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="tourmaster-tour-booking-bar-inner">
+                    <style>
+                        .error_booking {
+                            color: red;
+                            font-size: 12px;
+                            font-weight: normal;
+                            display: none;
+                        }
+                    </style>
+                    <div id="booking" class="tourmaster-tour-booking-bar-inner">
                         <form class="tourmaster-single-tour-booking-fields tourmaster-form-field tourmaster-with-border"
                               method="post"
-                              action="https://demo.goodlayers.com/traveltour/?tourmaster-payment"
-                              id="tourmaster-single-tour-booking-fields"
-                              data-ajax-url="https://demo.goodlayers.com/traveltour/wp-admin/admin-ajax.php">
-                            <input type="hidden" name="tour-id" value="4641"/>
-                            <div class="tourmaster-tour-booking-date clearfix" data-step="1"><i
-                                        class="fa fa-calendar"></i>
+                              action=""
+                              id="tourmaster-single-tour-booking-fields">
+                            <div class="tourmaster-tour-booking-date clearfix" data-step="1">
+                                <i class="fa fa-user"></i>
+                                <label>Họ tên <span style="color: red">*</span></label>
                                 <div class="tourmaster-tour-booking-date-input">
+                                    <input autofocus="autofocus" required="required" type="text" id="input_name_customer"
+                                           name="name_customer">
+                                    <label class="error_booking" id="error_name_customer">Bạn vui lòng kiểm tra họ
+                                        tên</label>
+                                </div>
+                            </div>
+                            <div class="tourmaster-tour-booking-room clearfix" data-step="2">
+                                <div class="tourmaster-tour-booking-next-sign"><span></span></div>
+                                <i class="fa fa-envelope-o"></i>
+                                <label>Email <span style="color: red">*</span></label>
+                                <div class="tourmaster-tour-booking-date-input">
+                                    <input required="" type="email" id="input_email" name="email">
+                                    <label class="error_booking" id="error_email">Bạn vui lòng kiểm tra email</label>
+                                </div>
+                            </div>
+                            <div class="tourmaster-tour-booking-room clearfix" data-step="3">
+                                <div class="tourmaster-tour-booking-next-sign"><span></span></div>
+                                <i class="fa fa-phone"></i>
+                                <label>Điện thoại <span style="color: red">*</span></label>
+                                <div class="tourmaster-tour-booking-date-input">
+                                    <input required="" type="text" id="input_phone" name="phone">
+                                    <label id="error_phone" class="error_booking">Bạn vui lòng kiểm tra điện
+                                        thoại</label>
+                                </div>
+                            </div>
+                            <div class="tourmaster-tour-booking-room clearfix" data-step="4">
+                                <div class="tourmaster-tour-booking-next-sign"><span></span></div>
+                                <i class="fa fa-map-marker"></i>
+                                <label>Địa chỉ <span style="color: red">*</span></label>
+                                <div class="tourmaster-tour-booking-date-input">
+                                    <input required="" type="text" id="input_address" name="address">
+                                    <label id="error_address" class="error_booking">Bạn vui lòng kiểm tra địa
+                                        chỉ</label>
+                                </div>
+                            </div>
+                            <div class="tourmaster-tour-booking-room clearfix" data-step="5">
+                                <div class="tourmaster-tour-booking-next-sign"><span></span></div>
+                                <i class="fa fa-calendar"></i>
+                                <div class="tourmaster-tour-booking-date-input">
+                                    <label>Ngày khởi hành <span style="color: red">*</span></label>
                                     <div class="tourmaster-datepicker-wrap">
                                         <input type='text' class="form-control" id='datetimepicker4'/>
 
@@ -64,73 +114,42 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tourmaster-tour-booking-room clearfix" data-step="2">
+                            <div class="tourmaster-tour-booking-room clearfix" data-step="6">
                                 <div class="tourmaster-tour-booking-next-sign"><span></span></div>
-                                <i class="fa fa-bed"></i>
-                                <div class="tourmaster-tour-booking-room-input">
-                                    <div class="tourmaster-combobox-wrap"><select name="tour-room">
-                                            <option value="">Number Of Rooms</option>
-                                            <option value="1" selected>1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></div>
+                                <i class="fa fa-blind"></i>
+                                <label>Số {name_price} <span style="color: red">*</span></label>
+                                <div class="tourmaster-tour-booking-date-input">
+                                    <input id_title="1" name_title="{name_price}" required=""
+                                           value="1" min="1" type="number" class="valid"
+                                           id="input_num_nguoi_lon" name="num_nguoi_lon">
                                 </div>
                             </div>
-                            <div class="tourmaster-tour-booking-people-container" data-step="999">
-                                <div class="tourmaster-tour-booking-people tourmaster-variable clearfix"
-                                     data-step="3" data-max-ppl="4"><span
-                                            class="tourmaster-tour-booking-room-text">Room <span>1</span> :</span>
-                                    <div class="tourmaster-tour-booking-people-input tourmaster-variable clearfix">
-                                        <div class="tourmaster-combobox-wrap"><select
-                                                    name="tour-adult[]">
-                                                <option value="">Adult</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select></div>
-                                        <div class="tourmaster-combobox-wrap"><select
-                                                    name="tour-children[]">
-                                                <option value="">Child</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select></div>
-                                    </div>
+                            <div class="tourmaster-tour-booking-room clearfix" data-step="7">
+                                <div class="tourmaster-tour-booking-next-sign"><span></span></div>
+                                <i class="fa fa-male "></i>
+                                <label>Số {name_price_2} </label>
+                                <div class="tourmaster-tour-booking-date-input">
+                                    <input id_title="2" name_title="{name_price_2}" required=""
+                                           value="0" min="0" type="number" class="valid"
+                                           id="input_num_tre_em" name="num_tre_em">
                                 </div>
                             </div>
-                            <div class="tourmaster-tour-booking-room-template" data-step="999">
-                                <div class="tourmaster-tour-booking-people tourmaster-variable clearfix"
-                                     data-max-ppl="4"><span
-                                            class="tourmaster-tour-booking-room-text">Room <span>1</span> :</span>
-                                    <div class="tourmaster-tour-booking-people-input tourmaster-variable clearfix">
-                                        <div class="tourmaster-combobox-wrap"><select
-                                                    name="tour-adult[]">
-                                                <option value="">Adult</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select></div>
-                                        <div class="tourmaster-combobox-wrap"><select
-                                                    name="tour-children[]">
-                                                <option value="">Child</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select></div>
-                                    </div>
+                            <div class="tourmaster-tour-booking-room clearfix" data-step="8">
+                                <div class="tourmaster-tour-booking-next-sign"><span></span></div>
+                                <i class="fa fa-child"></i>
+                                <label>Số {name_price_3} </label>
+                                <div class="tourmaster-tour-booking-date-input">
+                                    <input id_title="3" name_title="{name_price_3}" required=""
+                                           value="0" min="0" type="number" class="valid"
+                                           id="input_num_tre_em_5" name="num_tre_em_5">
                                 </div>
                             </div>
+
                             <div class="tourmaster-tour-booking-submit" data-step="4">
                                 <div class="tourmaster-tour-booking-next-sign"><span></span></div>
                                 <i class="fa fa-check-circle"></i>
                                 <div class="tourmaster-tour-booking-submit-input"><input
-                                            class="tourmaster-button" type="submit" value="Proceed Booking"
+                                            class="tourmaster-button" type="submit" value="Đặt Tour"
                                             data-ask-login="proceed-without-login"/>
                                     <div class="tourmaster-tour-booking-submit-error">* Please select
                                         all required fields to proceed to the next step.
