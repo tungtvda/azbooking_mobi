@@ -55,6 +55,14 @@ function show_chitiet_tour($data = array())
         $asign['price_format']= number_format($data['detail'][0]->price,0,",",".");
         $asign['vnd']='vnđ';
     }
+
+    if($data['detail'][0]->price_sales==0||$data['detail'][0]->price_sales==''){
+        $asign['price_sales_format']='Liên hệ';
+    }
+    else{
+        $asign['price_sales_format']= number_format($data['detail'][0]->price_sales,0,",",".").' vnđ';
+    }
+
     $asign['price_2_format']= number_format($data['detail'][0]->price_2,0,",",".");
     $asign['price_3_format']= number_format($data['detail'][0]->price_3,0,",",".");
     $asign['price_4_format']= number_format($data['detail'][0]->price_4,0,",",".");

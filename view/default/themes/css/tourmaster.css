@@ -995,7 +995,7 @@
 .tourmaster-header-price .tourmaster-header-price-wrap {
     position: relative;
     text-align: center;
-    padding: 38px 20px 34px;
+    padding: 20px 20px 20px;
 }
 
 .tourmaster-header-price .tourmaster-header-price-overlay {
@@ -1040,7 +1040,7 @@
 }
 
 .tourmaster-header-price .tourmaster-tour-discount-price {
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 800;
 }
 
