@@ -188,7 +188,7 @@ function print_item($file,$ListItem,$LocDau=false,$LocDauAssign=false,$numberfor
                     }
                 }
                 $ft->assign('tring_des',$tring_des);
-                $ft->assign('img',SITE_NAME_MAIN.$item->img);
+                $ft->assign('img',_returnCheckLinkImg($item->img));
                 $ft->assign('key_id',$key_id);
                 $ft->assign('mes_',$mes_);
 

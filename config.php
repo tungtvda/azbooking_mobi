@@ -389,3 +389,15 @@ function _returnPostParamSecurity($param)
         return '';
     }
 }
+function _returnCheckLinkImg($img){
+    $link='';
+    if($img!='')
+    {
+        if(strstr($img,SITE_NAME_MAIN)!=''){
+            $link=$img;
+        }else{
+            $link=SITE_NAME_MAIN.$img;
+        }
+    }
+    return $link;
+}

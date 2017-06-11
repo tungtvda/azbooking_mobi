@@ -8,7 +8,7 @@ function view_footer($data = array())
     {
         $asign['tieuchi'] = print_item('tieuchi', $data['tieuchi']);
     }
-    $asign['Logo'] = SITE_NAME_MAIN.$data['config'][0]->Logo;
+    $asign['Logo'] = _returnCheckLinkImg($data['config'][0]->Logo);
     $asign['Name'] = $data['config'][0]->Name;
 //
     $asign['Address'] = $data['config'][0]->Address;

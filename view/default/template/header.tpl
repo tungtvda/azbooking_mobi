@@ -22,6 +22,7 @@
     <meta property="og:description" content="{description}" />
     <meta property="og:url" content="{link_url}" />
     <meta property="og:site_name" content="azbooking.vn" />
+    <meta property="fb:admins" content="487430091415856"/>
 
     <link rel='dns-prefetch' href='//maps.google.com'/>
     <link rel='dns-prefetch' href='//fonts.googleapis.com'/>
@@ -55,13 +56,6 @@
             src='{SITE-NAME}/view/default/themes/js/jquery.js?ver=1.12.4'></script>-->
     <script type="text/javascript" src="{SITE-NAME}/view/default/themes/js/jquery-1.11.2.min.js"></script>
 </head>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+
 
 <!--Start of Zopim Live Chat Script-->

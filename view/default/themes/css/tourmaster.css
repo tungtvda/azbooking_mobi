@@ -4628,7 +4628,7 @@ ul.tourmaster-widget-tour-category-list li {
 
     .tourmaster-tour-booking-bar-container-inner .tourmaster-tour-booking-bar-wrap {
         max-width: 100%;
-        margin: 50px auto !important;
+        margin: 30px auto !important;
         position: static;
     }
 
@@ -4662,8 +4662,8 @@ ul.tourmaster-widget-tour-category-list li {
 @media only screen and (max-width: 767px) {
     .tourmaster-body .tourmaster-container {
         max-width: 500px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .tourmaster-column-10 {
