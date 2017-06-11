@@ -1288,3 +1288,16 @@ you can use the generic selector below, but it's slower:
 .breadcrumb ul li span {
     color: #0091ea;
 }
+.price_detail{
+    color: red;font-size: 20px;font-weight: bold;
+}
+.price_sales_detail{
+    text-decoration: line-through;
+    color: #777;
+}
+.title_detail{
+    font-size: 18px;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}

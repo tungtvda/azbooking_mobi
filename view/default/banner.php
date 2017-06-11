@@ -10,12 +10,12 @@ function view_banner($data=array())
 {
     $asign=array();
     $asign['name_dm']=$data['banner']['name'];
-    $asign['banner_img']=SITE_NAME_MAIN.$data['banner']['banner_img'];
+    $asign['banner_img']=_returnCheckLinkImg($data['banner']['banner_img']);
     $asign['url']='';
     if(isset($data['banner']['url'])&&$data['banner']['url']!=''){
         $asign['url']=$data['banner']['url'];
     }
-    $asign['banner_img']=SITE_NAME_MAIN.$data['banner']['banner_img'];
+    $asign['banner_img']=_returnCheckLinkImg($data['banner']['banner_img']);
 
     $asign['danhmuc_1_timkiem_trongnuoc'] ='';
     if(count($data['danhmuc_1_timkiem_trongnuoc'])>0)

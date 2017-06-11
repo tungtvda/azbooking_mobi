@@ -233,8 +233,8 @@ body.traveltour-boxed.traveltour-background-pattern .traveltour-body-outer-wrapp
 }
 
 .traveltour-item-pdlr, .gdlr-core-item-pdlr {
-    padding-left: 20px;
-    padding-right: 20px;
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
 }
 
 .traveltour-item-rvpdlr, .gdlr-core-item-rvpdlr {
