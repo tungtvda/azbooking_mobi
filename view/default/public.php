@@ -411,7 +411,7 @@ function link_dm_tour2($app, $name_url, $tour_quoc_te=0)
     }
     return SITE_NAME.$link.$name_url.'/'.$app->name_url.'/';
 }
-function link_tourdetail($app,$name_url='',$name2_url='')
+function link_tourdetail($app,$name_url='',$name2_url='', $site_name=SITE_NAME)
 {
     if($app->tour_quoc_te==0){
 
@@ -420,10 +420,10 @@ function link_tourdetail($app,$name_url='',$name2_url='')
         $link='/tour-du-lich-quoc-te/';
     }
     if($name2_url==''){
-        return SITE_NAME.$link.$name_url.'/'.$app->name_url.'.html';
+        return $site_name.$link.$name_url.'/'.$app->name_url.'.html';
     }
     else{
-        return SITE_NAME.$link.$name_url.'/'.$name2_url.'/'.$app->name_url.'.html';
+        return $site_name.$link.$name_url.'/'.$name2_url.'/'.$app->name_url.'.html';
     }
 
 }

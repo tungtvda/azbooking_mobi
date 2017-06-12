@@ -1,12 +1,18 @@
 <body class="page-template-default page page-id-4807 gdlr-core-body tourmaster-body traveltour-body traveltour-body-front traveltour-full  traveltour-with-sticky-navigation gdlr-core-link-to-lightbox">
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=487430091415856";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+<div id="fb-root"></div><script>window.fbAsyncInit = function() {
+        FB.init({
+            appId : '487430091415856',
+            status : true, // check login status
+            cookie : true, // enable cookies to allow the server to access the session
+            xfbml : true // parse XFBML
+        });
+    };
+    (function() {
+        var e = document.createElement('script');
+        e.src = document.location.protocol + '//connect.facebook.net/vi_VN/all.js';
+        e.async = true;
+        document.getElementById('fb-root').appendChild(e);
+    }());</script>
 <div class="traveltour-mobile-header-wrap">
     <div class="traveltour-mobile-header traveltour-header-background traveltour-style-slide"
          id="traveltour-mobile-header">

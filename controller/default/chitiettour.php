@@ -47,7 +47,7 @@ if(isset($_GET['Id_sub'])&&$_GET['Id_sub']!=''){
         {
 //            $url='<li><a href="'.SITE_NAME.'">Trang chủ</a></li><li><a href="'.SITE_NAME.$link.'">'.$data['menu'][1]->name.'</a></li><li><a href="'.SITE_NAME.$link.$danhmuc_1[0]->name_url.'/">'.$danhmuc_1[0]->name.'</a></li><li><a href="'.SITE_NAME.$link.$danhmuc_1[0]->name_url.'/'.$danhmuc2[0]->name_url.'/">'.$danhmuc2[0]->name.'</a></li><li><span>'.$data['detail'][0]->name.'</span></li>';
             $banner=$danhmuc2[0]->img;
-            $link_detail=link_tourdetail($data['detail'][0],$danhmuc_1[0]->name_url,$danhmuc2[0]->name_url);
+            $link_detail=link_tourdetail($data['detail'][0],$danhmuc_1[0]->name_url,$danhmuc2[0]->name_url, SITE_NAME_MAIN);
         }
         else{
             redict(SITE_NAME);
@@ -64,7 +64,7 @@ else{
     {
 //        $url='<li><a href="'.SITE_NAME.'">Trang chủ</a></li><li><a href="'.SITE_NAME.$link.'">'.$data['menu'][1]->name.'</a></li><li><a href="'.SITE_NAME.$link.$danhmuc_1[0]->name_url.'/">'.$danhmuc_1[0]->name.'</a></li><li><span>'.$data['detail'][0]->name.'</span></li>';
         $banner=$danhmuc_1[0]->img;
-        $link_detail=link_tourdetail($data['detail'][0],$danhmuc_1[0]->name_url,'');
+        $link_detail=link_tourdetail($data['detail'][0],$danhmuc_1[0]->name_url,'',SITE_NAME_MAIN);
     }
     else{
         redict(SITE_NAME);
