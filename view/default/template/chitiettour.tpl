@@ -110,10 +110,20 @@
                         }
                     </style>
                     <div id="booking" class="tourmaster-tour-booking-bar-inner">
-                        <form class="tourmaster-single-tour-booking-fields tourmaster-form-field tourmaster-with-border"
-                              method="post"
-                              action=""
-                              id="tourmaster-single-tour-booking-fields">
+                        <form class="tourmaster-single-tour-booking-fields tourmaster-form-field tourmaster-with-border" id="submit_form" role="form" action="" method="post"
+                              enctype="multipart/form-data">
+                            <input hidden type="text" id="input_price" value="{price}" name="price"
+                                   class="valid">
+                            <input hidden type="text" id="input_price_2" value="{price_2}"
+                                   name="price_2" class="valid">
+                            <input hidden type="text" id="input_price_3" value="{price_3}"
+                                   name="price_3" class="valid">
+                            <input hidden type="text" id="input_price_4" value="{price_4}"
+                                   name="price_4" class="valid">
+                            <input hidden type="text" id="input_price_5" value="{price_5}"
+                                   name="price_5" class="valid">
+                            <input hidden type="text" id="input_price_6" value="{price_6}"
+                                   name="price_6" class="valid">
                             <div class="tourmaster-tour-booking-date clearfix" data-step="1">
                                 <i class="fa fa-user"></i>
                                 <label>Họ tên <span style="color: red">*</span></label>
@@ -157,20 +167,13 @@
                             <div class="tourmaster-tour-booking-room clearfix" data-step="5">
                                 <div class="tourmaster-tour-booking-next-sign"><span></span></div>
                                 <i class="fa fa-calendar"></i>
-                                <div class="tourmaster-tour-booking-date-input">
-                                    <label>Ngày khởi hành <span style="color: red">*</span></label>
-                                    <div class="tourmaster-datepicker-wrap">
-                                        <input type='text' class="form-control" id='datetimepicker4'/>
-
-                                        <script type="text/javascript">
-                                            $(function () {
-                                                $("#datetimepicker4").datepicker().datepicker("setDate", new Date());
-                                            });
-                                        </script>
-
-                                    </div>
-                                </div>
+                                {date_select}
                             </div>
+                            <script type="text/javascript">
+                                $(function () {
+                                    $("#input_ngay_khoi_hanh").datepicker().datepicker("setDate", new Date());
+                                });
+                            </script>
                             <div class="tourmaster-tour-booking-room clearfix" data-step="6">
                                 <div class="tourmaster-tour-booking-next-sign"><span></span></div>
                                 <i class="fa fa-blind"></i>
@@ -201,12 +204,20 @@
                                            id="input_num_tre_em_5" name="num_tre_em_5">
                                 </div>
                             </div>
+                            <div class="tourmaster-tour-booking-room clearfix" data-step="9">
+                                <div class="tourmaster-tour-booking-next-sign"><span></span></div>
+                                <i class="fa fa-dollar"></i>
 
-                            <div class="tourmaster-tour-booking-submit" data-step="4">
+                                <div class="tourmaster-tour-booking-date-input" style="padding-top: 13px;">
+                                    <span class="tourmaster-tour-discount-price price_detail" id="amount_total">{price_format} {vnd}</span>
+                                </div>
+                            </div>
+
+                            <div class="tourmaster-tour-booking-submit" data-step="10">
                                 <div class="tourmaster-tour-booking-next-sign"><span></span></div>
                                 <i class="fa fa-check-circle"></i>
-                                <div class="tourmaster-tour-booking-submit-input"><input
-                                            class="tourmaster-button" type="submit" value="Đặt Tour"
+                                <div class="tourmaster-tour-booking-submit-input"><input  id="submit_form_action"
+                                            class="tourmaster-button" type="button" value="Đặt Tour"
                                             data-ask-login="proceed-without-login"/>
                                     <div class="tourmaster-tour-booking-submit-error">* Bạn vui lòng nhập thông tin bắt
                                         buộc
