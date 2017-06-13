@@ -362,7 +362,6 @@
                     }
                 }
                 if (valid == false) {
-                    console.log(name_input);
                     element.addClass("input-error").removeClass("valid");
                     error.show();
                     error_free = false
@@ -372,6 +371,8 @@
             }
         }
         if (error_free != false) {
+            $('.tourmaster-tour-booking-submit-error').hide();
+            $(this).hide();
             $('#loading').show();
             $("#submit_form").submit();
         }else{

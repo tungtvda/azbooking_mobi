@@ -216,7 +216,10 @@
                             <div class="tourmaster-tour-booking-submit" data-step="10">
                                 <div class="tourmaster-tour-booking-next-sign"><span></span></div>
                                 <i class="fa fa-check-circle"></i>
-                                <div class="tourmaster-tour-booking-submit-input"><input  id="submit_form_action"
+
+                                <div class="tourmaster-tour-booking-submit-input">
+                                    <img id="loading" style="width: 150px; display: none " src="http://azbooking.vn/view/default/themes/images/loading.gif">
+                                    <input  id="submit_form_action"
                                             class="tourmaster-button" type="button" value="Đặt Tour"
                                             data-ask-login="proceed-without-login"/>
                                     <div class="tourmaster-tour-booking-submit-error">* Bạn vui lòng nhập thông tin bắt
