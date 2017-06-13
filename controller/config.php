@@ -6,7 +6,6 @@
  */
 define("SITE_NAME", "http://m.azbooking.vn");
 define("SITE_NAME_MAIN", "http://azbooking.vn");
-define("SITE_NAME_MANAGE", "http://manage.mixmedia.vn");
 define("DIR", dirname(__FILE__));
 define('SERVER','localhost');
 define('DB_USERNAME','azbk_az');

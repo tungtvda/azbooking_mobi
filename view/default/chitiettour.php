@@ -210,7 +210,7 @@ function show_chitiet_tour($data = array())
                     $asign['date_select'] = '<div class="tourmaster-tour-booking-date-input">
                                     <label>Ngày khởi hành <span style="color: red">*</span></label>
                                     <div class="tourmaster-datepicker-wrap">
-                                        <input type=\'text\' class="form-control" id=\'input_ngay_khoi_hanh\'/>
+                                        <input name="ngay_khoi_hanh" type=\'text\' class="form-control" id=\'input_ngay_khoi_hanh\'/>
                                     </div>
                                     <label class="error_booking" id="error_ngay_khoi_hanh">Bạn vui lòng chọn ngày khởi hành</label>
                                 </div>';
@@ -228,7 +228,7 @@ function show_chitiet_tour($data = array())
             $asign['date_select'] = '<div class="tourmaster-tour-booking-date-input">
                                     <label>Ngày khởi hành <span style="color: red">*</span></label>
                                     <div class="tourmaster-datepicker-wrap">
-                                        <input type=\'text\' class="form-control" id=\'input_ngay_khoi_hanh\'/>
+                                        <input name="ngay_khoi_hanh" type=\'text\' class="form-control" id=\'input_ngay_khoi_hanh\'/>
                                     </div>
                                     <label class="error_booking" id="error_ngay_khoi_hanh">Bạn vui lòng chọn ngày khởi hành</label>
                                 </div>';
@@ -237,7 +237,7 @@ function show_chitiet_tour($data = array())
         $asign['date_select'] = '<div class="tourmaster-tour-booking-date-input">
                                     <label>Ngày khởi hành <span style="color: red">*</span></label>
                                     <div class="tourmaster-datepicker-wrap">
-                                        <input type=\'text\' class="form-control" id=\'input_ngay_khoi_hanh\'/>
+                                        <input name="ngay_khoi_hanh" type=\'text\' class="form-control" id=\'input_ngay_khoi_hanh\'/>
                                     </div>
                                     <label class="error_booking" id="error_ngay_khoi_hanh">Bạn vui lòng chọn ngày khởi hành</label>
                                 </div>';
