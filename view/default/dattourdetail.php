@@ -216,13 +216,6 @@ function show_dattourdetail($data = array())
                                                             <td>
                                                                 <span style="font-size: 11px">'.$row_sub['do_tuoi'].'</span>
                                                             </td>
-//                                                            <td>
-//                                                                <input class="input_table" style="height: 30px; font-size: 10px;padding-left: 10px" title="'.$row_sub['passport'].'" value="'.$row_sub['passport'].'" >
-//                                                            </td>
-//
-//                                                            <td>
-//                                                                <input class="input_table" style="height: 30px; font-size: 10px;padding-left: 10px" title="'.$date_passport.'" value="'.$date_passport.'" >
-//                                                            </td>
                                                             <td style="width: 130px">
                                                                 <span style="color: red; font-size: 12px">'.$price_item.'</span>
                                                             </td>
@@ -233,32 +226,4 @@ function show_dattourdetail($data = array())
 
     print_template($asign, 'dattourdetail');
 }
-
-//function returnInput_price($price,$name_price){
-//    $string='';
-//    if($price!=''){
-//        $array_price=explode(',',$price);
-//        if(count($array_price)>0){
-//            foreach($array_price as $row){
-//                if($row!=''){
-//                    $array_item=explode('-',$row);
-//                    if(count($array_item)>0){
-//                        if(isset($array_item[0])&&isset($array_item[1])&&$array_item[0]!=''&&$array_item[1]!=''){
-//                           $check_lon_hon=strstr($array_item[0],">");
-//                            $input_lon_hon='';
-//                            if($check_lon_hon!=''){
-//                                $number_lonhon=str_replace('>','',$check_lon_hon);
-//                                $input_lon_hon='<input hidden value="'.$number_lonhon.'" id="input_'.$name_price.'tu" class="valid" name="'.$name_price.'tu">';
-//                                $array_item[0]=str_replace('>','lon_hon_',$array_item[0]);
-//                            }
-//                            $string.='<input hidden value="'.$array_item[1].'" id="input_'.$name_price.$array_item[0].'" class="valid" name="'.$name_price.$array_item[0].'">'.$input_lon_hon;
-//
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-//    return $string;
-//}
 
