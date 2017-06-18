@@ -10,7 +10,6 @@ function view_banner($data=array())
 {
     $asign=array();
     $asign['name_dm']=$data['banner']['name'];
-    $asign['banner_img']=_returnCheckLinkImg($data['banner']['banner_img']);
     $asign['url']='';
     if(isset($data['banner']['url'])&&$data['banner']['url']!=''){
         $asign['url']=$data['banner']['url'];

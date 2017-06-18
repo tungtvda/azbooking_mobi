@@ -10,7 +10,7 @@ require_once DIR . '/common/cls_fast_template.php';
 function show_chitiet_tintuc($data = array())
 {
     $asign = array();
-    $asign['img']= $data['detail'][0]->img;
+    $asign['img']= _returnCheckLinkImg($data['detail'][0]->img);
     $asign['content']= $data['detail'][0]->content;
     $asign['name']= $data['detail'][0]->name;
     $asign['link']=$data['link_url'];
@@ -27,10 +27,10 @@ function show_chitiet_tintuc($data = array())
     } else {
         $asign['content_short']=strip_tags($content);
     }
-    $asign['tour_lienquan'] ='';
-    if(count($data['tour_lienquan'])>0) {
-        $asign['tour_lienquan'] = print_item('danhmuc_tintuc', $data['tour_lienquan']);
-    }
+//    $asign['tour_lienquan'] ='';
+//    if(count($data['tour_lienquan'])>0) {
+//        $asign['tour_lienquan'] = print_item('danhmuc_tintuc', $data['tour_lienquan']);
+//    }
     print_template($asign, 'chitiettintuc');
 }
 

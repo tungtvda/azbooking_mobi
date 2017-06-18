@@ -44,6 +44,8 @@ RewriteRule ^tour-giam-gia/page-([0-9]+)$ controller/default/tourgiamgia.php?pag
 RewriteRule ^tour-noi-bat/$ controller/default/tournoibat.php
 RewriteRule ^tour-noi-bat/page-([0-9]+)$ controller/default/tournoibat.php?page=$1
 
+RewriteRule ^tour-du-lich/$ controller/default/tourdulich.php
+
 
 RewriteRule ^dat-tour/ajax/$ controller/default/booking.php
 

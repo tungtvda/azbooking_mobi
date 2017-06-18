@@ -424,8 +424,8 @@ body.traveltour-boxed.traveltour-background-image .traveltour-body-background {
 }
 
 .traveltour-content-area {
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .traveltour-sidebar-area {
@@ -2345,7 +2345,7 @@ body.blog .traveltour-single-article {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
-    margin-bottom: 55px;
+    margin-bottom: 20px;
 }
 
 .traveltour-comments-area ol.comment-list {

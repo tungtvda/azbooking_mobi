@@ -21,6 +21,7 @@ function view_menu($data = array())
     $asign['trangchu_mn'] = ($data['active'] == 'trangchu') ? 'current-menu-ancestor' : '';
     $asign['tour_trong_nuoc_mn'] = ($data['active'] == 'tour_trong_nuoc') ? 'current-menu-ancestor' : '';
     $asign['tour_nuoc_ngoai_mn'] = ($data['active'] == 'tour_nuoc_ngoai') ? 'current-menu-ancestor' : '';
+    $asign['tour_du_lich_mn'] = ($data['active'] == 'tour_du_lich') ? 'current-menu-ancestor' : '';
 //    $asign['tour_mn'] = ($data['active'] == 'tour') ? 'current-menu-parent' : '';
     $asign['khachsan_mn'] = ($data['active'] == 'khachsan') ? 'current-menu-ancestor' : '';
     $asign['tintuc_mn'] = ($data['active'] == 'tintuc') ? 'current-menu-ancestor' : '';

@@ -14,20 +14,10 @@ function show_timkiem($data = array())
     $asign['hidden_tour'] ='';
     if(count($data['danhsach_tour'])>0)
     {
-        $asign['danhsach_tour'] = print_item('tour_index', $data['danhsach_tour']);
+        $asign['danhsach_tour'] = print_item('item_list', $data['danhsach_tour']);
     }
     else{
         $asign['hidden_tour'] ='hidden';
-    }
-
-    $asign['danhsach_khachsan'] ='';
-    $asign['hidden_khachsan'] ='';
-    if(count($data['danhsach_tour'])>0)
-    {
-        $asign['danhsach_khachsan'] = print_item('danhmuc_khachsan', $data['danhsach_khachsan']);
-    }
-    else{
-        $asign['hidden_khachsan'] ='hidden';
     }
 
     $asign['danhsach_tintuc'] ='';

@@ -1,6 +1,6 @@
 <footer>
     <div class="traveltour-footer-wrapper">
-        <div class="traveltour-footer-container traveltour-container clearfix">
+        <div style="border-top: 1px solid #e1e1e1" class="traveltour-footer-container traveltour-container clearfix">
             <div class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
                 <div id="text-1" class="widget widget_text traveltour-widget">
                     <div class="textwidget"><img
