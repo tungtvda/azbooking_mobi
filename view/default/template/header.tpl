@@ -58,6 +58,9 @@
     <link rel='stylesheet' id='traveltour-custom-style-css'
           href='{SITE-NAME}/view/default/themes/css/traveltour-style-custom.css?1495645121&#038;ver=4.7.5'
           type='text/css' media='all'/>
+    <link rel='stylesheet' id='traveltour-style-core-css'
+          href='{SITE-NAME}/view/default/themes/css/messenger.css?ver=1.0.1'
+          type='text/css' media='all'/>
     <!--<script type='text/javascript'
             src='{SITE-NAME}/view/default/themes/js/jquery.js?ver=1.12.4'></script>-->
     <script type="text/javascript" src="{SITE-NAME}/view/default/themes/js/jquery-1.11.2.min.js"></script>
