@@ -215,7 +215,7 @@ body:not(.touching) .drag-wrapper .thing {
 
 @media only screen and (max-width: 767px) {
     .drag-wrapper .thing .content {
-        /* right: -17px; */
+         right: -17px;
         width: 310px;
         padding: 0px;
     }

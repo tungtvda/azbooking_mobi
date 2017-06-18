@@ -1,13 +1,13 @@
 <footer>
     <div class="traveltour-footer-wrapper">
-        <div style="border-top: 1px solid #e1e1e1" class="traveltour-footer-container traveltour-container clearfix">
-            <div class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
-                <div id="text-1" class="widget widget_text traveltour-widget">
-                    <div class="textwidget"><img
+        <div style="border-top: 1px solid #e1e1e1; border-bottom: none; padding-top: 20px" class="traveltour-footer-container traveltour-container clearfix">
+            <div  class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
+                <div style="border-bottom: none;" id="text-1" class="widget widget_text traveltour-widget">
+                    <div class="textwidget"><img style="width: 70%"
                                 src="{Logo}"
                                 alt="{Name}"/>
                     </div>
-                    <p><a href="{facebook}" target="_blank"><i class="fa fa-facebook"
+                    <p style="margin-bottom: 0px"><a href="{facebook}" target="_blank"><i class="fa fa-facebook"
                                                                style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
                         <a href="{twitter}" target="_blank"><i class="fa fa-twitter"
                                                                style="font-size: 18px;color: red;margin-right: 20px;"></i></a>
@@ -21,7 +21,7 @@
                 </div>
 
             </div>
-            <div class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
+            <div hidden class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
                 <div id="tourmaster-widget-tour-category-6"
                      class="widget widget_tourmaster-widget-tour-category traveltour-widget"><h3
                             class="traveltour-widget-title"><span class="traveltour-widget-head-text">Tại sao bạn nên lựa chọn chúng tôi</span>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
+            <div hidden class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
                 <div id="text-2" class="widget widget_text traveltour-widget"><h3
                             class="traveltour-widget-title"><span
                                 class="traveltour-widget-head-text">Văn phòng Hà Nội</span></h3><span
@@ -92,12 +92,12 @@
                     <label style="color: red;"><i>(Bấm <a href="tel:{Hotline}"><i style="color: #0091EA;font-weight: bold; font-size: 18px" class="fa fa-hand-o-down"></i></a> và gọi ngay cho chúng tôi)</i></label>
                     <p style="margin-bottom: 10px; margin-top: 10px">
                         <a href="tel:{Hotline}">
-                            <i class="fa fa-phone" style="font-size: 20px;color: #0091EA;margin-right: 10px;"></i><span
-                                    style="font-size: 20px; color: #0091EA; font-weight: 600;">{Hotline}</span></a>
+                            <i class="fa fa-phone" style="font-size: 20px;color: #0091EA;margin-right: 10px;"></i>
+                            <span style="font-size: 20px; color: #0091EA; font-weight: 600;">{Hotline}</span></a> (Hà Nội)
                     </p>
                     <p style="margin-bottom:0px"><a href="tel:{Hotline_hcm}"><i class="fa fa-phone"
                                                      style="font-size: 20px;color: #0091EA;margin-right: 10px;"></i><span
-                                    style="font-size: 20px; color: #0091EA; font-weight: 600;">{Hotline_hcm}</span></a>
+                                    style="font-size: 20px; color: #0091EA; font-weight: 600;">{Hotline_hcm}</span></a> (HCM)
                     </p>
                 </div>
             </div>
