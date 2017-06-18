@@ -50,8 +50,8 @@
                             <li class="{trangchu_mn} menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-4373">
                                 <a href="{SITE-NAME}">{trangchu}</a>
                             </li>
-                            <li class="{tour_trong_nuoc_mn} {tour_nuoc_ngoai_mn} menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4341">
-                                <a href="javascript:void(0)">Tour du lịch</a>
+                            <li class="{tour_trong_nuoc_mn} {tour_nuoc_ngoai_mn} {tour_du_lich_mn} menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4341">
+                                <a href="{SITE-NAME}/tour-du-lich/">Tour du lịch</a>
                                 <ul class="sub-menu mm-listview">
                                     <li class="{tour_trong_nuoc_mn} menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4341">
                                         <a href="{SITE-NAME}/tour-du-lich-trong-nuoc/">Tour trong nước</a>

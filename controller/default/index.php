@@ -15,7 +15,6 @@ $data['menu']=menu_getByTop('','','');
 $data['config']=config_getByTop(1,'','');
 ////
 $date_now=_returnGetDateTime();
-$data['danhsach']=tour_getByTop(10,'(count_down!="" and count_down>"'.$date_now.'") or price_sales!="" ','count_down desc,id DESC');
 $data['banner']='';
 $data['slide']=slide_getByTop('','','Id desc');
 $random_keys=array_rand($data['slide'],1);
@@ -29,6 +28,6 @@ $description=($description)?$description:'Azbooking.vn';
 $keywords=($keyword)?$keyword:'Azbooking.vn';
 show_header($title,$description,$keywords,$data);
 show_menu($data,'trangchu');
-show_banner($data);
+//show_banner($data);
 show_index($data);
 show_footer($data);

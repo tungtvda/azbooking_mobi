@@ -254,6 +254,7 @@ function print_item($file,$ListItem,$LocDau=false,$LocDauAssign=false,$numberfor
                 } else {
                     $ft->assign('content',strip_tags($content));
                 }
+                $ft->assign('img',_returnCheckLinkImg($item->img));
                 $data_dm=danhmuc_tintuc_getById($item->danhmuc_id);
                 if(count($data_dm)==0){
                     redict(SITE_NAME);
@@ -434,9 +435,14 @@ function link_news($app)
 {
     return SITE_NAME.'/cam-nang/'.$app->name_url.'/';
 }
-function link_newsdetail($app,$name_url='')
+function link_newsdetail($app,$name_url='',$name_main='')
 {
-    return SITE_NAME.'/cam-nang/'.$name_url.'/'.$app->name_url.'.html';
+    if($name_main==''){
+        return SITE_NAME.'/cam-nang/'.$name_url.'/'.$app->name_url.'.html';
+    }else{
+        return SITE_NAME_MAIN.'/cam-nang/'.$name_url.'/'.$app->name_url.'.html';
+    }
+
 }
 function link_khachsandetail($app,$name_url='')
 {

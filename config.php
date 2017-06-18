@@ -22,6 +22,20 @@ require_once DIR.'/model/contactService.php';
 require_once DIR.'/model/booking_hotelService.php';
 require_once DIR.'/model/booking_tourService.php';
 require_once DIR.'/model/khachsan_room_priceService.php';
+require_once 'mobi/Mobile_Detect.php';
+require_once DIR . '/common/redict.php';
+$detect = new Mobile_Detect;
+$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+$actual_link = $_SERVER['REQUEST_URI'];
+if($deviceType=='phone'){
+    $khach_san='khach-san';
+    if(strstr($actual_link,$khach_san)!=''){
+        redict(SITE_NAME_MAIN.$actual_link);
+    }
+}else{
+    redict(SITE_NAME_MAIN.$actual_link);
+}
+
 function returnSearchDurations(){
     $data['data']=tour_getByTop('','','durations asc');
     $data_arr=array();
