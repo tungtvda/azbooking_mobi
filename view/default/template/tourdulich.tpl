@@ -1,6 +1,6 @@
 <div class="home-nav clearfix">
     <a class="trong_nuoc" href="{SITE-NAME}/tour-du-lich-trong-nuoc/">Du lịch <br>trong nước</a>
-    <a class="quoc_te" href="{SITE-NAME}/tour-du-lich-trong-nuoc/">Du lịch <br>Quốc tế</a>
+    <a class="quoc_te" href="{SITE-NAME}/tour-du-lich-quoc-te/">Du lịch <br>Quốc tế</a>
 </div>
 
 <div class="traveltour-page-wrapper" id="traveltour-page-wrapper">
