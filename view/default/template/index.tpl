@@ -13,6 +13,7 @@
             <a class="tour-btn" href="http://khachsan.azbooking.vn/">Đặt phòng<br>khách sạn</a>
             <a class="flight-btn" href="http://vemaybay.azbooking.vn/">Đặt vé<br>máy bay</a>
             <a class="car-btn" href="http://thuexe.azbooking.vn/">Thuê xe<br>du lịch</a>
+            <a class="camnang-btn" href="{SITE-NAME}/cam-nang/">Cẩm nang du lịch</a>
         </div>
 
         <div hidden id="box_timkiem" class="gdlr-core-pbf-wrapper-content gdlr-core-js ">

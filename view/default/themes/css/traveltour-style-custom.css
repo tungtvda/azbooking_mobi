@@ -278,11 +278,11 @@ body.traveltour-boxed.traveltour-background-pattern .traveltour-body-outer-wrapp
 }
 
 .traveltour-top-bar {
-    padding-top: 22px;
+    /*padding-top: 22px;*/
 }
 
 .traveltour-top-bar {
-    padding-bottom: 22px;
+    /*padding-bottom: 22px;*/
 }
 
 .traveltour-top-bar {
@@ -577,7 +577,7 @@ body.traveltour-boxed.traveltour-background-pattern .traveltour-body-outer-wrapp
 }
 
 .traveltour-top-bar-background {
-    background-color: #000000;
+    background-color: #064c77;
 }
 
 .traveltour-body .traveltour-top-bar {
@@ -1903,7 +1903,8 @@ body .traveltour-top-bar-right-social {
 }
 
 body .traveltour-top-bar-right .tourmaster-user-top-bar {
-    margin-left: 32px;
+    margin-left: 0px;
+    margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 425px) {
