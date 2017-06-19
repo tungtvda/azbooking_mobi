@@ -83,7 +83,7 @@
         </div>
     </div>
     <div class="drag-wrapper drag-wrapper-right">
-        <div data-drag="data-drag" class="thing" style="top:40px;transform: translate(1289px, 55px);">
+        <div data-drag="data-drag" class="thing" style="top:70px;transform: translate(1289px, 55px);">
             <div class="circle facebook-messenger-avatar facebook-messenger-avatar-type0">
                 <img class="facebook-messenger-avatar" src="{SITE-NAME}/view/default/themes/images/phone.png">
             </div>
