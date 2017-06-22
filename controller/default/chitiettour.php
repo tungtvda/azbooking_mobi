@@ -649,7 +649,7 @@ if (isset($_POST['name_customer'])) {
   text-transform: uppercase;
   text-align: center;" class="title_index">Có thể bạn quan tâm <a
                         style="float: right; margin-top: 10px; color: red; font-weight: bold;font-size: 14px;"
-                        href="' . SITE_NAME . '/tour-du-lich-quoc-te/">Xem thêm...</a></h3>
+                        href="' . SITE_NAME . '/tour-du-lich/">Xem thêm...</a></h3>
 
                 <div style="float: left; width: 100%" class="row">
 
