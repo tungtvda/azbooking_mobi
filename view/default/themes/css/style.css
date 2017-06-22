@@ -1338,8 +1338,8 @@ a.quoc_te {
     background: #0370b3 url(../images/outbound.png) 50% 20px no-repeat;
     background-size: 51px 59px;
 }
-
-.call_mobile{
-    position: fixed;
-    bottom: 0;
+a.camnang-btn {
+    background: #064c77 url(../images/book.png) 50% 20px no-repeat;
+    background-size: 80px 60px;
+    width: 100%;
 }

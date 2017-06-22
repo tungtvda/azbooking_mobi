@@ -3020,7 +3020,7 @@ body.traveltour-boxed .gdlr-core-column-extend-right .gdlr-core-pbf-background-w
     .traveltour-mobile-header-wrap .traveltour-top-bar-right {
         float: none;
         text-align: center;
-        margin-bottom: 11px;
+        /*margin-bottom: 11px;*/
         font-size: 11px;
         padding-left: 0;
         padding-right: 0;
