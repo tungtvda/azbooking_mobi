@@ -22,13 +22,13 @@
 
             <div class="traveltour-top-bar-right traveltour-item-pdlr">
                 <div class="tourmaster-user-top-bar tourmaster-guest">
-                    <a  href="{SITE-NAME}/dang-nhap.html">
+                    <a  href="{site_name_main}/tiep-thi-lien-ket/thanh-vien/">
                         <span class="tourmaster-user-top-bar-login" data-tmlb="login">
                             <i style="color:#ffffff;" class="icon_lock_alt"></i>
                             <span class="tourmaster-text">Đăng nhập</span>
                         </span>
                     </a>
-                    <a href="{SITE-NAME}/dang-ky.html">
+                    <a href="{site_name_main}/tiep-thi-lien-ket/thanh-vien/?type=dang-ky">
                     <span class="tourmaster-user-top-bar-signup" data-tmlb="signup"><i style="color:#ffffff;" class="fa fa-user"></i><span
                                 class="tourmaster-text">Đăng ký</span></span>
                     </a>
