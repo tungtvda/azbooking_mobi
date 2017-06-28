@@ -15,6 +15,7 @@ function view_menu($data = array())
     $asign['khachsan']=$data['menu'][2]->name;
     $asign['tintuc']=$data['menu'][3]->name;
     $asign['lienhe']=$data['menu'][4]->name;
+    $asign['site_name_main']=SITE_NAME_MAIN;
 //
 //
 //    // active menu
