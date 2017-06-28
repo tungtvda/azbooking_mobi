@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-    <div class="drag-wrapper drag-wrapper-right">
+    <!--<div class="drag-wrapper drag-wrapper-right">
         <div data-drag="data-drag" class="thing" style="top:70px;transform: translate(1289px, 55px);">
             <div class="circle facebook-messenger-avatar facebook-messenger-avatar-type0">
                 <img class="facebook-messenger-avatar" src="{SITE-NAME}/view/default/themes/images/phone.png">
@@ -103,6 +103,21 @@
             </div>
         </div>
         <div class="magnet-zone" style="margin-left: 0px; margin-bottom: 0px;">
+            <div class="magnet"></div>
+        </div>
+    </div>-->
+    <div class="drag-wrapper drag-wrapper-right">
+        <div data-drag="data-drag" class="thing" style="transform: translate(822px, 341px);">
+            <div class="circle facebook-messenger-avatar facebook-messenger-avatar-type0">
+                <img class="facebook-messenger-avatar" src="https://thailan.luhanhviet.com.vn/wp-content/plugins/wp-facebook-messenger/frontend/images/facebook-messenger.svg">
+            </div>
+            <div class="content">
+                <div class="inside">
+                    <div class="fb-page fb_iframe_widget" data-width="310" data-height="310" data-href="https://www.facebook.com/Du-L%E1%BB%8Bch-Th%C3%A1i-Lan-dulichvietnamcomvn-209549189532357/" data-hide-cover="false" data-tabs="messages" data-small-header="true" data-show-facepile="true" data-adapt-container-width="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=0&amp;height=310&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FDu-L%25E1%25BB%258Bch-Th%25C3%25A1i-Lan-dulichvietnamcomvn-209549189532357%2F&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true&amp;tabs=messages&amp;width=310"><span style="vertical-align: bottom; width: 310px; height: 310px;"><iframe name="f129ac86578f6e" width="310px" height="310px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:page Facebook Social Plugin" src="https://www.facebook.com/v2.5/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FXBwzv5Yrm_1.js%3Fversion%3D42%23cb%3Df2ab55b22fff104%26domain%3Dthailan.luhanhviet.com.vn%26origin%3Dhttps%253A%252F%252Fthailan.luhanhviet.com.vn%252Ff207e8b87746f74%26relation%3Dparent.parent&amp;container_width=0&amp;height=310&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FDu-L%25E1%25BB%258Bch-Th%25C3%25A1i-Lan-dulichvietnamcomvn-209549189532357%2F&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true&amp;tabs=messages&amp;width=310" class="" style="border: none; visibility: visible; width: 310px; height: 310px;"></iframe></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="magnet-zone">
             <div class="magnet"></div>
         </div>
     </div>
