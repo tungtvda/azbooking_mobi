@@ -14,25 +14,27 @@
         e.async = true;
         document.getElementById('fb-root').appendChild(e);
     }());</script>
-
 <div class="traveltour-mobile-header-wrap">
     <div class="traveltour-top-bar">
         <div class="traveltour-top-bar-background"></div>
         <div class="traveltour-top-bar-container clearfix traveltour-container ">
 
             <div class="traveltour-top-bar-right traveltour-item-pdlr">
-                <div class="tourmaster-user-top-bar tourmaster-guest">
-                    <a  href="{site_name_main}/tiep-thi-lien-ket/thanh-vien/">
-                        <span class="tourmaster-user-top-bar-login" data-tmlb="login">
-                            <i style="color:#ffffff;" class="icon_lock_alt"></i>
-                            <span class="tourmaster-text">Đăng nhập</span>
-                        </span>
-                    </a>
-                    <a href="{site_name_main}/tiep-thi-lien-ket/thanh-vien/?type=dang-ky">
-                    <span class="tourmaster-user-top-bar-signup" data-tmlb="signup"><i style="color:#ffffff;" class="fa fa-user"></i><span
-                                class="tourmaster-text">Đăng ký</span></span>
-                    </a>
+                <div class="tourmaster-user-top-bar tourmaster-guest" style=" line-height: 18px;">
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                           <img class="img_border" title="Trần Văn Tùng" alt="Trần Văn Tùng" src="http://images.tapchianhdep.net/15-10ngam-anh-ha-noi-ve-dem-lung-linh-anh-den7.jpg">
+                            Hi! Trần Văn Tùng <i style="color: #ffffff" class="fa fa-angle-down "></i>
+                        </button>
+                        <div class="dropdown-content">
+                           <a href="'.SITE_NAME.'/tiep-thi-lien-ket/ho-so/"><i class="fa fa-cogs "></i> Cài đặt tài khoản</a>
+                           <a href="'.SITE_NAME.'/tiep-thi-lien-ket/"><i class="fa fa-share-alt "></i> Tiếp thị liên kết</a>
+                            <a href="'.SITE_NAME.'/tiep-thi-lien-ket/dang-xuat/"><i class="fa fa-sign-out "></i> Đăng xuất</a>
+                        </div>
+
+                    </div>
                 </div>
+                <!--{content_user}-->
             </div>
         </div>
     </div>

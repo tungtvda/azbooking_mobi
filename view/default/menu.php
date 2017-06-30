@@ -95,5 +95,33 @@ function view_menu($data = array())
     {
         $asign['danhmuc_tintuc'] = print_item('menu_item', $data['danhmuc_tintuc']);
     }
+    $data_session=checkSession('', 1);
+    if(count($data_session)>0){
+        $asign['content_user']='<div class="tourmaster-user-top-bar tourmaster-guest">
+                    <a  href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thanh-vien/">
+                        <span class="tourmaster-user-top-bar-login" data-tmlb="login">
+                            <i style="color:#ffffff;" class="icon_lock_alt"></i>
+                            <span class="tourmaster-text">Đăng nhập</span>
+                        </span>
+                    </a>
+                    <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thanh-vien/?type=dang-ky">
+                    <span class="tourmaster-user-top-bar-signup" data-tmlb="signup"><i style="color:#ffffff;" class="fa fa-user"></i><span
+                                class="tourmaster-text">Đăng ký</span></span>
+                    </a>
+                </div>';
+    }else{
+        $asign['content_user']='<div class="tourmaster-user-top-bar tourmaster-guest">
+                    <a  href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thanh-vien/">
+                        <span class="tourmaster-user-top-bar-login" data-tmlb="login">
+                            <i style="color:#ffffff;" class="icon_lock_alt"></i>
+                            <span class="tourmaster-text">Đăng nhập</span>
+                        </span>
+                    </a>
+                    <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thanh-vien/?type=dang-ky">
+                    <span class="tourmaster-user-top-bar-signup" data-tmlb="signup"><i style="color:#ffffff;" class="fa fa-user"></i><span
+                                class="tourmaster-text">Đăng ký</span></span>
+                    </a>
+                </div>';
+    }
     print_template($asign, 'menu');
 }
