@@ -5,8 +5,10 @@
  * @copyright 2013
  */
 define("SITE_NAME", "http://localhost/azbooking_mobi");
-define("SITE_NAME_MAIN", "http://azbooking.vn");
-define("SITE_NAME_MANAGE", "http://manage.mixmedia.vn");
+//define("SITE_NAME_MAIN", "http://azbooking.vn");
+define("SITE_NAME_MAIN", "http://localhost/azbooking");
+define("SITE_NAME_MANAGE", "http://localhost/manage_mix");
+//define("SITE_NAME_MANAGE", "http://manage.mixmedia.vn");
 define("DIR", dirname(__FILE__));
 define('SERVER','localhost');
 define('DB_USERNAME','root');
@@ -15,6 +17,7 @@ define('DB_NAME','azbooking');
 define('CACHE',false);
 define('DATETIME_FORMAT',"y-m-d H:i:s");
 define('PRIVATE_KEY','hoidinhnvbk');
+define('ENCRYPTION_KEY', '5a9adddba4556e4784ec17246552f2033c3f6df767516ef92a55efed1408772b');
 session_start();
 require_once DIR.'/common/minifi.output.php';
 ob_start("minify_output");
@@ -27,15 +30,64 @@ require_once DIR . '/common/redict.php';
 $detect = new Mobile_Detect;
 $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 $actual_link = $_SERVER['REQUEST_URI'];
+
+$string_token=strstr($actual_link,'?key_token_mobile=');
+if($string_token!=''){
+    $string_token=str_replace('?key_token_mobile=','',$string_token);
+    $actual_full_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    $link_redict=str_replace('?key_token_mobile='.$string_token,'',$actual_full_link);
+    $data_token=json_decode(base64_decode($string_token),true);
+    if(count($data_token)>0){
+        $rememberme=_return_mc_decrypt($data_token['rememberme'],ENCRYPTION_KEY,1);
+        if(isset($data_token['id'])&&isset($data_token['name'])&&isset($data_token['user_email'])&&isset($data_token['user_code'])&&isset($data_token['token_code'])&&isset($data_token['time_token'])){
+            $string_info_booking="id="._return_mc_encrypt(_return_mc_decrypt($data_token['id'],ENCRYPTION_KEY,1));
+            $string_info_booking.="&name="._return_mc_encrypt(_return_mc_decrypt($data_token['name'],ENCRYPTION_KEY,1));
+            $string_info_booking.="&user_email="._return_mc_encrypt(_return_mc_decrypt($data_token['user_email'],ENCRYPTION_KEY,1));
+            $string_info_booking.="&user_code="._return_mc_encrypt(_return_mc_decrypt($data_token['user_code'],ENCRYPTION_KEY,1));
+            $string_info_booking.="&token_code="._return_mc_encrypt(_return_mc_decrypt($data_token['token_code'],ENCRYPTION_KEY,1));
+            $string_info_booking.="&time_token="._return_mc_encrypt(_return_mc_decrypt($data_token['time_token'],ENCRYPTION_KEY,1));
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, SITE_NAME_MANAGE."/azbooking-check-login.html");
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $string_info_booking);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $res = curl_exec($ch);
+            curl_close($ch);
+            $check_login=json_decode($res,true);
+            if($check_login['success']==1){
+                if($rememberme==1){
+                    $check_login['user_sec']['rememberme']=_return_mc_encrypt(1,ENCRYPTION_KEY,1);
+                    setcookie('user_token', json_encode($check_login['user_sec']), time() + (86400 * 30),'/', "",  0); // 86400 = 1 day
+                }else{
+                    $check_login['user_sec']['rememberme']=_return_mc_encrypt(0,ENCRYPTION_KEY,1);
+                    $_SESSION['user_token']=json_encode($check_login['user_sec']);
+                }
+                redict($link_redict);
+            }else{
+                redict(SITE_NAME);
+            }
+        }
+    }
+}
+
+$key_token='';
+
+if(isset($_COOKIE['user_token'])){
+    $_SESSION['user_token']=$_COOKIE['user_token'];
+}
+if(isset($_SESSION['user_token'])){
+    $key_token='?key_token_desktop='.base64_encode($_SESSION['user_token']);
+}
+
 if($deviceType=='phone'){
     $khach_san='khach-san';
-    if(strstr($actual_link,$khach_san)!=''){
+    $thanh_vien='/tiep-thi-lien-ket/';
+    if(strstr($actual_link,$khach_san)!=''||strstr($actual_link,$thanh_vien)!=''){
         redict(SITE_NAME_MAIN.$actual_link);
     }
 }else{
     redict(SITE_NAME_MAIN.$actual_link);
 }
-
 function returnSearchDurations(){
     $data['data']=tour_getByTop('','','durations asc');
     $data_arr=array();
@@ -361,28 +413,57 @@ function returnRoomPrice($room){
 
 }
 
-function _return_mc_encrypt($encrypt)
+// Code mã hóa
+function _return_mc_encrypt($encrypt, $key='', $code_key = '')
 {
-    $encode = base64_encode($encrypt);
-    $encode = base64_encode($encode);
-    $encode = base64_encode($encode);
-    $encode = base64_encode($encode);
-    $encode = base64_encode($encode);
-    $encode = base64_encode($encode);
-    $encode = base64_encode($encode);
+    if ($code_key == 1) {
+        $encrypt = serialize($encrypt);
+        $iv = mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_CBC), MCRYPT_DEV_URANDOM);
+        $key = pack('H*', $key);
+        $mac = hash_hmac('sha256', $encrypt, substr(bin2hex($key), -32));
+        $passcrypt = mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $key, $encrypt . $mac, MCRYPT_MODE_CBC, $iv);
+        $encode = base64_encode($passcrypt) . '|' . base64_encode($iv);
+
+    } else {
+        $encode = base64_encode($encrypt);
+        $encode = base64_encode($encode);
+        $encode = base64_encode($encode);
+        $encode = base64_encode($encode);
+        $encode = base64_encode($encode);
+        $encode = base64_encode($encode);
+        $encode = base64_encode($encode);
+    }
     return $encode;
 }
 
 // Code giải mã
-function _return_mc_decrypt($decrypt)
+function _return_mc_decrypt($decrypt, $key='', $code_key = '')
 {
-    $decoded = base64_decode($decrypt);
-    $decoded = base64_decode($decoded);
-    $decoded = base64_decode($decoded);
-    $decoded = base64_decode($decoded);
-    $decoded = base64_decode($decoded);
-    $decoded = base64_decode($decoded);
-    $decoded = base64_decode($decoded);
+    if ($code_key == 1) {
+        $decrypt = explode('|', $decrypt);
+        $decoded = base64_decode($decrypt[0]);
+        $iv = base64_decode($decrypt[1]);
+        if (strlen($iv) !== mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_CBC)) {
+            return false;
+        }
+        $key = pack('H*', $key);
+        $decrypted = trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $key, $decoded, MCRYPT_MODE_CBC, $iv));
+        $mac = substr($decrypted, -64);
+        $decrypted = substr($decrypted, 0, -64);
+        $calcmac = hash_hmac('sha256', $decrypted, substr(bin2hex($key), -32));
+        if ($calcmac !== $mac) {
+            return false;
+        }
+        $decoded = unserialize($decrypted);
+    } else {
+        $decoded = base64_decode($decrypt);
+        $decoded = base64_decode($decoded);
+        $decoded = base64_decode($decoded);
+        $decoded = base64_decode($decoded);
+        $decoded = base64_decode($decoded);
+        $decoded = base64_decode($decoded);
+        $decoded = base64_decode($decoded);
+    }
     return $decoded;
 }
 function _returnGetParamSecurity($param)
@@ -415,4 +496,69 @@ function _returnCheckLinkImg($img){
         }
     }
     return $link;
+}
+
+
+function _returnLogin(){
+    $username_login=_returnPostParamSecurity('username_login');
+    $password_login=_returnPostParamSecurity('password_login');
+    $mail_confirm=_returnPostParamSecurity('mail_confirm');
+    $rememberme=_returnPostParamSecurity('rememberme');
+    if($rememberme){
+        $rememberme=1;
+    }else{
+        $rememberme=0;
+    }
+    $string_info_booking="username_login=".$username_login;
+    $string_info_booking.="&password_login=".$password_login;
+    $string_info_booking.="&rememberme=".$rememberme;
+    $string_info_booking.="&mail_confirm=".$mail_confirm;
+    if($username_login!=''&&$password_login!=''){
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, SITE_NAME_MANAGE."/azbooking-login.html");
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $string_info_booking);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $res = curl_exec($ch);
+        curl_close($ch);
+        return $res;
+    }else{
+        if($username_login==''&&$password_login==''){
+            return 'Bạn vui lòng nhập email và mật khẩu đăng nhập';
+        }else{
+            if($username_login==''){
+                return 'Bạn vui lòng nhập nhập email đăng nhập';
+            }
+            if($password_login==''){
+                return 'Bạn vui lòng nhập nhập mật khẩu đăng nhập';
+            }
+        }
+    }
+}
+function checkSession($return='', $array=''){
+    $check_session=0;
+    $array_res=array();
+    if(isset($_SESSION['user_token'])){
+        $data_user=json_decode($_SESSION['user_token'],true);
+        if(count($data_user)>0){
+            $check_session=1;
+            if($array){
+                $array_res = array(
+                    'id'=>_return_mc_decrypt($data_user['id'],ENCRYPTION_KEY,1),
+                    'name'=>_return_mc_decrypt($data_user['name'],ENCRYPTION_KEY,1),
+                    'user_email'=>_return_mc_decrypt($data_user['user_email'],ENCRYPTION_KEY,1),
+                    'user_code'=>_return_mc_decrypt($data_user['user_code'],ENCRYPTION_KEY,1),
+                    'created'=>_return_mc_decrypt($data_user['created'],ENCRYPTION_KEY,1),
+                    'avatar'=>_return_mc_decrypt($data_user['avatar'],ENCRYPTION_KEY,1),
+                );
+            }
+        }
+    }
+    if($return){
+        return $check_session;
+    }
+    if($array){
+        return $array_res;
+    }
+
 }
