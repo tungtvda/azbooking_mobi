@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-    <!--<div class="drag-wrapper drag-wrapper-right">
+    <div class="drag-wrapper drag-wrapper-right">
         <div data-drag="data-drag" class="thing" style="top:70px;transform: translate(1289px, 55px);">
             <div class="circle facebook-messenger-avatar facebook-messenger-avatar-type0">
                 <img class="facebook-messenger-avatar" src="{SITE-NAME}/view/default/themes/images/phone.png">
@@ -105,8 +105,8 @@
         <div class="magnet-zone" style="margin-left: 0px; margin-bottom: 0px;">
             <div class="magnet"></div>
         </div>
-    </div>-->
-    <div class="drag-wrapper drag-wrapper-right">
+    </div>
+    <!--<div class="drag-wrapper drag-wrapper-right">
         <div data-drag="data-drag" class="thing" style="transform: translate(822px, 341px);">
             <div class="circle facebook-messenger-avatar facebook-messenger-avatar-type0">
                 <img class="facebook-messenger-avatar" src="https://thailan.luhanhviet.com.vn/wp-content/plugins/wp-facebook-messenger/frontend/images/facebook-messenger.svg">
@@ -120,7 +120,7 @@
         <div class="magnet-zone">
             <div class="magnet"></div>
         </div>
-    </div>
+    </div>-->
 
     <!--<a class="call_mobile" href="tel:{Hotline}"><img src="{SITE-NAME}/view/default/themes/images/mobile-phone.png"></a>-->
 </footer>
