@@ -96,18 +96,80 @@ function view_menu($data = array())
         $asign['danhmuc_tintuc'] = print_item('menu_item', $data['danhmuc_tintuc']);
     }
     $data_session=checkSession('', 1);
+    $asign['content_user']='';
     if(count($data_session)>0){
-        $asign['content_user']='<div class="tourmaster-user-top-bar tourmaster-guest">
-                    <a  href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thanh-vien/">
-                        <span class="tourmaster-user-top-bar-login" data-tmlb="login">
-                            <i style="color:#ffffff;" class="icon_lock_alt"></i>
-                            <span class="tourmaster-text">Đăng nhập</span>
-                        </span>
+        $array_check_noti = array(
+            'id'=>_return_mc_encrypt($data_session['id']),
+            'name'=>_return_mc_encrypt($data_session['name']),
+            'user_email'=>_return_mc_encrypt($data_session['user_email']),
+            'user_code'=>_return_mc_encrypt($data_session['user_code']),
+            'created'=>_return_mc_encrypt($data_session['created']),
+            'avatar'=>_return_mc_encrypt($data_session['avatar']),
+            'token_code'=>_return_mc_decrypt($data_session['token_code']),
+            'time_token'=>_return_mc_decrypt($data_session['time_token']),
+        );
+       $list_noti= returnCURL($array_check_noti, SITE_NAME_MANAGE.'/return-list-notification.html');
+//        print_r($list_noti);
+//        exit;
+        $avatar='<img class="nav-user-photo" title="'.$data_session['name'].'" alt="'.$data_session['name'].'"  src="'.$data_session['avatar'].'">';
+        $asign['content_user'].='<div class="dropdown-noti">
+                    <a class="notification_menu" data-toggle="dropdown-noti">
+                        <i class="ace-icon fa fa-bell icon-animated-bell color_white"></i>
+                        <span class="badge badge-important">1</span>
                     </a>
-                    <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thanh-vien/?type=dang-ky">
-                    <span class="tourmaster-user-top-bar-signup" data-tmlb="signup"><i style="color:#ffffff;" class="fa fa-user"></i><span
-                                class="tourmaster-text">Đăng ký</span></span>
+                    <div class="dropdown-content-noti">
+                        <p class="dropdown-header">
+                            <i class="ace-icon fa fa-exclamation-triangle"></i> 1 Thông báo
+                        </p>
+                        <ul class="dropdown-menu dropdown-navbar navbar-pink ul_noti">
+                            <li >
+                                <a title="Chi tiết bài viết"
+                                   href="http://localhost/manage_mix/booking-new/sua?noti=1&amp;confirm=1&amp;id=Vm0xMGEwNUdWWGhWYms1U1lrVndVbFpyVWtKUFVUMDk=&amp;id_noti=Vm0xMGEwNUdWWGhXYms1U1lrVndVbFpyVWtKUFVUMDk="
+                                   class="clearfix">
+
+												<span class="msg-body">
+													<span class="msg-title">
+														Khách hàng Trần Hoài Anh đã thêm một đơn hàng từ 4
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i> <span>28-03-2017 19:07:33 </span>
+
+													</span>
+												</span>
+                                </a>
+                                <a title="Chi tiết thông báo"
+                                   href=""
+                                   style="position: absolute;right: 0%;bottom: 5%; "><i
+                                            style="color:#4a96d9 !important;"
+                                            class="ace-icon fa fa-hand-o-right"></i></a>
+                            </li>
+                            <li class="dropdown-footer">
+                                <a href=""> Xem tất cả <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>';
+        $asign['content_user'].='<div class="dropdown">
+                    <a class="user_profile" data-toggle="dropdown">
+                       '.$avatar.'
+								<span class="user-info">
+									<small>Xin chào,</small>
+                                    '.$data_session['name'].'
+                                    </span>
+
+                        <i class="ace-icon fa fa-caret-down color_white" style="margin-left: 10px"></i>
                     </a>
+                    <div class="dropdown-content">
+                        <a href="'.SITE_NAME.'/tiep-thi-lien-ket/ho-so/"><i class="fa fa-cogs "></i> Cài đặt tài
+                            khoản</a>
+                        <a href="'.SITE_NAME.'/tiep-thi-lien-ket/"><i class="fa fa-share-alt "></i> Tiếp thị liên
+                            kết</a>
+                        <a href="'.SITE_NAME.'/tiep-thi-lien-ket/dang-xuat/"><i class="fa fa-sign-out "></i> Đăng
+                            xuất</a>
+                    </div>
                 </div>';
     }else{
         $asign['content_user']='<div class="tourmaster-user-top-bar tourmaster-guest">
