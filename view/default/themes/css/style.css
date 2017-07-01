@@ -1409,7 +1409,9 @@ a.camnang-btn {
     margin: -0px 8px 0 0;
     border-radius: 100%;
     border: 2px solid #FFF;
-    max-width: 40px;
+    /*max-width: 40px;*/
+    height: 45px;
+    width: 45px;
 }
 .user-info {
     max-width: 100px;
@@ -1427,21 +1429,21 @@ a.camnang-btn {
     display: block;
 }
 .notification_menu{
-    background-color: #762c59;
-    /*display: block;*/
+    /* background-color: #0370b3; */
+    /* display: block; */
     line-height: inherit;
     text-align: center;
     height: 100%;
     width: auto;
     min-width: 50px;
-    padding: 18px 15px;
+    padding: 18px 35px;
     position: relative;
-    border-right: 1px solid red;
-    border-left: 1px solid red;
+    border-right: 1px solid #6d6e6f !important;
+    /* border-left: 1px solid red; */
 }
 .user_profile{
-    background-color:#62a8d1;
-    /*display: block;*/
+    /* background-color: #0370b3; */
+    /* display: block; */
     line-height: inherit;
     text-align: center;
     height: 100%;
@@ -1498,11 +1500,14 @@ a.camnang-btn {
 }
 
 .badge {
-    font-size: 12px;
-    padding: 3px 8px;
+    font-size: 10px;
+    padding: 1px 5px;
     background-color: #d15b47;
-    border-radius: 10px;
-    margin-left: 5px;
+    border-radius: 4px;
+    position: absolute;
+    text-align: center;
+    /* height: 18px; */
+    line-height: 14px;
 }
 
 .dropdown-header {
@@ -1554,4 +1559,12 @@ a.camnang-btn {
     color: #4F99C6!important;
     text-align: center;
     font-size: 13px;
+}
+.icon_right_noti{
+    position: absolute;right: 0%;bottom: 5%;
+}
+.icon_glo_noti{
+    position: absolute;
+    left: 20px;
+    top: 15px;
 }

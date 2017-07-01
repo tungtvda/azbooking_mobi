@@ -105,36 +105,69 @@ function view_menu($data = array())
             'user_code'=>_return_mc_encrypt($data_session['user_code']),
             'created'=>_return_mc_encrypt($data_session['created']),
             'avatar'=>_return_mc_encrypt($data_session['avatar']),
-            'token_code'=>_return_mc_decrypt($data_session['token_code']),
-            'time_token'=>_return_mc_decrypt($data_session['time_token']),
+            'token_code'=>_return_mc_encrypt($data_session['token_code']),
+            'time_token'=>_return_mc_encrypt($data_session['time_token']),
+            'top_5'=>1,
         );
        $list_noti= returnCURL($array_check_noti, SITE_NAME_MANAGE.'/return-list-notification.html');
-//        print_r($list_noti);
-//        exit;
-        $avatar='<img class="nav-user-photo" title="'.$data_session['name'].'" alt="'.$data_session['name'].'"  src="'.$data_session['avatar'].'">';
-        $asign['content_user'].='<div class="dropdown-noti">
-                    <a class="notification_menu" data-toggle="dropdown-noti">
-                        <i class="ace-icon fa fa-bell icon-animated-bell color_white"></i>
-                        <span class="badge badge-important">1</span>
-                    </a>
-                    <div class="dropdown-content-noti">
+        $data_list_noti=json_decode($list_noti,true);
+        $count_noti_string='';
+        if(isset($data_list_noti['count_active'])&& $data_list_noti['count_active']>0){
+            $count_noti_string='<span class="badge badge-important">'.$data_list_noti['count_active'].'</span>';
+        }
+//        $count_noti=count($data_list_noti);
+        if($data_list_noti>0){
+            $item_noti=' <div class="dropdown-content-noti">
                         <p class="dropdown-header">
-                            <i class="ace-icon fa fa-exclamation-triangle"></i> 1 Thông báo
+                            <i class="ace-icon fa fa-exclamation-triangle"></i> '.$count_noti_string.' Thông báo
                         </p>
                         <ul class="dropdown-menu dropdown-navbar navbar-pink ul_noti">
-                            <li >
-                                <a title="Chi tiết bài viết"
-                                   href="http://localhost/manage_mix/booking-new/sua?noti=1&amp;confirm=1&amp;id=Vm0xMGEwNUdWWGhWYms1U1lrVndVbFpyVWtKUFVUMDk=&amp;id_noti=Vm0xMGEwNUdWWGhXYms1U1lrVndVbFpyVWtKUFVUMDk="
-                                   class="clearfix">
-
+                            <li>
+                                <a title="" href="" class="clearfix">
 												<span class="msg-body">
 													<span class="msg-title">
 														Khách hàng Trần Hoài Anh đã thêm một đơn hàng từ 4
 													</span>
 
 													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i> <span>28-03-2017 19:07:33 </span>
+														<i class="ace-icon fa fa-clock-o"></i> <span> 28-03-2017 19:07:33 </span>
+													</span>
+												</span>
+                                </a>
+                                <a title="Chi tiết thông báo"
+                                   href=""
+                                   style="position: absolute;right: 0%;bottom: 5%; "><i
+                                            style="color:#4a96d9 !important;"
+                                            class="ace-icon fa fa-hand-o-right"></i></a>
+                            </li>
+                            <li class="dropdown-footer">
+                                <a href=""> Xem tất cả <i class="ace-icon fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
 
+                    </div>';
+        }
+        $avatar='<img class="nav-user-photo" title="'.$data_session['name'].'" alt="'.$data_session['name'].'"  src="'.$data_session['avatar'].'">';
+        $asign['content_user'].='<div class="dropdown-noti">
+                    <a class="notification_menu" data-toggle="dropdown-noti">
+                        <i class="icon_glo_noti ace-icon fa fa-globe icon-animated-bell color_white fa-2x"></i>
+                        '.$count_noti_string.'
+                    </a>
+                    <div class="dropdown-content-noti">
+                        <p class="dropdown-header">
+                            <i class="ace-icon fa fa-exclamation-triangle"></i> 1 Thông báo
+                        </p>
+                        <ul class="dropdown-menu dropdown-navbar navbar-pink ul_noti">
+                            <li>
+                                <a title="" href="" class="clearfix">
+												<span class="msg-body">
+													<span class="msg-title">
+														Khách hàng Trần Hoài Anh đã thêm một đơn hàng từ 4
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i> <span> 28-03-2017 19:07:33 </span>
 													</span>
 												</span>
                                 </a>
