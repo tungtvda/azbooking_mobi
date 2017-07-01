@@ -1386,6 +1386,8 @@ a.camnang-btn {
     display: block;
 }
 
+
+
 /* Change the background color of the dropdown button when the dropdown content is shown */
 /*.dropdown:hover .dropbtn {*/
     /*background-color: #3e8e41;*/
@@ -1399,4 +1401,157 @@ a.camnang-btn {
     padding: 5px;
    height: 45px;
     border-radius: 50%;
+}
+
+
+/**/
+.nav-user-photo {
+    margin: -0px 8px 0 0;
+    border-radius: 100%;
+    border: 2px solid #FFF;
+    max-width: 40px;
+}
+.user-info {
+    max-width: 100px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: top;
+    line-height: 15px;
+    position: relative;
+    top: 6px;
+}
+.user-info small {
+    display: block;
+}
+.notification_menu{
+    background-color: #762c59;
+    /*display: block;*/
+    line-height: inherit;
+    text-align: center;
+    height: 100%;
+    width: auto;
+    min-width: 50px;
+    padding: 18px 15px;
+    position: relative;
+    border-right: 1px solid red;
+    border-left: 1px solid red;
+}
+.user_profile{
+    background-color:#62a8d1;
+    /*display: block;*/
+    line-height: inherit;
+    text-align: center;
+    height: 100%;
+    width: auto;
+    min-width: 50px;
+    padding: 18px 20px;
+    position: relative;
+}
+.color_white{
+    color: white !important;
+}
+
+.dropbtn-noti {
+    background-color: #064c77;
+    color: white;
+    /*padding: 16px;*/
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown-noti {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content-noti {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 248px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 11;
+    margin-top: 13px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content-noti a {
+    color: #064c77 !important;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content-noti a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown-noti:hover .dropdown-content-noti {
+    display: block;
+}
+
+.badge {
+    font-size: 12px;
+    padding: 3px 8px;
+    background-color: #d15b47;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.dropdown-header {
+    background-color: #f7ecf2;
+    color: #b471a0;
+    text-shadow: none;
+    line-height: 34px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: none;
+    border-bottom: 1px solid #e5bcd4;
+    text-align: left;
+    padding: 5px 15px;
+    margin-bottom: 0px;
+}
+.ul_noti{
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+.ul_noti li{
+    position: relative;
+    border-bottom: 1px solid #f3e4ec;
+}
+.ul_noti li a {
+    padding: 10px 15px;
+}
+.msg-photo {
+    max-width: 42px;
+    float: left;
+    margin-top: 2px;
+}
+.msg-body {
+    display: block;
+    line-height: 20px;
+    white-space: normal;
+    vertical-align: middle;
+    /*margin-left: 50px;*/
+}
+.msg-title {
+    display: inline-block;
+    line-height: 14px;
+}
+.msg-time {
+    display: block;
+    font-size: 11px;
+    color: #777;
+}
+.dropdown-footer>a {
+    color: #4F99C6!important;
+    text-align: center;
+    font-size: 13px;
 }
