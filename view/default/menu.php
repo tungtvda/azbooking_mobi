@@ -97,6 +97,7 @@ function view_menu($data = array())
     }
     $data_session=checkSession('', 1);
     $asign['content_user']='';
+    $asign['content_user']='';
     if(count($data_session)>0){
         $array_check_noti = array(
             'id'=>_return_mc_encrypt($data_session['id']),
@@ -112,40 +113,50 @@ function view_menu($data = array())
        $list_noti= returnCURL($array_check_noti, SITE_NAME_MANAGE.'/return-list-notification.html');
         $data_list_noti=json_decode($list_noti,true);
         $count_noti_string='';
+        $count_un_read=0;
         if(isset($data_list_noti['count_active'])&& $data_list_noti['count_active']>0){
             $count_noti_string='<span class="badge badge-important">'.$data_list_noti['count_active'].'</span>';
         }
-//        $count_noti=count($data_list_noti);
+        if(isset($data_list_noti['count_un_read'])&& $data_list_noti['count_un_read']>0){
+            $count_un_read=$data_list_noti['count_un_read'];
+        }
         if($data_list_noti>0){
-            $item_noti=' <div class="dropdown-content-noti">
+            $list_notification='<div class="dropdown-content-noti">
                         <p class="dropdown-header">
-                            <i class="ace-icon fa fa-exclamation-triangle"></i> '.$count_noti_string.' Thông báo
+                            <i class="ace-icon fa fa-exclamation-triangle"></i> <span id="count_un_read">'.$count_un_read.'</span> Thông báo chưa đọc
                         </p>
-                        <ul class="dropdown-menu dropdown-navbar navbar-pink ul_noti">
-                            <li>
-                                <a title="" href="" class="clearfix">
+                        <ul class="dropdown-menu dropdown-navbar navbar-pink ul_noti">';
+            foreach($data_list_noti['data_noti'] as $row_noti){
+                $row_color='';
+                if($row_noti['status']!=1){
+                    $row_color='background-color: #edf2fa;';
+                }
+                $date_noti = date("d-m-Y H:i:s", strtotime($row_noti['created']));
+                $list_notification.='
+                            <li style="'.$row_color.'">
+                                <a href="'.SITE_NAME_MAIN.'/'.$row_noti['link'].'" class="clearfix">
 												<span class="msg-body">
 													<span class="msg-title">
-														Khách hàng Trần Hoài Anh đã thêm một đơn hàng từ 4
+														'.$row_noti['name'].'
 													</span>
-
 													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i> <span> 28-03-2017 19:07:33 </span>
+														<i class="ace-icon fa fa-clock-o"></i> <span> '.$date_noti.' </span>
 													</span>
 												</span>
                                 </a>
                                 <a title="Chi tiết thông báo"
-                                   href=""
+                                   href="'.SITE_NAME_MAIN.'/'.$row_noti['link'].'"
                                    style="position: absolute;right: 0%;bottom: 5%; "><i
                                             style="color:#4a96d9 !important;"
                                             class="ace-icon fa fa-hand-o-right"></i></a>
                             </li>
-                            <li class="dropdown-footer">
+                            ';
+            }
+            $list_notification.='<li class="dropdown-footer">
                                 <a href=""> Xem tất cả <i class="ace-icon fa fa-arrow-right"></i>
                                 </a>
                             </li>
                         </ul>
-
                     </div>';
         }
         $avatar='<img class="nav-user-photo" title="'.$data_session['name'].'" alt="'.$data_session['name'].'"  src="'.$data_session['avatar'].'">';
@@ -154,36 +165,7 @@ function view_menu($data = array())
                         <i class="icon_glo_noti ace-icon fa fa-globe icon-animated-bell color_white fa-2x"></i>
                         '.$count_noti_string.'
                     </a>
-                    <div class="dropdown-content-noti">
-                        <p class="dropdown-header">
-                            <i class="ace-icon fa fa-exclamation-triangle"></i> 1 Thông báo
-                        </p>
-                        <ul class="dropdown-menu dropdown-navbar navbar-pink ul_noti">
-                            <li>
-                                <a title="" href="" class="clearfix">
-												<span class="msg-body">
-													<span class="msg-title">
-														Khách hàng Trần Hoài Anh đã thêm một đơn hàng từ 4
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i> <span> 28-03-2017 19:07:33 </span>
-													</span>
-												</span>
-                                </a>
-                                <a title="Chi tiết thông báo"
-                                   href=""
-                                   style="position: absolute;right: 0%;bottom: 5%; "><i
-                                            style="color:#4a96d9 !important;"
-                                            class="ace-icon fa fa-hand-o-right"></i></a>
-                            </li>
-                            <li class="dropdown-footer">
-                                <a href=""> Xem tất cả <i class="ace-icon fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
+                    '.$list_notification.'
                 </div>';
         $asign['content_user'].='<div class="dropdown">
                     <a class="user_profile" data-toggle="dropdown">
@@ -196,11 +178,11 @@ function view_menu($data = array())
                         <i class="ace-icon fa fa-caret-down color_white" style="margin-left: 10px"></i>
                     </a>
                     <div class="dropdown-content">
-                        <a href="'.SITE_NAME.'/tiep-thi-lien-ket/ho-so/"><i class="fa fa-cogs "></i> Cài đặt tài
+                        <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/ho-so/"><i class="fa fa-cogs "></i> Cài đặt tài
                             khoản</a>
-                        <a href="'.SITE_NAME.'/tiep-thi-lien-ket/"><i class="fa fa-share-alt "></i> Tiếp thị liên
+                        <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/"><i class="fa fa-share-alt "></i> Tiếp thị liên
                             kết</a>
-                        <a href="'.SITE_NAME.'/tiep-thi-lien-ket/dang-xuat/"><i class="fa fa-sign-out "></i> Đăng
+                        <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/dang-xuat/"><i class="fa fa-sign-out "></i> Đăng
                             xuất</a>
                     </div>
                 </div>';
