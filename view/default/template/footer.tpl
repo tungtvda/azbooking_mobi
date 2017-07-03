@@ -153,7 +153,21 @@
     $(".btn_timkiem").click(function () {
         $('#box_timkiem').slideToggle();
     });
-
+    $('body').on("click", '.notification_menu', function () {
+        link = '{site_name_manage}/update-notification.html';
+        $.ajax({
+            method: "POST",
+            url: link,
+            data: $("#form_noti").serialize(),
+            success: function (response) {
+                response=$.parseJSON(response);
+                if (response.success == 1) {
+                    $('#count_notification').hide();
+                    $('#count_un_read').html(response.count_un_read);
+                }
+            }
+        });
+    });
     $('body').on("blur", '#input_num_nguoi_lon', function () {
         returnDanhSachDoan('#input_num_nguoi_lon');
     });
