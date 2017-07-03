@@ -14,6 +14,7 @@
         e.async = true;
         document.getElementById('fb-root').appendChild(e);
     }());</script>
+{form_}
 <div class="traveltour-mobile-header-wrap">
     <div class="traveltour-top-bar">
         <div class="traveltour-top-bar-background"></div>

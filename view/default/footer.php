@@ -28,6 +28,7 @@ function view_footer($data = array())
     $asign['facebook'] = $data['mangxahoi'][0]->facebook;
     $asign['google'] = $data['mangxahoi'][0]->google;
     $asign['rss'] = $data['mangxahoi'][0]->rss;
+    $asign['site_name_manage'] = SITE_NAME_MANAGE;
 //
 //    $asign['quydinh'] = $data['info'][0]->name;
 //    $asign['baomat'] = $data['info'][1]->name;

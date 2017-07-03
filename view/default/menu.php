@@ -97,7 +97,7 @@ function view_menu($data = array())
     }
     $data_session=checkSession('', 1);
     $asign['content_user']='';
-    $asign['content_user']='';
+    $asign['form_']='';
     if(count($data_session)>0){
         $array_check_noti = array(
             'id'=>_return_mc_encrypt($data_session['id']),
@@ -110,12 +110,13 @@ function view_menu($data = array())
             'time_token'=>_return_mc_encrypt($data_session['time_token']),
             'top_5'=>1,
         );
-       $list_noti= returnCURL($array_check_noti, SITE_NAME_MANAGE.'/return-list-notification.html');
+        $asign['form_']='<form style="display: none" action="" method="" id="form_noti"><input name="noti_name" value="'._return_mc_encrypt(json_encode($array_check_noti)).'"></form>';
+        $list_noti= returnCURL($array_check_noti, SITE_NAME_MANAGE.'/return-list-notification.html');
         $data_list_noti=json_decode($list_noti,true);
         $count_noti_string='';
         $count_un_read=0;
         if(isset($data_list_noti['count_active'])&& $data_list_noti['count_active']>0){
-            $count_noti_string='<span class="badge badge-important">'.$data_list_noti['count_active'].'</span>';
+            $count_noti_string='<span class="badge badge-important" id="count_notification">'.$data_list_noti['count_active'].'</span>';
         }
         if(isset($data_list_noti['count_un_read'])&& $data_list_noti['count_un_read']>0){
             $count_un_read=$data_list_noti['count_un_read'];
