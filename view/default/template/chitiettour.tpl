@@ -78,7 +78,8 @@
             </div>
         </div>
     </div>
-    <div class="link_tiep_thi_lien_ket package-details-content"><h3 class="title "><b>Tiếp thị liên kết</b> <b
+    {div_tiep_thi}
+    <!--<div class="link_tiep_thi_lien_ket package-details-content"><h3 class="title "><b>Tiếp thị liên kết</b> <b
                     style="color: red">(Hoa hồng được nhận 10%)</b></h3>
         <p>Bạn hãy kích <span></span> hoặc copy nội dung trong ô textbox hoặc bạn có thể kích vào các biểu tượng mạng xã
             hội để chia sẻ liên kết</p>
@@ -124,7 +125,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="tourmaster-tour-booking-bar-container tourmaster-container">
         <div class="tourmaster-tour-booking-bar-container-inner">
             <div class="tourmaster-tour-booking-bar-anchor tourmaster-item-mglr"></div>
