@@ -154,7 +154,7 @@ function view_menu($data = array())
                             ';
             }
             $list_notification.='<li class="dropdown-footer">
-                                <a href=""> Xem tất cả <i class="ace-icon fa fa-arrow-right"></i>
+                                <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thong-bao/"> Xem tất cả <i class="ace-icon fa fa-arrow-right"></i>
                                 </a>
                             </li>
                         </ul>
