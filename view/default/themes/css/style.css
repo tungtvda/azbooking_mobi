@@ -1577,7 +1577,7 @@ a.camnang-btn {
     /* padding: 5px; */
     /* float: left; */
     width: 100%;
-    /* padding-bottom: 20px; */
+     padding-bottom: 20px;
     padding-top: 20px;
     padding-left: 30px;
     padding-right: 30px;
@@ -1653,4 +1653,32 @@ a.camnang-btn {
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    /*margin-bottom: 20px;*/
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+}
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
 }

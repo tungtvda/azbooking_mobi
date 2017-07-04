@@ -693,6 +693,7 @@ if($data['detail'][0]->tour_quoc_te==0){
 $url='';
 $banner='';
 $link_detail='';
+$link_share='';
 if(isset($_GET['Id_sub'])&&$_GET['Id_sub']!=''){
     if(isset($_GET['Id'])&&$_GET['Id']!=''){
         $id=addslashes(strip_tags($_GET['Id']));
@@ -708,6 +709,7 @@ if(isset($_GET['Id_sub'])&&$_GET['Id_sub']!=''){
 //            $url='<li><a href="'.SITE_NAME.'">Trang chủ</a></li><li><a href="'.SITE_NAME.$link.'">'.$data['menu'][1]->name.'</a></li><li><a href="'.SITE_NAME.$link.$danhmuc_1[0]->name_url.'/">'.$danhmuc_1[0]->name.'</a></li><li><a href="'.SITE_NAME.$link.$danhmuc_1[0]->name_url.'/'.$danhmuc2[0]->name_url.'/">'.$danhmuc2[0]->name.'</a></li><li><span>'.$data['detail'][0]->name.'</span></li>';
             $banner=$danhmuc2[0]->img;
             $link_detail=link_tourdetail($data['detail'][0],$danhmuc_1[0]->name_url,$danhmuc2[0]->name_url, SITE_NAME_MAIN);
+            $link_share=link_tourdetail($data['detail'][0],$danhmuc_1[0]->name_url,$danhmuc2[0]->name_url);
         }
         else{
             redict(SITE_NAME);
@@ -725,6 +727,7 @@ else{
 //        $url='<li><a href="'.SITE_NAME.'">Trang chủ</a></li><li><a href="'.SITE_NAME.$link.'">'.$data['menu'][1]->name.'</a></li><li><a href="'.SITE_NAME.$link.$danhmuc_1[0]->name_url.'/">'.$danhmuc_1[0]->name.'</a></li><li><span>'.$data['detail'][0]->name.'</span></li>';
         $banner=$danhmuc_1[0]->img;
         $link_detail=link_tourdetail($data['detail'][0],$danhmuc_1[0]->name_url,'',SITE_NAME_MAIN);
+        $link_share=link_tourdetail($data['detail'][0],$danhmuc_1[0]->name_url,'');
     }
     else{
         redict(SITE_NAME);
@@ -747,6 +750,7 @@ $description=$data['detail'][0]->description;
 $keyword=$data['detail'][0]->keyword;
 $data['link_anh']=$data['detail'][0]->img;
 $data['link_url']=$link_detail;
+$data['link_share']=$link_share;
 $data['tour_lienquan']=tour_getByTop(6,'id!='.$data['detail'][0]->id.' and DanhMuc1Id='.$data['detail'][0]->DanhMuc1Id,'id desc');
 
 $title=($title)?$title:'Azbooking.vn';
