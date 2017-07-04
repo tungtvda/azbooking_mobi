@@ -78,10 +78,57 @@
             </div>
         </div>
     </div>
+    <div class="link_tiep_thi_lien_ket package-details-content"><h3 class="title "><b>Tiếp thị liên kết</b> <b
+                    style="color: red">(Hoa hồng được nhận 10%)</b></h3>
+        <p>Bạn hãy kích <span></span> hoặc copy nội dung trong ô textbox hoặc bạn có thể kích vào các biểu tượng mạng xã
+            hội để chia sẻ liên kết</p>
+        <div class="col-xs-12">
+            <div class="col-md-5 col-sm-12 col-xs-12" style="text-align: center">
+                <p>
+                   <input style="height: 34px; width: 100%;" id="check_link_tiep_thi" class="form-control" value="">
+                    <input hidden="" id="link_old" type="password" value="">
+                </p>
+
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6" style="width: 50%; display: inline-block"><p>
+
+                    <button type="button" class="btn btn-primary" id="copy_link_tiep_thi">
+                        <i class="fa fa-share-alt "></i>  Link tiếp thị
+                    </button>
+                </p>
+
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: right; width: 50%; display: inline-block">
+                <a target="_blank"
+                   href=""
+                   style="margin-right: 5px;" class="btn btn-primary"><i style="background:none; color: #ffffff"
+                                                                         class="fa fa-facebook"></i></a><a
+                        target="_blank"
+                        href=""
+                        style="margin-right: 5px;" class="btn btn-info"><i style="background:none; color: #ffffff"
+                                                                           class="fa fa-twitter"></i></a><a
+                        target="_blank"
+                        href=""
+                        style="margin-right: 5px;" class="btn btn-danger"><i style="background:none; color: #ffffff"
+                                                                             class="fa fa-google-plus"></i></a><a
+                        target="_blank"
+                        href=""
+                        class="btn btn-warning"><i style="background:none ; color: #ffffff" class="fa fa-envelope"></i></a></div>
+            <div class="col-md-12 col-xs-12 col-sm-12" style="margin-top: 20px; display: none" id="box_alert">
+                <div class="col-xs-12">
+                    <div class="alert alert-block alert-success">
+                        <button type="button" class="close" id="close_alert"><i class="ace-icon fa fa-times"></i>
+                        </button>
+                        <i class="ace-icon fa fa-check green"></i> Link tiếp thị liên kết đã được copy
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="tourmaster-tour-booking-bar-container tourmaster-container">
         <div class="tourmaster-tour-booking-bar-container-inner">
             <div class="tourmaster-tour-booking-bar-anchor tourmaster-item-mglr"></div>
-            <div class="tourmaster-tour-booking-bar-wrap tourmaster-item-mglr">
+            <div class="tourmaster-tour-booking-bar-wrap tourmaster-item-mglr" style="margin-top: 0px !important;">
                 <div class="tourmaster-tour-booking-bar-outer">
                     <div class="tourmaster-header-price tourmaster-item-mglr">
                         <div class="tourmaster-header-price-wrap">
@@ -110,7 +157,8 @@
                         }
                     </style>
                     <div id="booking" class="tourmaster-tour-booking-bar-inner">
-                        <form class="tourmaster-single-tour-booking-fields tourmaster-form-field tourmaster-with-border" id="submit_form" role="form" action="" method="post"
+                        <form class="tourmaster-single-tour-booking-fields tourmaster-form-field tourmaster-with-border"
+                              id="submit_form" role="form" action="" method="post"
                               enctype="multipart/form-data">
                             <input hidden type="text" id="input_price" value="{price}" name="price"
                                    class="valid">
@@ -209,7 +257,8 @@
                                 <i class="fa fa-dollar"></i>
 
                                 <div class="tourmaster-tour-booking-date-input" style="padding-top: 13px;">
-                                    <span class="tourmaster-tour-discount-price price_detail" id="amount_total">{price_format} {vnd}</span>
+                                    <span class="tourmaster-tour-discount-price price_detail"
+                                          id="amount_total">{price_format} {vnd}</span>
                                 </div>
                             </div>
 
@@ -218,118 +267,17 @@
                                 <i class="fa fa-check-circle"></i>
 
                                 <div class="tourmaster-tour-booking-submit-input">
-                                    <img id="loading" style="width: 150px; display: none " src="http://azbooking.vn/view/default/themes/images/loading.gif">
-                                    <input  id="submit_form_action"
-                                            class="tourmaster-button" type="button" value="Đặt Tour"
-                                            data-ask-login="proceed-without-login"/>
+                                    <img id="loading" style="width: 150px; display: none "
+                                         src="http://azbooking.vn/view/default/themes/images/loading.gif">
+                                    <input id="submit_form_action"
+                                           class="tourmaster-button" type="button" value="Đặt Tour"
+                                           data-ask-login="proceed-without-login"/>
                                     <div class="tourmaster-tour-booking-submit-error">* Bạn vui lòng nhập thông tin bắt
                                         buộc
                                     </div>
                                 </div>
                             </div>
                         </form>
-                        <div hidden class="tourmaster-lightbox-content-wrap"
-                             data-tmlb-id="proceed-without-login">
-                            <div class="tourmaster-lightbox-head"><h3 class="tourmaster-lightbox-title">
-                                    Proceed Booking</h3><i class="tourmaster-lightbox-close icon_close"></i>
-                            </div>
-                            <div class="tourmaster-lightbox-content">
-                                <div class="tourmaster-login-form2-wrap clearfix">
-                                    <form class="tourmaster-login-form2 tourmaster-form-field tourmaster-with-border"
-                                          method="post"
-                                          action="">
-                                        <h3 class="tourmaster-login-title">Already A Member?</h3>
-                                        <div class="tourmaster-login-form-fields clearfix"><p
-                                                    class="tourmaster-login-user"><label>Username</label>
-                                                <input type="text" name="log"/></p>
-                                            <p class="tourmaster-login-pass"><label>Password</label>
-                                                <input type="password" name="pwd"/></p></div>
-                                        <p class="tourmaster-login-submit"><input type="submit"
-                                                                                  name="wp-submit"
-                                                                                  class="tourmaster-button"
-                                                                                  value="Sign In!"/></p>
-                                        <p class="tourmaster-login-lost-password"><a
-                                                    href="">Forget
-                                                Password?</a></p><input type="hidden" name="rememberme"
-                                                                        value="forever"/> <input
-                                                type="hidden" name="redirect_to"
-                                                value=""/>
-                                        <input type="hidden" name="source" value="tm"/></form>
-                                    <div class="tourmaster-login2-right"><h3
-                                                class="tourmaster-login2-right-title">Don&#039;t have an
-                                            account? Create one.</h3>
-                                        <div class="tourmaster-login2-right-content">
-                                            <div class="tourmaster-login2-right-description">When you
-                                                book with an account, you will be able to track your
-                                                payment status, track the confirmation and you can also
-                                                rate the tour after you finished the tour.
-                                            </div>
-                                            <a class="tourmaster-button"
-                                               href="">Sign
-                                                Up</a></div>
-                                        <h3 class="tourmaster-login2-right-title">Or Continue As
-                                            Guest</h3> <a class="tourmaster-button"
-                                                          href="">Continue
-                                            As Guest</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div hidden class="tourmaster-booking-bottom clearfix">
-                            <div class="tourmaster-save-wish-list" data-tmlb="wish-list-login"><span
-                                        class="tourmaster-save-wish-list-icon-wrap"><i
-                                            class="tourmaster-icon-active fa fa-heart"></i><i
-                                            class="tourmaster-icon-inactive fa fa-heart-o"></i></span>Save To
-                                Wish List
-                            </div>
-                            <div class="tourmaster-lightbox-content-wrap"
-                                 data-tmlb-id="wish-list-login">
-                                <div class="tourmaster-lightbox-head"><h3
-                                            class="tourmaster-lightbox-title">Adding item to wishlist
-                                        requires an account</h3><i
-                                            class="tourmaster-lightbox-close icon_close"></i></div>
-                                <div class="tourmaster-lightbox-content">
-                                    <div class="tourmaster-login-form2-wrap clearfix">
-                                        <form class="tourmaster-login-form2 tourmaster-form-field tourmaster-with-border"
-                                              method="post"
-                                              action="p">
-                                            <h3 class="tourmaster-login-title">Already A Member?</h3>
-                                            <div class="tourmaster-login-form-fields clearfix"><p
-                                                        class="tourmaster-login-user">
-                                                    <label>Username</label> <input type="text" name="log"/>
-                                                </p>
-                                                <p class="tourmaster-login-pass"><label>Password</label>
-                                                    <input type="password" name="pwd"/></p></div>
-                                            <p class="tourmaster-login-submit"><input type="submit"
-                                                                                      name="wp-submit"
-                                                                                      class="tourmaster-button"
-                                                                                      value="Sign In!"/>
-                                            </p>
-                                            <p class="tourmaster-login-lost-password"><a
-                                                        href="">Forget
-                                                    Password?</a></p><input type="hidden" name="rememberme"
-                                                                            value="forever"/> <input
-                                                    type="hidden" name="redirect_to"
-                                                    value=""/>
-                                            <input type="hidden" name="source" value="tm"/></form>
-                                        <div class="tourmaster-login2-right"><h3
-                                                    class="tourmaster-login2-right-title">Don&#039;t have an
-                                                account? Create one.</h3>
-                                            <div class="tourmaster-login2-right-content">
-                                                <div class="tourmaster-login2-right-description">When
-                                                    you book with an account, you will be able to track
-                                                    your payment status, track the confirmation and you
-                                                    can also rate the tour after you finished the tour.
-                                                </div>
-                                                <a class="tourmaster-button"
-                                                   href="">Sign
-                                                    Up</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div hidden class="tourmaster-view-count"><i class="fa fa-eye"></i><span
-                                        class="tourmaster-view-count-text">273</span></div>
-                        </div>
                     </div>
                 </div>
 
