@@ -163,7 +163,12 @@
                 response=$.parseJSON(response);
                 if (response.success == 1) {
                     $('#count_notification').hide();
-                    $('#count_un_read').html(response.count_un_read);
+                    if(response.count_un_read>0){
+                        $('#count_un_read').html(response.count_un_read+' Thông báo chưa đọc');
+                    }else{
+                        $('#count_un_read').html('Tất cả thông báo đã được đọc');
+                    }
+
                 }
             }
         });
@@ -665,11 +670,62 @@
         }
         return succeed;
     }
+    $contentLoadTriggered = false;
+    $(".content_ul_li").scroll(
+            function()
+            {
+                if($(".content_ul_li").scrollTop() >= ($(".content_ul_li").height() - $(".ul_noti").height()) && $contentLoadTriggered == false)
+                {
+                    $contentLoadTriggered = true;
+                    var page=$('#page_noti').val();
+                    if(page==1){
+                        $('#page_noti').val(2);
+                    }
+                    link = '{site_name_manage}/return-list-notification.html';
+                    $.ajax({
+                        method: "POST",
+                        url: link,
+                        data: $("#form_noti").serialize(),
+                        success: function (response) {
+                            response = $.parseJSON(response);
+                            if(response.success==1){
+                                response.data_noti.forEach(function(value) {
+                                    var row_color='';
+                                    if(value.status!=1){
+                                        row_color='background-color: #edf2fa;';
+                                    }
+                                    var time_format=moment(value.created).format('DD-MM-YYYY HH:mm:ss');
+                                    var item_noti=' <li style="'+row_color+'">' +
+                                            '<a href="{site_name_main}/'+value.link+'"><span class="msg-body"><span class="msg-title">'+value.name+'</span>' +
+                                            '<span class="msg-time"><i class="ace-icon fa fa-clock-o"></i> ' +
+                                            '<span>'+time_format+'</span></span></span> </a>' +
+                                            '<a title="Chi tiết thông báo" href="{site_name_main}/'+value.link+'"  style="position: absolute;right: 0%;bottom: 5%; "> <i style="color:#4a96d9 !important;" class="ace-icon fa fa-hand-o-right"></i>' +
+                                            '</a></li>';
+                                    $( ".ul_noti" ).append(item_noti );
+                                });
+                                $('#page_noti').val(response.current);
+                                if(response.data_noti.length>0){
+                                    $contentLoadTriggered =false;
+                                }else{
+                                    $contentLoadTriggered =true;
+                                }
+
+                            }else{
+                                $contentLoadTriggered = true;
+                            }
+                        }
+                    });
+
+
+                }
+            }
+    );
 </script>
 
 <script type='text/javascript'
         src='{SITE-NAME}/view/default/themes/js/script-core.js?ver=1.0.0'></script>
 <script type="text/javascript"
         src="{SITE-NAME}/view/default/themes/js/kkcountdown.js"></script>
+<script src="{SITE-NAME}/view/default/themes/js/moment.min.js"></script>
 </body>
 </html>

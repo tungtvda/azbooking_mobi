@@ -110,22 +110,50 @@ function view_menu($data = array())
             'time_token'=>_return_mc_encrypt($data_session['time_token']),
             'top_5'=>1,
         );
-        $asign['form_']='<form style="display: none" action="" method="" id="form_noti"><input name="noti_name" value="'._return_mc_encrypt(json_encode($array_check_noti)).'"></form>';
+        $asign['form_']='<form style="display: none" action="" method="" id="form_noti">
+        <input name="noti_name" value="'._return_mc_encrypt(json_encode($array_check_noti)).'">
+        <input name="id" value="'._return_mc_encrypt($data_session['id']).'">
+        <input name="name" value="'._return_mc_encrypt($data_session['name']).'">
+        <input name="user_email" value="'._return_mc_encrypt($data_session['user_email']).'">
+        <input name="user_code" value="'._return_mc_encrypt($data_session['user_code']).'">
+        <input name="created" value="'._return_mc_encrypt($data_session['created']).'">
+        <input name="avatar" value="'._return_mc_encrypt($data_session['avatar']).'">
+        <input name="token_code" value="'._return_mc_encrypt($data_session['token_code']).'">
+        <input name="time_token" value="'._return_mc_encrypt($data_session['time_token']).'">
+        <input id="top_5" name="top_5" value="1">
+        <input id="page_noti" name="page" value="1">
+        </form>';
         $list_noti= returnCURL($array_check_noti, SITE_NAME_MANAGE.'/return-list-notification.html');
         $data_list_noti=json_decode($list_noti,true);
         $count_noti_string='';
-        $count_un_read=0;
+        $count_noti=count($data_list_noti['data_noti']);
         if(isset($data_list_noti['count_active'])&& $data_list_noti['count_active']>0){
             $count_noti_string='<span class="badge badge-important" id="count_notification">'.$data_list_noti['count_active'].'</span>';
         }
         if(isset($data_list_noti['count_un_read'])&& $data_list_noti['count_un_read']>0){
-            $count_un_read=$data_list_noti['count_un_read'];
+            $count_un_read=' <i class="ace-icon fa fa-exclamation-triangle"></i> <span id="count_un_read"> '.$data_list_noti['count_un_read'].' Thông báo chưa đọc</span> ';
+        }else{
+            if($count_noti>0){
+                $count_un_read='<span id="count_un_read">Bạn không có thông báo nào</span>';
+            }else{
+                $count_un_read='<span id="count_un_read">Tất cả thông báo đã được đọc</span>';
+            }
         }
-        if($data_list_noti>0){
+        $scroll='';
+        if($count_noti>=3){
+            $scroll='scroll_noti';
+        }
+        $hidden_div='';
+        if($count_noti==0){
+            $hidden_div='hidden';
+        }
+
+        if($count_noti>0){
             $list_notification='<div class="dropdown-content-noti">
                         <p class="dropdown-header">
-                            <i class="ace-icon fa fa-exclamation-triangle"></i> <span id="count_un_read">'.$count_un_read.'</span> Thông báo chưa đọc
+                           '.$count_un_read.'
                         </p>
+                        <div '.$hidden_div.'  class="content_ul_li '.$scroll.'">
                         <ul class="dropdown-menu dropdown-navbar navbar-pink ul_noti">';
             foreach($data_list_noti['data_noti'] as $row_noti){
                 $row_color='';
@@ -153,12 +181,13 @@ function view_menu($data = array())
                             </li>
                             ';
             }
-            $list_notification.='<li class="dropdown-footer">
-                                <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thong-bao/"> Xem tất cả <i class="ace-icon fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>';
+            $list_notification.='
+                        </ul></div>
+                         <p '.$hidden_div.' class="dropdown-footer" style="margin-bottom: 0px">
+                                    <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thong-bao/"> Xem tất cả <i class="ace-icon fa fa-arrow-right"></i></a></p>
+                    </div>
+
+                    ';
         }
         $avatar='<img class="nav-user-photo" title="'.$data_session['name'].'" alt="'.$data_session['name'].'"  src="'.$data_session['avatar'].'">';
         $asign['content_user'].='<div class="dropdown-noti">

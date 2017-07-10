@@ -1682,3 +1682,7 @@ button.close {
     filter: alpha(opacity=20);
     opacity: .2;
 }
+.scroll_noti{
+    overflow: scroll;
+    height: 232px;
+}
