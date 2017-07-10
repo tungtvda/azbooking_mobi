@@ -29,6 +29,7 @@ function view_footer($data = array())
     $asign['google'] = $data['mangxahoi'][0]->google;
     $asign['rss'] = $data['mangxahoi'][0]->rss;
     $asign['site_name_manage'] = SITE_NAME_MANAGE;
+    $asign['site_name_main'] = SITE_NAME_MAIN;
 //
 //    $asign['quydinh'] = $data['info'][0]->name;
 //    $asign['baomat'] = $data['info'][1]->name;
