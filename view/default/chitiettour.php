@@ -286,7 +286,13 @@ function show_chitiet_tour($data = array())
     $asign['hanh_trinh'] = $tring_des;
     $data_session=checkSession('', 1);
     $asign['div_tiep_thi']='';
+    $asign['code_user']='';
     if(count($data_session)>0 && $asign['price_tiep_thi']!='' && $asign['price_tiep_thi']>0){
+        $asign['code_user']='  <div
+                                class="tourmaster-tour-info tourmaster-tour-info-duration-text tourmaster-item-pdlr">
+                            <i class="fa fa-shopping-cart "></i> Mã booking: <span class="tourmaster-tour-discount-price price_detail">'.$data_session['user_code'].'</span>
+                        </div>';
+
         $asign['id_user']='&key='._return_mc_encrypt($data_session['id']);
         $link_tiep_thi=$asign['link_share'].'/'._return_mc_encrypt($data_session['id']);
         $asign['div_tiep_thi']='<div class="link_tiep_thi_lien_ket package-details-content">
