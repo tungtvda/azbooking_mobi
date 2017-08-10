@@ -43,6 +43,7 @@
                                 </span>
                             </span>
                         </div>
+                        {code_user}
                         <div {hidden_code}
                                 class="tourmaster-tour-info tourmaster-tour-info-duration-text tourmaster-item-pdlr">
                             <i class="fa fa-barcode"></i> Mã tour: {code}
