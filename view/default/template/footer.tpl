@@ -40,6 +40,30 @@
                     </div>
                 </div>
             </div>
+            <div  class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
+                <div id="tourmaster-widget-tour-category-6"
+                     class="widget widget_tourmaster-widget-tour-category traveltour-widget"><h3
+                            class="traveltour-widget-title"><span class="traveltour-widget-head-text">TIẾP THỊ LIÊN KẾT</span>
+                    </h3><span class="clear"></span>
+                    <div class="tourmaster-widget-tour-category">
+                        <div id="text-11" class="widget widget_text traveltour-widget">
+                            <div class="textwidget">
+                                <div class="gdlr-core-widget-list-shortcode" id="gdlr-core-widget-list-0"
+                                     style="text-align: left;">
+                                    <ul>
+                                        <li><a style=" color: #ffa127;" href="{SITE-NAME}/tiep-thi-lien-ket-info/gioi-thieu.html"><i class="fa fa-check"></i> Giới thiệu tiếp thị liên kết</a></li>
+                                        <li><a style=" color: #ffa127;" href="{SITE-NAME}/tiep-thi-lien-ket-info/cac-buoc-tham-gia.html"><i class="fa fa-check"></i> Các bước tham gia</a></li>
+                                        <li><a style=" color: #ffa127;" href="{SITE-NAME}/tiep-thi-lien-ket-info/cam-ket.html"><i class="fa fa-check"></i> Cam kết</a></li>
+                                        <li><a style=" color: #ffa127;" href="{SITE-NAME}/tiep-thi-lien-ket-info/hoi-dap.html"><i class="fa fa-check"></i> Hỏi và đáp</a></li>
+                                        <li><a style=" color: #ffa127;" href="{SITE-NAME}/tiep-thi-lien-ket-info/dieu-khoan-chinh-sach.html"><i class="fa fa-check"></i> Điều khoản và chính sách</a></li>
+                                        <li><a style=" color: #ffa127;" href="{SITE-NAME}/tiep-thi-lien-ket-info/hop-dong-cong-tac-vien.html"><i class="fa fa-check"></i> Hợp đồng với CTV</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div hidden class="traveltour-footer-column traveltour-item-pdlr traveltour-column-20">
                 <div id="text-2" class="widget widget_text traveltour-widget"><h3
                             class="traveltour-widget-title"><span

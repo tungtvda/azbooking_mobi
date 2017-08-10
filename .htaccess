@@ -90,3 +90,5 @@ RewriteRule ^dang-nhap-tour/$ controller/default/login_tour.php
 RewriteRule ^cap-nhat-tour/$ controller/default/cap_nhat_tour.php
 RewriteRule ^dang-xuat-tour/$ controller/default/logout_tour.php
 RewriteRule ^quan-ly-tour/$ controller/default/quanly_tour.php
+
+RewriteRule ^tiep-thi-lien-ket-info/([a-zA-Z0-9_-]+).html controller/default/info_tiepthi.php?Id=$1

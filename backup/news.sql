@@ -29,3 +29,4 @@ update news set view='496' where id=25;
 update news set view='497' where id=25;
 update news set view='498' where id=25;
 update news set view='499' where id=25;
+update news set view='84' where id=24;
