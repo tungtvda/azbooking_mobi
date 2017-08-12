@@ -287,6 +287,22 @@ function show_chitiet_tour($data = array())
     $data_session=checkSession('', 1);
     $asign['div_tiep_thi']='';
     $asign['code_user']='';
+    $asign['code_user']='';
+    if(isset($_GET['key'])){
+        $asign['id_user']='&key='._returnGetParamSecurity('key');
+        $array_user_share_noti = array(
+            'id'=>_returnGetParamSecurity('key'),
+        );
+        $list_noti= returnCURL($array_user_share_noti, SITE_NAME_MANAGE.'/azbooking-hoso.html');
+        $data_list_noti=json_decode($list_noti,true);
+        if(isset($data_list_noti['user']['code']) && $data_list_noti['user']['code']!=''){
+            $asign['code_user']='  <p class="price"><i class="icon-dollar"></i> Mã booking:
+                                    <ins><span class="amount"> '.$data_list_noti['user']['code'].'</span></ins>
+                                </p>';
+        }
+
+    }
+
     if(count($data_session)>0 && $asign['price_tiep_thi']!='' && $asign['price_tiep_thi']>0){
         $asign['code_user']='  <div
                                 class="tourmaster-tour-info tourmaster-tour-info-duration-text tourmaster-item-pdlr">
