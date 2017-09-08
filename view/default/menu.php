@@ -164,7 +164,7 @@ function view_menu($data = array())
                 $date_noti =timeAgo($row_noti['created']);
                 $list_notification.='
                             <li style="'.$row_color.'">
-                                <a href="'.SITE_NAME_MAIN.'/'.$row_noti['link'].'" class="clearfix">
+                                <a href="'.SITE_NAME_MAIN.'/'.$row_noti['link'].'&id_noti='._return_mc_encrypt($row_noti['id']).'" class="clearfix">
 												<span class="msg-body">
 													<span class="msg-title">
 														'.$row_noti['name'].'
@@ -175,7 +175,7 @@ function view_menu($data = array())
 												</span>
                                 </a>
                                 <a title="Chi tiết thông báo"
-                                   href="'.SITE_NAME_MAIN.'/'.$row_noti['link'].'"
+                                   href="'.SITE_NAME_MAIN.'/'.$row_noti['link'].'&id_noti='._return_mc_encrypt($row_noti['id']).'"
                                    style="position: absolute;right: 0%;bottom: 5%; "><i
                                             style="color:#4a96d9 !important;"
                                             class="ace-icon fa fa-hand-o-right"></i></a>
