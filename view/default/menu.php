@@ -213,6 +213,9 @@ function view_menu($data = array())
                             khoản</a>
                         <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/"><i class="fa fa-share-alt "></i> Tiếp thị liên
                             kết</a>
+                             <a target="_blank"  href="https://www.facebook.com/sharer/sharer.php?u='.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thanh-vien/?type=dang-ky&key_id='._return_mc_encrypt($data_session['id']).'" ><i class="fa fa-facebook "></i> Chia sẻ đăng ký <i>(Facebook)</i> </a></a>
+                                <a target="_blank"  href="https://twitter.com/intent/tweet?source=webclient&text='.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thanh-vien/?type=dang-ky&key_id='._return_mc_encrypt($data_session['id']).' + '.$data_session['name'].'" ><i class="fa fa fa-twitter "></i> Chia sẻ đăng ký <i>(Twitter)</i> </a></a>
+                                <a target="_blank"  href="https://plus.google.com/share?url='.SITE_NAME_MAIN.'/tiep-thi-lien-ket/thanh-vien/?type=dang-ky&key_id='._return_mc_encrypt($data_session['id']).'" ><i class="fa fa fa fa-google-plus"></i> Chia sẻ đăng ký <i>(Google)</i> </a></a>
                         <a href="'.SITE_NAME_MAIN.'/tiep-thi-lien-ket/dang-xuat/"><i class="fa fa-sign-out "></i> Đăng
                             xuất</a>
                     </div>
