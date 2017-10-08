@@ -203,35 +203,39 @@
                                      width: 200px;
                                     text-align: left;
                                 }
+                                .with_td_left p{
+                                    margin-bottom: 5px;
+                                }
                             </style>
                             <table>
-                                <tr>
+                                <tr hidden>
                                     <td class="with_td_left"><i class="fa fa-barcode"></i> Mã tour:
                                     </td>
                                     <td style="font-weight: bold"><a>{code}</td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-clock-o"></i> Thời
-                                        gian:
+                                    <td class="with_td_left">
+                                       <p><i class="fa fa-clock-o"></i>  Thời gian </p>
+                                        <p><a><b>{durations}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{durations}</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-calendar"></i> Ngày
-                                        khởi hành:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-calendar"></i> Ngày khởi hành</p>
+                                        <p><a><b>{ngay_khoi_hanh}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{ngay_khoi_hanh}</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-calendar"></i> Ngày về:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-calendar"></i>  Ngày về</p>
+                                        <p><a><b>{ngay_ket_thuc}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{ngay_ket_thuc}</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-map-marker"></i> Nơi
-                                        khởi hành:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-calendar"></i>  Nơi khởi hành</p>
+                                        <p><a><b>{khoihanh}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{khoihanh}</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -242,48 +246,51 @@
                              class="product-detail__info">
                             <table>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-barcode"></i> Mã đơn
-                                        hàng:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-barcode"></i>  Mã đơn hàng</p>
+                                        <p><a><b>{code_booking}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{code_booking}</td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-dollar"></i> Trị giá
-                                        đơn hàng:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-dollar"></i>  Trị giá
+                                            đơn hàng</p>
+                                        <p><a><b style="color: red">{total_price}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a
-                                                style="color: red">{total_price}</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-calendar"></i> Ngày đặt
-                                        tour:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-calendar"></i>  Ngày đặt
+                                            tour</p>
+                                        <p><a><b>{ngay_tao}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{ngay_tao}</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-credit-card"></i> Hình
-                                        thức thanh toán:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-credit-card"></i>  Hình
+                                            thức thanh toán</p>
+                                        <p><a><b>{httt_name}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{httt_name}</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-check-square-o "></i>
-                                        Trạng thái đơn hàng:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-check-square-o"></i>  Trạng thái đơn hàng</p>
+                                        <p><a><b>{ttdh_name}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{ttdh_name}</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-calendar"></i> Hạn
-                                        thanh toán:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-calendar"></i>  Hạn thanh toán</p>
+                                        <p><a><b>{han_thanh_toan}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{han_thanh_toan}</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-pencil-square-o"></i>  Tổng số khách:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-pencil-square-o"></i>  Tổng số khách</p>
+                                        <p><a><b>{total_cus}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {name_price}
+                                                    : {num_nguoi_lon} -  {name_price_2}: {num_tre_em}
+                                                    - {name_price_3}: {num_tre_em_5}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{total_cus}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {name_price}
-                                            : {num_nguoi_lon} -  {name_price_2}: {num_tre_em}
-                                            - {name_price_3}: {num_tre_em_5}</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -294,31 +301,36 @@
                              class="product-detail__info">
                             <table>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-user"></i> Họ tên:</td>
-                                    <td style="font-weight: bold"><a>{name_cus}</td>
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-user"></i>  Họ tên</p>
+                                        <p><a><b>{name_cus}</b></a></p>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-map-marker"></i> Địa
-                                        chỉ:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-map-marker"></i>  Địa chỉ</p>
+                                        <p><a><b>{address_cus}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a
-                                               >{address_cus}</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-envelope"></i> Email:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-envelope"></i>  Email</p>
+                                        <p><a><b>{email_cus}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{email_cus}</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-phone"></i> Điện thoại:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-phone"></i>  Điện thoại</p>
+                                        <p><a><b>{phone_cus}</b></a></p>
+                                        <i class="fa fa-phone"></i> Điện thoại:
                                     </td>
-                                    <td style="font-weight: bold"><a>{phone_cus}</a></td>
                                 </tr>
 
                                 <tr>
-                                    <td class="with_td_left"><i class="fa fa-pencil-square-o"></i> Ghi chú:
+                                    <td class="with_td_left">
+                                        <p><i class="fa fa-pencil-square-o"></i> Ghi chú</p>
+                                        <p><a><b>{note_cus}</b></a></p>
                                     </td>
-                                    <td style="font-weight: bold"><a>{note_cus}</a></td>
                                 </tr>
 
 

@@ -432,6 +432,7 @@
     }
     $('body').on("click", '#submit_form_action', function () {
         var form_data = $("#submit_form").serializeArray();
+        $('#submit_form_action').hide();
         var error_free = true;
         for (var input in form_data) {
             var name_input = form_data[input]['name'];
@@ -472,6 +473,7 @@
             $('#loading').show();
             $("#submit_form").submit();
         } else {
+            $('#submit_form_action').show();
             $('.tourmaster-tour-booking-submit-error').show();
 
         }
