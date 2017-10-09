@@ -148,6 +148,7 @@
 
     <!--<a class="call_mobile" href="tel:{Hotline}"><img src="{SITE-NAME}/view/default/themes/images/mobile-phone.png"></a>-->
 </footer>
+
 </div>
 </div>
 <!--<script type="text/javascript" src="{SITE-NAME}/view/default/themes/js/jquery-ui.min.js"></script>-->
