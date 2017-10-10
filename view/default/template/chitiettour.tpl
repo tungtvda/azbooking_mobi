@@ -44,7 +44,7 @@
                             </span>
                         </div>
                         {code_user}
-                        <div {hidden_code}
+                        <div hidden
                                 class="tourmaster-tour-info tourmaster-tour-info-duration-text tourmaster-item-pdlr">
                             <i class="fa fa-barcode"></i> Mã tour: {code}
                         </div>
@@ -359,3 +359,19 @@
         </div>
     </div>
 </div>
+<style>
+    .ma_san_pham_tiep_thi{
+        position: fixed;
+        bottom: -20px;
+        background: #ffffff;
+        z-index: 1;
+        text-align: center;
+        width: 100%;
+        left: 0px;
+        padding: 10px 10px;
+        border-top: 1px solid #438ada;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+    }
+</style>
