@@ -184,60 +184,41 @@ function show_chitiet_tour($data = array())
 
     }
     $asign['khoihanh'] = $string_khoihanh;
-    $asign['departure_time'] = $data['detail'][0]->departure_time;
 
-
-    $asign['date_select'] = ' <div class="tourmaster-tour-booking-people-input"> <label>Ngày khởi hành <span style="color: red">*</span></label><div class="tourmaster-combobox-wrap">
-
-                                                            <select  name="ngay_khoi_hanh" id="input_select_ngay_khoi_hanh">';
+    $asign['departure_time']=$data['detail'][0]->departure_time;
+    $asign['hidden_date']='';
+    $asign['hidden_date_select']='hidden';
+    $date_option='';
     $now = getdate();
-    $year_current = $now["year"];
-    if ($data['detail'][0]->departure_time != '' && $data['detail'][0]->departure_time != 'Theo yêu cầu' && $data['detail'][0]->departure_time != 'theo yêu cầu') {
-        $arr_explode = explode(',', $data['detail'][0]->departure_time);
-        if (count($arr_explode) > 0) {
-            if (strlen($arr_explode[0]) >= 8) {
-                $time_explode_0 = $arr_explode[0];
-            } else {
-                $time_explode_0 = $arr_explode[0] . '-' . $year_current;
-            }
-            $asign['date_now'] = date('Y-m-d', strtotime(trim($time_explode_0)));
-            $asign['date_now_vn'] = trim($time_explode_0);
-            foreach ($arr_explode as $row) {
-                $date = trim($row);
-                if (strlen($date) >= 8) {
-                    $time_format = $date;
-                } else {
-                    $time_format = $date . '-' . $year_current;
+    $year_current=$now["year"];
+    $string_departure_time='';
+    $full_date=date("d-m-Y");
+    if($data['detail'][0]->departure_time!=''){
+        $array_item=explode(',',$data['detail'][0]->departure_time);
+        if(count($array_item)>0){
+            foreach($array_item as $key=>$value){
+                $value=$value.'-'.$year_current;
+                $value=str_replace('/','-',$value);
+                if(checkmydate($value) && strtotime($value)>=strtotime($full_date)){
+                    $date_en=date('Y-m-d', strtotime(trim($value)));
+                    $date_option.='<option value="'.$date_en.'">'.$value.'</option>';
+                    if($string_departure_time==''){
+                        $string_departure_time=  $value;
+                        $asign['date_now']=date('Y-m-d', strtotime(trim($value)));
+                        $asign['date_now_vn'] =trim($value);
+                    }else{
+                        $string_departure_time.= ' ,'.$value;
+                    }
                 }
-                $validate = validateDate($time_format);
-                if ($validate == false) {
-                    $asign['date_select'] = '<div class="tourmaster-tour-booking-date-input">
-                                    <label>Ngày khởi hành <span style="color: red">*</span></label>
-                                    <div class="tourmaster-datepicker-wrap">
-                                        <input name="ngay_khoi_hanh" type=\'text\' class="form-control" id=\'input_ngay_khoi_hanh\'/>
-                                    </div>
-                                    <label class="error_booking" id="error_ngay_khoi_hanh">Bạn vui lòng chọn ngày khởi hành</label>
-                                </div>';
-                    $khongtontai_delect = 1;
-                    break;
-                }
-                $date_en = date('Y-m-d', strtotime(trim($time_format)));
-                $asign['date_select'] .= '<option value="' . $time_format . '">' . $time_format . '</option>';
             }
-            if (!isset($khongtontai_delect)) {
-                $asign['date_select'] .= ' </select>
-                                                        </div></div><label class="error_booking" id="error_ngay_khoi_hanh">Bạn vui lòng chọn ngày khởi hành</label>';
-            }
-        } else {
-            $asign['date_select'] = '<div class="tourmaster-tour-booking-date-input">
-                                    <label>Ngày khởi hành <span style="color: red">*</span></label>
-                                    <div class="tourmaster-datepicker-wrap">
-                                        <input name="ngay_khoi_hanh" type=\'text\' class="form-control" id=\'input_ngay_khoi_hanh\'/>
-                                    </div>
-                                    <label class="error_booking" id="error_ngay_khoi_hanh">Bạn vui lòng chọn ngày khởi hành</label>
-                                </div>';
         }
-    } else {
+    }
+
+    if($string_departure_time==''){
+        $asign['departure_time']='Liên hệ';
+        $asign['hidden_date']='';
+        $asign['hidden_date_select']='hidden';
+
         $asign['date_select'] = '<div class="tourmaster-tour-booking-date-input">
                                     <label>Ngày khởi hành <span style="color: red">*</span></label>
                                     <div class="tourmaster-datepicker-wrap">
@@ -245,7 +226,20 @@ function show_chitiet_tour($data = array())
                                     </div>
                                     <label class="error_booking" id="error_ngay_khoi_hanh">Bạn vui lòng chọn ngày khởi hành</label>
                                 </div>';
+    }else{
+        $asign['departure_time']=$string_departure_time;
+        $asign['hidden_date']='hidden';
+        $asign['hidden_date_select']='';
+
+        $asign['date_select']='<div class="tourmaster-tour-booking-people-input"> <label>Ngày khởi hành <span style="color: red">*</span></label><div class="tourmaster-combobox-wrap">
+
+                                                            <select  name="ngay_khoi_hanh" id="input_select_ngay_khoi_hanh">';
+        $asign['date_select'].=$date_option;
+        $asign['date_select'].='</select>
+                                                        </div></div><label class="error_booking" id="error_ngay_khoi_hanh">Bạn vui lòng chọn ngày khởi hành</label>';
+
     }
+
 
     $asign['quocgia'] = '';
     $arr = explode(',', trim($data['detail'][0]->danhmuc_multi));
@@ -287,20 +281,30 @@ function show_chitiet_tour($data = array())
     $data_session=checkSession('', 1);
     $asign['div_tiep_thi']='';
     $asign['code_user']='';
+
     if(isset($_GET['key'])){
-        $asign['id_user']='&key='._returnGetParamSecurity('key');
+        $_SESSION['id_tour_'.$data['detail'][0]->id]=_returnGetParamSecurity('key');
+    }
+    if(isset($_SESSION['id_tour_'.$data['detail'][0]->id])){
+        $asign['id_user']='&key='.$_SESSION['id_tour_'.$data['detail'][0]->id];
         $array_user_share_noti = array(
-            'id'=>_returnGetParamSecurity('key'),
+            'id'=>$_SESSION['id_tour_'.$data['detail'][0]->id],
         );
         $list_noti= returnCURL($array_user_share_noti, SITE_NAME_MANAGE.'/azbooking-hoso.html');
         $data_list_noti=json_decode($list_noti,true);
         if(isset($data_list_noti['user']['code']) && $data_list_noti['user']['code']!=''){
-            $asign['code_user']='  <p class="price"><i class="icon-dollar"></i> Mã booking:
-                                    <ins><span class="amount"> '.$data_list_noti['user']['code'].'</span></ins>
+            $asign['code_user']='  <p class="price ma_san_pham_tiep_thi"><i class="icon-dollar"></i> <span style="color: #4692e7">Mã sản phẩm:</span>
+                                    <span style="font-size: 20px" class="amount"> '.$data_list_noti['user']['code'].'</span>
                                 </p>';
         }
-
+    }else{
+        if($data['detail'][0]->code!=''){
+            $asign['code_user']='  <p class="price ma_san_pham_tiep_thi"><i class="icon-dollar"></i> <span style="color: #4692e7">Mã sản phẩm:</span>
+                                    <span style="font-size: 20px" class="amount"> '.$data['detail'][0]->code.'</span>
+                                </p>';
+        }
     }
+
 
     if(count($data_session)>0 && $asign['price_tiep_thi']!='' && $asign['price_tiep_thi']>0){
 //        $asign['code_user']='  <div

@@ -21,7 +21,7 @@
                                         <div class="gdlr-core-title-item-title-wrap"><h5
                                                     class="gdlr-core-title-item-title gdlr-core-skin-title"
                                                     style="font-size: 28px;letter-spacing: 0px;text-transform: none;">
-                                                Văn phòng Hà Nội<span
+                                                VP.Hà Nội<span
                                                         class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
                                             </h5></div>
                                     </div>
@@ -71,7 +71,7 @@
                                         <div class="gdlr-core-title-item-title-wrap"><h5
                                                     class="gdlr-core-title-item-title gdlr-core-skin-title"
                                                     style="font-size: 28px;letter-spacing: 0px;text-transform: none;">
-                                                San Fran<span
+                                                VP.Hồ Chí Minh<span
                                                         class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
                                             </h5></div>
                                     </div>

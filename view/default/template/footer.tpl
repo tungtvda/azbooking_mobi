@@ -148,6 +148,7 @@
 
     <!--<a class="call_mobile" href="tel:{Hotline}"><img src="{SITE-NAME}/view/default/themes/images/mobile-phone.png"></a>-->
 </footer>
+
 </div>
 </div>
 <!--<script type="text/javascript" src="{SITE-NAME}/view/default/themes/js/jquery-ui.min.js"></script>-->
@@ -432,6 +433,7 @@
     }
     $('body').on("click", '#submit_form_action', function () {
         var form_data = $("#submit_form").serializeArray();
+        $('#submit_form_action').hide();
         var error_free = true;
         for (var input in form_data) {
             var name_input = form_data[input]['name'];
@@ -472,6 +474,7 @@
             $('#loading').show();
             $("#submit_form").submit();
         } else {
+            $('#submit_form_action').show();
             $('.tourmaster-tour-booking-submit-error').show();
 
         }
