@@ -217,7 +217,8 @@ function print_item($file,$ListItem,$LocDau=false,$LocDauAssign=false,$numberfor
                 $ft->assign('khoihanh',$string_khoihanh);
                 $string_departure_time='';
 
-                $year_current=date("Y");
+//                $year_current=date("Y");
+                $year_current='2018';
                 $full_date=date("d-m-Y");
                 if($item->departure_time!=''){
                     $array_item=explode(',',$item->departure_time);
