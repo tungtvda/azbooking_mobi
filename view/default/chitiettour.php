@@ -40,11 +40,14 @@ function show_chitiet_tour($data = array())
         $asign['content_short'] = strip_tags($content);
     }
     $asign['summary'] = $data['detail'][0]->summary;
+    $asign['summary']=str_replace('src="/view/admin/Themes/','src="'.SITE_NAME_MAIN.'/view/admin/Themes/',$asign['summary']);
+
     $asign['hidden_summary'] = '';
     if ($data['detail'][0]->summary == '') {
         $asign['hidden_summary'] = 'hidden';
     }
     $asign['highlights'] = $data['detail'][0]->highlights;
+    $asign['highlights']=str_replace('src="/view/admin/Themes/','src="'.SITE_NAME_MAIN.'/view/admin/Themes/',$asign['highlights']);
     $asign['hidden_highlights'] = '';
     if ($asign['highlights'] == '') {
         $asign['hidden_highlights'] = 'hidden';
@@ -135,23 +138,27 @@ function show_chitiet_tour($data = array())
     $asign['date_now_vn'] = date('d-m-Y', strtotime(date(DATETIME_FORMAT)));
 
     $asign['schedule'] = $data['detail'][0]->schedule;
+    $asign['schedule']=str_replace('src="/view/admin/Themes/','src="'.SITE_NAME_MAIN.'/view/admin/Themes/',$asign['schedule']);
     $asign['hidden_schedule'] = '';
     if ($asign['schedule'] == '') {
         $asign['hidden_schedule'] = 'hidden';
     }
 
     $asign['inclusion'] = $data['detail'][0]->inclusion;
+    $asign['inclusion']=str_replace('src="/view/admin/Themes/','src="'.SITE_NAME_MAIN.'/view/admin/Themes/',$asign['inclusion']);
     $asign['hidden_inclusion'] = '';
     if ($data['detail'][0]->inclusion == '') {
         $asign['hidden_inclusion'] = 'hidden';
     }
     $asign['exclusion'] = $data['detail'][0]->exclusion;
+    $asign['exclusion']=str_replace('src="/view/admin/Themes/','src="'.SITE_NAME_MAIN.'/view/admin/Themes/',$asign['exclusion']);
     $asign['hidden_exclusion'] = '';
     if ($data['detail'][0]->exclusion == '') {
         $asign['hidden_exclusion'] = 'hidden';
     }
 
     $asign['price_list'] = $data['detail'][0]->price_list;
+    $asign['price_list']=str_replace('src="/view/admin/Themes/','src="'.SITE_NAME_MAIN.'/view/admin/Themes/',$asign['price_list']);
     $asign['vehicle'] = $data['detail'][0]->vehicle;
 
 //    $asign['tour_lienquan'] ='';

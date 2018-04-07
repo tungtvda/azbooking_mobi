@@ -27,10 +27,11 @@ function show_chitiet_tintuc($data = array())
     } else {
         $asign['content_short']=strip_tags($content);
     }
-//    $asign['tour_lienquan'] ='';
-//    if(count($data['tour_lienquan'])>0) {
-//        $asign['tour_lienquan'] = print_item('danhmuc_tintuc', $data['tour_lienquan']);
-//    }
+    $asign['tour_lienquan'] ='';
+    if(count($data['tour_lienquan'])>0) {
+        $asign['tour_lienquan'] = print_item('danhmuc_tintuc', $data['tour_lienquan']);
+    }
+    $asign['content']=str_replace('src="/view/admin/Themes/','src="'.SITE_NAME_MAIN.'/view/admin/Themes/',$asign['content']);
     print_template($asign, 'chitiettintuc');
 }
 
