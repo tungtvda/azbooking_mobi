@@ -403,7 +403,158 @@ function show_chitiet_tour($data = array())
     }else{
         $asign['id_user']='';
     }
+    $asign['tour_id']= _return_mc_encrypt($data['detail'][0]->id);
+    $asign['SITE_NAME_MANAGE']=SITE_NAME_MANAGE;
+    $stringRandom=rand(1000,1000000);
+    $code_check_send_email=_return_mc_encrypt('azmix_'.$stringRandom.'_tungtv.soict@gmail.com');
+    $asign['code_check_send_email']=$code_check_send_email;
+    $asign['code_tour_review']=$stringRandom;
     print_template($asign, 'chitiettour');
+
+    $array_check_noti = array(
+        'id_tour'=> _return_mc_encrypt($data['detail'][0]->id),
+        'code_tour_review'=>$stringRandom,
+        'domain'=>'azbooking.vn',
+        'code_check_send_email'=>$code_check_send_email,
+    );
+    $list_review= returnCURL($array_check_noti, SITE_NAME_MANAGE.'/list-review.html');
+    $data_list_noti=json_decode($list_review,true);
+    $asign['list_reivew']='<p style="margin-top: 30px">Tour '. $asign['name'].' chưa có đánh giá</p>';
+    $asign['percent_access']='Tour chưa có bất kỳ đánh giá nào';
+    $asign['total_review']=0;
+    $asign['hidden_review']='hidden';
+    $asign['hidden_page']='hidden';
+    if(isset($data_list_noti['listReview']) && $data_list_noti['listReview']!=''){
+        $asign['list_reivew']=$data_list_noti['listReview'];
+        $asign['hidden_page']='';
+    }
+    $asign['count_list']=0;
+    if(isset($data_list_noti['countList']) &&$data_list_noti['countList']!=''){
+        $asign['count_list']=$data_list_noti['countList'];
+    }
+
+    if(isset($data_list_noti['totalReview'])&& $data_list_noti['totalReview']>0){
+        if(isset($data_list_noti['percentAccess']) && $data_list_noti['percentAccess']>0){
+            $asign['hidden_review']='';
+            $asign['percent_access']=$data_list_noti['percentAccess'].'% đánh giá đã được xác minh';
+        }else{
+            $asign['percent_access']='Có '.$data_list_noti['totalNoAccess'].' đánh giá đang đợi được xác minh';
+        }
+        $asign['total_review']=$data_list_noti['totalReview'];
+
+    }
+    $asign['total_access']=0;
+    $asign['nex_page']='<i class="fa fa-angle-double-right next-pre-icon"></i>';
+    if(isset($data_list_noti['totalAccess']) ){
+        if( $data_list_noti['totalAccess']>10){
+            $asign['nex_page']=' <a href="javascript:void(0)" data-current="2" data-max-page="'.$asign['count_list'].'"
+                                       class="next_pre_review review_next_page_link">
+                                        <i class="fa fa-angle-double-right next-pre-icon"></i>
+                                    </a>';
+        }
+        $asign['total_access']=$data_list_noti['totalAccess'];
+    }
+
+
+    $asign['programPoint']=0;
+    $asign['programPointPercent']=0;
+    if(isset($data_list_noti['programPoint'])){
+        $asign['programPoint']=$data_list_noti['programPoint'];
+        $asign['programPointPercent']=$data_list_noti['programPoint']*10;
+    }
+    $asign['tourGuideFullPoint']=0;
+    $asign['tourGuideFullPointPercent']=0;
+    if(isset($data_list_noti['tourGuideFullPoint'])){
+        $asign['tourGuideFullPoint']=$data_list_noti['tourGuideFullPoint'];
+        $asign['tourGuideFullPointPercent']=$data_list_noti['tourGuideFullPoint']*10;
+    }
+//    $asign['tourGuideLocalPoint']=0;
+//    $asign['tourGuideLocalPointPercent']=0;
+//    if(isset($data_list_noti['tourGuideLocalPoint'])){
+//        $asign['tourGuideLocalPoint']=$data_list_noti['tourGuideLocalPoint'];
+//        $asign['tourGuideLocalPointPercent']=$data_list_noti['tourGuideLocalPoint']*10;
+//    }
+    $asign['hotelPoint']=0;
+    $asign['hotelPointPercent']=0;
+    if(isset($data_list_noti['hotelPoint'])){
+        $asign['hotelPoint']=$data_list_noti['hotelPoint'];
+        $asign['hotelPointPercent']=$data_list_noti['hotelPoint']*10;
+    }
+    $asign['restaurantPoint']=0;
+    $asign['restaurantPointPercent']=0;
+    if(isset($data_list_noti['restaurantPoint'])){
+        $asign['restaurantPoint']=$data_list_noti['restaurantPoint'];
+        $asign['restaurantPointPercent']=$data_list_noti['restaurantPoint']*10;
+    }
+    $asign['transportationPoint']=0;
+    $asign['transportationPointPercent']=0;
+    if(isset($data_list_noti['transportationPoint'])){
+        $asign['transportationPoint']=$data_list_noti['transportationPoint'];
+        $asign['transportationPointPercent']=$data_list_noti['transportationPoint']*10;
+    }
+    $asign['totalPoint']=0;
+    if(isset($data_list_noti['totalPoint'])){
+        $asign['totalPoint']=$data_list_noti['totalPoint'];
+    }
+    $asign['textPoint']='Tuyệt vời';
+    if($asign['totalPoint']>=1 && $asign['totalPoint']<=2.9){
+        $asign['textPoint']='Rất kém';
+    }
+    if($asign['totalPoint']>=3 && $asign['totalPoint']<=4.9){
+        $asign['textPoint']='Kém';
+    }
+    if($asign['totalPoint']>=5 && $asign['totalPoint']<=6.9){
+        $asign['textPoint']='Trung bình';
+    }
+    if($asign['totalPoint']>=7 && $asign['totalPoint']<=8.9){
+        $asign['textPoint']='Tốt';
+    }
+
+    if($asign['totalPoint']<7){
+        $asign['hidden_review']='hidden';
+    }
+    $asign['count13']='0';
+    if(isset($data_list_noti['count13'])){
+        $asign['count13']=$data_list_noti['count13'];
+    }
+    $asign['count35']='0';
+    if(isset($data_list_noti['count35'])){
+        $asign['count35']=$data_list_noti['count35'];
+    }
+    $asign['count57']='0';
+    if(isset($data_list_noti['count57'])){
+        $asign['count57']=$data_list_noti['count57'];
+    }
+    $asign['count79']='0';
+    if(isset($data_list_noti['count57'])){
+        $asign['count79']=$data_list_noti['count79'];
+    }
+    $asign['count910']='0';
+    if(isset($data_list_noti['count910'])){
+        $asign['count910']=$data_list_noti['count910'];
+    }
+
+    $asign['countPercent13']='0';
+    if(isset($data_list_noti['countPercent13'])){
+        $asign['countPercent13']=$data_list_noti['countPercent13'];
+    }
+    $asign['countPercent35']='0';
+    if(isset($data_list_noti['countPercent35'])){
+        $asign['countPercent35']=$data_list_noti['countPercent35'];
+    }
+    $asign['countPercent57']='0';
+    if(isset($data_list_noti['countPercent57'])){
+        $asign['countPercent57']=$data_list_noti['countPercent57'];
+    }
+    $asign['countPercent79']='0';
+    if(isset($data_list_noti['countPercent79'])){
+        $asign['countPercent79']=$data_list_noti['countPercent79'];
+    }
+    $asign['countPercent910']='0';
+    if(isset($data_list_noti['countPercent910'])){
+        $asign['countPercent910']=$data_list_noti['countPercent910'];
+    }
+    print_template($asign, 'chitiettourreview');
 }
 
 function validateDate($date, $format = 'd-m-Y')

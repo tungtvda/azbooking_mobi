@@ -757,5 +757,6 @@
 <script type="text/javascript"
         src="{SITE-NAME}/view/default/themes/js/kkcountdown.js"></script>
 <script src="{SITE-NAME}/view/default/themes/js/moment.min.js"></script>
+<script type='text/javascript' src='{SITE-NAME}/view/default/themes/js/review.js'></script>
 </body>
 </html>

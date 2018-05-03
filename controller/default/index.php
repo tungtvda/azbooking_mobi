@@ -15,7 +15,7 @@ $data['menu']=menu_getByTop('','','');
 $data['config']=config_getByTop(1,'','');
 ////
 $date_now=_returnGetDateTime();
-$data['banner']='';
+$data['banner']=array();
 $data['slide']=slide_getByTop('','','Id desc');
 $random_keys=array_rand($data['slide'],1);
 $data['banner']['name']=$data['slide'][$random_keys]->name;
