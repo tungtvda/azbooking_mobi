@@ -2,8 +2,8 @@
 <link rel="stylesheet"
       href="{SITE-NAME}/view/default/themes/css/review.css"/>
 <input value="{SITE_NAME_MANAGE}" id="site_name_manage" hidden>
-<input value="" id="url_tab_review" >
-<a href="javascript:void(0)" id="tab-review-click">
+<input hidden value="" id="url_tab_review" >
+<a href="#tab-reviews" id="tab-review-click">
 <i class="fa fa-comments"></i>
 </a>
 <div id="tab_review" data-tab="reviews" class="pagination_scroll_top">
@@ -18,9 +18,9 @@
                 <div>
                 </div>
                 <div class=" review-policy reviews-new-title--fix-top clearfix review-policy-fix ">
-                    <img class="review-policy__icon" src="{SITE-NAME}/view/default/themes/images/review/checklist.png">
+                    <!--<img class="review-policy__icon" src="{SITE-NAME}/view/default/themes/images/review/checklist.png">-->
                     <div class="review-policy__header-group">
-                        <h2 class="review-policy__header" style="font-size: 15px; padding-top: 25px">
+                        <h2 class="review-policy__header" style="font-size: 14px; padding-top: 15px;    margin-bottom: 0px;    padding-bottom: 15px;">
                         {percent_access}
                         </h2>
                     </div>

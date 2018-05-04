@@ -225,11 +225,11 @@
                 var f = a(b);
                 if (f.length)var e = f.offset().top
             }
-            return "undefined" != typeof e ? (e -= parseInt(a("html").css("margin-top")), "undefined" != typeof window.traveltour_anchor_offset && (e -= parseInt(window.traveltour_anchor_offset)), e < 0 && (e = 0), a("html, body").animate({scrollTop: e}, {
-                duration: 1500,
-                easing: "easeOutQuart",
-                queue: !1
-            }), !1) : c ? ("#tourmaster-single-review" != b && (window.location.href = traveltour_script_core.home_url + b), !1) : void 0
+            // return "undefined" != typeof e ? (e -= parseInt(a("html").css("margin-top")), "undefined" != typeof window.traveltour_anchor_offset && (e -= parseInt(window.traveltour_anchor_offset)), e < 0 && (e = 0), a("html, body").animate({scrollTop: e}, {
+            //     duration: 1500,
+            //     easing: "easeOutQuart",
+            //     queue: !1
+            // }), !1) : c ? ("#tourmaster-single-review" != b && (window.location.href = traveltour_script_core.home_url + b), !1) : void 0
         }, scroll_section: function () {
             var c = this, d = this.menu_anchor.find('a[href*="#"]').not('[href="#"]');
             if (d.length) {

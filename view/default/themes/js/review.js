@@ -179,7 +179,7 @@
     //});
     $('body').on("click", '#tab-review-click', function () {
         $('.tab-tour').removeClass('active');
-        $('#tab-review-li').addClass('active');
+        // $('#tab-review-li').addClass('active');
         var  url=window.location.href;
         $('#url_tab_review').val(url+'#tab-reviews');
         //if(url.indexOf("#tab-reviews")>-1){
