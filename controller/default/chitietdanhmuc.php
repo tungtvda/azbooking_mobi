@@ -42,7 +42,7 @@ if(isset($_GET['Id_sub'])&&$_GET['Id_sub']!=''){
             }
             $pagesize=10;
             $arr_push=array();
-            $data_all=tour_getByTop('','','updated desc');
+            $data_all=tour_getByTop('','status =1','updated desc');
 
             foreach($data_all as $row){
                 $arr_check=explode(',',$row->danhmuc_multi);
@@ -89,16 +89,16 @@ else{
     if(isset($_GET['Id'])&&$_GET['Id']!=''){
         if($_GET['Id']=='tour-du-lich-trong-nuoc'||$_GET['Id']=='tour-du-lich-quoc-te')
         {
-            $dk='';
+            $dk='status =1 ';
             $link='';
             if($_GET['Id']=='tour-du-lich-quoc-te')
             {
-                $dk='tour_quoc_te=1';
+                $dk=' and tour_quoc_te=1';
                 $link='/tour-du-lich-quoc-te/';
                 $name_dm=$data['menu'][9]->name;
             }
             else{
-                $dk='tour_quoc_te=0';
+                $dk=' and tour_quoc_te=0';
                 $link='/tour-du-lich-trong-nuoc/';
                 $name_dm=$data['menu'][1]->name;
             }
@@ -134,7 +134,7 @@ else{
                 $link='/tour-du-lich-quoc-te/';
                 $name_dm=$data['menu'][9]->name;
             }
-            $dk='DanhMuc1Id='.$danhmuc[0]->id;
+            $dk='status =1 and DanhMuc1Id='.$danhmuc[0]->id;
 
             $data['current']=isset($_GET['page'])?$_GET['page']:'1';;
             $data['pagesize']=10;
@@ -151,9 +151,9 @@ else{
             $title=$danhmuc[0]->title;
             $description=$danhmuc[0]->description;
             $keyword=$danhmuc[0]->keyword;
-            $data['tour_count_down']=tour_getByTop(9,'count_down!="" and count_down>"'.$date_now.'" and DanhMuc1Id='.$danhmuc[0]->id,'id desc');
-            $data['tour_PROMOTIONS']=tour_getByTop(9,'promotion=1 and DanhMuc1Id='.$danhmuc[0]->id,'id desc');
-            $data['tour_sales']=tour_getByTop(9,'price_sales!="" and DanhMuc1Id='.$danhmuc[0]->id,'id desc');
+            $data['tour_count_down']=tour_getByTop(9,'status =1 and count_down!="" and count_down>"'.$date_now.'" and DanhMuc1Id='.$danhmuc[0]->id,'id desc');
+            $data['tour_PROMOTIONS']=tour_getByTop(9,'status =1 and promotion=1 and DanhMuc1Id='.$danhmuc[0]->id,'id desc');
+            $data['tour_sales']=tour_getByTop(9,'status =1 and price_sales!="" and DanhMuc1Id='.$danhmuc[0]->id,'id desc');
         }
 
 
@@ -167,13 +167,13 @@ else{
             $active='tour_trong_nuoc';
             $link='/tour-du-lich-trong-nuoc/';
             $data_menu=$data['menu'][1];
-            $dk='tour_quoc_te=0';
+            $dk='status =1 and tour_quoc_te=0';
         }
         else{
             $active='tour_nuoc_ngoai';
             $link='/tour-du-lich-quoc-te/';
             $data_menu=$data['menu'][9];
-            $dk='tour_quoc_te=1';
+            $dk='status =1 and tour_quoc_te=1';
         }
         $data['current']=isset($_GET['page'])?$_GET['page']:'1';;
         $data['pagesize']=10;

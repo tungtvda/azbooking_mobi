@@ -26,7 +26,7 @@ if(!isset($_GET['name_url'])){
     redict(SITE_NAME);
 }
 $id=addslashes(strip_tags($_GET['name_url']));
-$data['detail']=tour_getByTop('1','name_url="'.$id.'"','');
+$data['detail']=tour_getByTop('1','status =1 and name_url="'.$id.'"','');
 if(count($data['detail'])==0){
     redict(SITE_NAME);
 }
@@ -777,7 +777,7 @@ if($danhmuc_1[0]->tour_quoc_te==0){
 }else{
     $active='tour_nuoc_ngoai';
 }
-$data['tour_sales']=tour_getByTop(5,'price_sales!="" ','id desc');
+$data['tour_sales']=tour_getByTop(5,'status =1 and price_sales!="" ','id desc');
 
 $title=$data['detail'][0]->title;
 $description=$data['detail'][0]->description;
@@ -785,7 +785,7 @@ $keyword=$data['detail'][0]->keyword;
 $data['link_anh']=$data['detail'][0]->img;
 $data['link_url']=$link_detail;
 $data['link_share']=$link_share;
-$data['tour_lienquan']=tour_getByTop(6,'id!='.$data['detail'][0]->id.' and DanhMuc1Id='.$data['detail'][0]->DanhMuc1Id,'id desc');
+$data['tour_lienquan']=tour_getByTop(6,'status =1 and id!='.$data['detail'][0]->id.' and DanhMuc1Id='.$data['detail'][0]->DanhMuc1Id,'id desc');
 
 $title=($title)?$title:'Azbooking.vn';
 $description=($description)?$description:'Azbooking.vn';

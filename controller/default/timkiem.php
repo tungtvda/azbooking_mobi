@@ -18,7 +18,7 @@ $data['config']=config_getByTop(1,'','');
 
 if(isset($_GET['value'])&&$_GET['value']!=""){
     $key_timkiem=mb_strtolower(addslashes(strip_tags($_GET['value'])));
-    $dk_tour='name LIKE "%'.$key_timkiem.'%" or durations LIKE "%'.$key_timkiem.'%" or name_url LIKE "%'.$key_timkiem.'%" or title LIKE "%'.$key_timkiem.'%" or price LIKE "%'.$key_timkiem.'%"';
+    $dk_tour='status =1 and ( name LIKE "%'.$key_timkiem.'%" or durations LIKE "%'.$key_timkiem.'%" or name_url LIKE "%'.$key_timkiem.'%" or title LIKE "%'.$key_timkiem.'%" or price LIKE "%'.$key_timkiem.'%" )';
     $data['danhsach_tour']=tour_getByTop('',$dk_tour,'id desc');
 
     $dk_tintuc='name LIKE "%'.$key_timkiem.'%"  or name_url LIKE "%'.$key_timkiem.'%" or title LIKE "%'.$key_timkiem.'%" ';
